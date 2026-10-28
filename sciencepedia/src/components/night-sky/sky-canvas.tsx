@@ -184,7 +184,10 @@ export function SkyCanvas({
     const onFullscreenChange = () => {
       // Toàn màn hình đổi kích thước khung mà không phải lúc nào cũng kèm
       // sự kiện resize của cửa sổ — gọi thẳng resize của engine cho chắc.
+      // Hai nhịp: chuyển cảnh toàn màn hình có thể ổn định muộn hơn một
+      // khung hình, nhịp 150 ms vớt trường hợp canvas đo khung quá sớm.
       requestAnimationFrame(() => engineRef.current?.resize());
+      setTimeout(() => engineRef.current?.resize(), 150);
     };
     document.addEventListener("fullscreenchange", onFullscreenChange);
 

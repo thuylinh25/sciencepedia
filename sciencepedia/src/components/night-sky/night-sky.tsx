@@ -186,11 +186,16 @@ export function NightSky() {
       <div
         ref={frameRef}
         className={cn(
-          "relative mt-4 h-[56vh] overflow-hidden rounded-3xl border border-white/10",
+          "relative mt-4 overflow-hidden border border-white/10",
           "bg-gradient-to-b from-[#0a1030] via-[#060a20] to-[#03040c]",
           "shadow-[inset_0_0_120px_rgba(0,0,0,0.55)]",
-          "sm:h-[62vh] lg:h-[70vh]",
-          isFullscreen && "h-full rounded-none",
+          // Chiều cao phải CHỌN MỘT trong hai bộ, không cộng dồn: `h-full` đặt
+          // cạnh `lg:h-[70vh]` thì biến thể responsive thắng trong cascade
+          // của Tailwind, khung toàn màn hình kẹt ở 70vh chừa một dải đen
+          // phía dưới (QA bản xem trước PR #167 bắt được).
+          isFullscreen
+            ? "h-full rounded-none"
+            : "h-[56vh] rounded-3xl sm:h-[62vh] lg:h-[70vh]",
         )}
       >
         <SkyCanvas
