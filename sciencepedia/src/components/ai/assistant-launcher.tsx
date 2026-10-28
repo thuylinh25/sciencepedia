@@ -166,9 +166,13 @@ export function AssistantLauncher() {
            48px vẫn trên ngưỡng 44px của WCAG cho vùng chạm, nên nhỏ đi không
            đổi lấy khả năng bấm trúng trên di động.
 
-           Nhãn dùng `max-w` chứ không `display`: `display` không chuyển động
-           được, và nhãn bật/tắt đột ngột trông như lỗi render. */
-        className="fixed right-4 bottom-[max(1.5rem,calc(env(safe-area-inset-bottom)+0.75rem))] z-50 flex h-12 items-center justify-center rounded-full bg-primary px-3.5 text-primary-foreground shadow-lg transition-[transform,width] duration-300 ease-out hover:scale-110 active:scale-95 sm:bottom-[max(1rem,env(safe-area-inset-bottom))]"
+           Nhãn mở bằng lưới `0fr → 1fr` chứ không `display`: `display` không
+           chuyển động được, và nhãn bật/tắt đột ngột trông như lỗi render.
+           (Trước đây nhãn animate `max-width` và nút animate `width` —
+           Hallmark gate 10a cấm animate thuộc tính layout, polish
+           2026-10-28; lưới fr cho cùng hiệu ứng mở/đóng mà không đặt
+           transition lên width.) */
+        className="fixed right-4 bottom-[max(1.5rem,calc(env(safe-area-inset-bottom)+0.75rem))] z-50 flex h-12 items-center justify-center rounded-full bg-primary px-3.5 text-primary-foreground shadow-lg transition-transform duration-300 ease-out hover:scale-110 active:scale-95 sm:bottom-[max(1rem,env(safe-area-inset-bottom))]"
       >
         {open ? (
           <X className="size-5 shrink-0" />
@@ -176,11 +180,15 @@ export function AssistantLauncher() {
           <MessageCircle className="size-5 shrink-0" />
         )}
         <span
-          className={`overflow-hidden ps-2 text-sm font-semibold whitespace-nowrap transition-[max-width,opacity] duration-300 ease-out ${
-            showLabel && !open && !noLabel ? "max-w-40 opacity-100" : "max-w-0 opacity-0"
+          className={`grid transition-[grid-template-columns,opacity] duration-300 ease-out ${
+            showLabel && !open && !noLabel
+              ? "grid-cols-[1fr] opacity-100"
+              : "grid-cols-[0fr] opacity-0"
           }`}
         >
-          {t("askLabel")}
+          <span className="min-w-0 overflow-hidden ps-2 text-sm font-semibold whitespace-nowrap">
+            {t("askLabel")}
+          </span>
         </span>
       </button>
     </>

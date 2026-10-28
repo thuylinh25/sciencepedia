@@ -126,7 +126,7 @@ export function LibraryStats() {
       {/* Vạch vàng ngắn phía trên tiêu đề: đánh dấu chỗ khối số liệu bắt đầu,
           để mắt không đọc tiếp nó như phần đuôi của thẻ hồ sơ ngay bên trên. */}
       <span aria-hidden className="block h-1 w-12 rounded-full bg-primary" />
-      <p className="mt-4 text-xs font-semibold tracking-widest text-foreground/80 uppercase">
+      <p className="mt-4 text-sm font-semibold text-foreground/80">
         {t("statsTitle")}
       </p>
 
@@ -191,7 +191,7 @@ export function LibraryStats() {
 
             <span
               aria-hidden
-              className="flex size-8 shrink-0 items-center justify-center rounded-full border bg-background/40 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:border-primary/40 group-hover:text-primary-strong"
+              className="flex size-8 shrink-0 items-center justify-center rounded-full border bg-background/40 text-muted-foreground transition-[transform,border-color,color] group-hover:translate-x-0.5 group-hover:border-primary/40 group-hover:text-primary-strong"
             >
               <ArrowRight className="size-4" />
             </span>

@@ -499,7 +499,7 @@ export function ArticleForm({
         {/* ------------------------------------------------ Cột thiết lập */}
         <aside className="space-y-6 lg:sticky lg:top-24">
           <div className="space-y-4 rounded-2xl border bg-card p-5">
-            <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+            <p className="text-sm font-semibold text-muted-foreground">
               {t("form.organize")}
             </p>
 
@@ -591,7 +591,7 @@ export function ArticleForm({
           </div>
 
           <div className="space-y-3 rounded-2xl border bg-card p-5">
-            <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+            <p className="text-sm font-semibold text-muted-foreground">
               {t("form.tagsField")}
             </p>
             <div className="flex flex-wrap gap-1.5">
