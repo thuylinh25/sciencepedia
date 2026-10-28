@@ -361,6 +361,12 @@ export function ZoomJourney() {
     seq: number;
   } | null>(null);
   const seq = useRef(0);
+  /* Các cấp đang được gắn, theo thứ tự vẽ (cảnh ra đi trước, cảnh hiện tại
+     sau = nằm trên). Mỗi cấp có đúng một wrapper bền theo id — xem ghi chú
+     ở chỗ vẽ các lớp: đổi vai KHÔNG được gắn lại cảnh. */
+  const [mountedIds, setMountedIds] = useState<string[]>([
+    ZOOM_LEVELS[0].id,
+  ]);
   const [reducedMotion, setReducedMotion] = useState(false);
   const timer = useRef<number | null>(null);
   const frameRef = useRef<HTMLDivElement>(null);
@@ -463,9 +469,13 @@ export function ZoomJourney() {
 
       setOutgoing({ id: ZOOM_LEVELS[index].id, direction, seq: thisSeq });
       setIndex(next);
+      setMountedIds([ZOOM_LEVELS[index].id, ZOOM_LEVELS[next].id]);
 
       if (timer.current) window.clearTimeout(timer.current);
-      timer.current = window.setTimeout(() => setOutgoing(null), FADE_MS);
+      timer.current = window.setTimeout(() => {
+        setOutgoing(null);
+        setMountedIds([ZOOM_LEVELS[next].id]);
+      }, FADE_MS);
     },
     [frameAspect, index, writeFocusVars],
   );
@@ -624,10 +634,6 @@ export function ZoomJourney() {
       compactDisplay: "long",
       maximumSignificantDigits: 1,
     }).format(ratio);
-  const outgoingLevel = outgoing
-    ? (ZOOM_LEVELS.find((item) => item.id === outgoing.id) ?? level)
-    : level;
-
   if (webgl === false) {
     return (
       <div className="grid h-[70vh] place-items-center rounded-2xl border border-dashed bg-muted/30 px-6 text-center">
@@ -656,56 +662,61 @@ export function ZoomJourney() {
           </div>
         ) : (
           <>
-            {/* Cảnh đang rời đi: phóng to rồi mờ dần */}
-            {outgoing && (
-              <div
-                key={`out-${outgoing.id}`}
-                className="zoom-layer-out absolute inset-0"
-                style={{
-                  ["--zoom-ms" as string]: `${FADE_MS}ms`,
-                  /* Lao qua cảnh cũ: phóng lớn hẳn chứ không chỉ nhích —
-                     cảm giác bay xuyên qua nó, không phải lùi khỏi nó. */
-                  ["--zoom-to" as string]:
-                    outgoing.direction === "in" ? "2.6" : "0.35",
-                }}
-              >
-                <LevelScene
-                  level={outgoingLevel}
-                  locale={locale}
-                  targetRef={
-                    targetRefs.current[
-                      ZOOM_LEVELS.findIndex(
-                        (item) => item.id === outgoingLevel.id,
-                      )
-                    ]
-                  }
-                  centerRef={
-                    centerRefs.current[
-                      ZOOM_LEVELS.findIndex(
-                        (item) => item.id === outgoingLevel.id,
-                      )
-                    ]
-                  }
-                />
-              </div>
-            )}
+            {/* Các lớp cảnh — mỗi cấp một wrapper BỀN theo id, đổi vai bằng
+                class chứ không gắn lại.
 
-            <div
-              key={`in-${level.id}`}
-              className="zoom-layer-in absolute inset-0"
-              style={{
-                ["--zoom-ms" as string]: `${FADE_MS}ms`,
-                ["--zoom-from" as string]:
-                  outgoing?.direction === "out" ? "2.6" : "0.35",
-              }}
-            >
-              <LevelScene
-                level={level}
-                locale={locale}
-                targetRef={targetRefs.current[index]}
-                centerRef={centerRefs.current[index]}
-              />
-            </div>
+                Vì sao phải bền: trước đây lớp ra đi và lớp hiện tại là hai
+                phần tử khác nhau, nên lúc chuyển cấp React GỠ cảnh người xem
+                đang nhìn và gắn một BẢN SAO MỚI của cảnh cũ ở camera mặc
+                định. Mọi tính toán đích (điểm chốt của tàu/vệt sao, cú trượt
+                đưa đích về giữa của mục 3) đều đo trên cảnh THẬT — đĩa đã
+                quay lệch pha, camera đã trượt — còn thứ hiện lên màn hình
+                lại là bản sao chưa quay, lõi thiên hà nằm nguyên ở giữa.
+                Kết quả người xem thấy tận mắt (chủ sản phẩm báo 2026-10-28):
+                tàu bay vào lỗ đen ở giữa Ngân Hà thay vì vào Mặt Trời, dù
+                vòng đánh dấu và số đo đều đúng. Giữ wrapper bền theo cấp
+                thì cảnh ra đi chính là cảnh vừa xem, nguyên trạng thái
+                camera và pha quay; hết lượt chuyển mới cắt khỏi `mountedIds`
+                và bị gỡ. */}
+            {mountedIds.map((id) => {
+              const lvlIndex = ZOOM_LEVELS.findIndex(
+                (item) => item.id === id,
+              );
+              const lvl = ZOOM_LEVELS[lvlIndex];
+              const isOutgoing = outgoing?.id === id;
+              if (!lvl || (!isOutgoing && lvlIndex !== index)) return null;
+              return (
+                <div
+                  key={`scene-${id}`}
+                  className={
+                    isOutgoing
+                      ? "zoom-layer-out absolute inset-0"
+                      : "zoom-layer-in absolute inset-0"
+                  }
+                  style={{
+                    ["--zoom-ms" as string]: `${FADE_MS}ms`,
+                    /* Lao qua cảnh cũ: phóng lớn hẳn chứ không chỉ nhích —
+                       cảm giác bay xuyên qua nó, không phải lùi khỏi nó. */
+                    ...(isOutgoing
+                      ? {
+                          ["--zoom-to" as string]:
+                            outgoing.direction === "in" ? "2.6" : "0.35",
+                        }
+                      : {
+                          ["--zoom-from" as string]:
+                            outgoing?.direction === "out" ? "2.6" : "0.35",
+                        }),
+                  }}
+                >
+                  <LevelScene
+                    level={lvl}
+                    locale={locale}
+                    targetRef={targetRefs.current[lvlIndex]}
+                    centerRef={centerRefs.current[lvlIndex]}
+                  />
+                </div>
+              );
+            })}
 
             {/* Lớp bay chỉ gắn khi thông số tàu của ĐÚNG lượt này đã có:
                 chiều vào có ngay lúc bấm, chiều ra chờ cảnh cha báo đích
