@@ -41,6 +41,7 @@ export default async function ModelsPage({
      chính trang chúng dẫn tới, chứ không viết một bản rút gọn riêng. Hai bản
      mô tả cho cùng một thứ là hai bản sẽ lệch nhau. */
   const tSky = await getTranslations("sky");
+  const tNightSky = await getTranslations("nightSky");
   const tZoom = await getTranslations("zoom");
   const tAtlas = await getTranslations("humanAtlas");
   const tEarth = await getTranslations("earthLive");
@@ -48,6 +49,7 @@ export default async function ModelsPage({
 
   const toolCopy = {
     sky: tSky,
+    nightSky: tNightSky,
     zoom: tZoom,
     humanAtlas: tAtlas,
     earthLive: tEarth,
