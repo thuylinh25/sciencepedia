@@ -637,6 +637,65 @@ Ba quyết định ngữ nghĩa, ghi lại kẻo lần sau bị "sửa cho tiệ
   tra cứu ra ngoài. Bấm vào canvas từ Phase 2 không làm gì cả — có chủ ý,
   đường vào panel là danh sách và ô tìm kiếm.
 
+### Phase 3: sân khấu, dòng thời gian, máy thời gian, tour và AI diễn giải
+
+Phase 3 không thêm engine nào và không đổi ngữ nghĩa giờ của Phase 2;
+nó biến trang từ "một khung trời + panel" thành một sân khấu có dòng
+thời gian, và mọi tính năng mới đều ăn theo cùng một trạng thái
+(`locationId`, `time`) nên URL/Chia sẻ/Chụp ảnh bám theo miễn phí.
+
+- **Sàn điều khiển nằm TRONG khung** (`components/night-sky/sky-deck.tsx`)
+  nên nó sống sót qua toàn màn hình — phần tử được fullscreen là chính
+  khung. Thanh trượt đo bằng **phút giờ tường**: cửa sổ [12:00 địa phương
+  của ngày đang xem → 12:00 hôm sau], 0–1440, để một vòng trượt luôn là
+  đúng một ngày địa phương kể cả ngày có DST. Nút chạy đẩy giờ bằng
+  `setInterval` 100 ms × tốc độ (×60/×300/×900 giây bầu trời mỗi giây
+  thật), dừng ở cuối cửa sổ; mọi thao tác đặt giờ thủ công đều dừng chạy.
+  Hai kỷ luật hiệu năng kèm theo: cập nhật `time` cho engine được gộp
+  theo `requestAnimationFrame` trong `sky-canvas.tsx`, và báo cáo panel
+  tính theo `time` **cắt xuống phút** — chạy 10 nhịp/giây không có nghĩa
+  là tính lại bầu trời 10 lần/giây. URL cũng chỉ ghi tối đa một lần/phút.
+- **HUD đọc phương vị từ chính engine vẽ.** Thể hiện VirtualSky giữ
+  trường `az_off` (mọi đường kéo chuột và `changeAzimuth` đều dồn vào
+  đó; phương vị tâm khung = `az_off + 180`), nên `sky-canvas` đọc thẳng
+  trường này qua một vòng thăm dò 250 ms thay vì tự theo dõi — biến theo
+  dõi riêng không thấy được cú kéo của người đọc. HUD (la bàn góc trái,
+  đồng hồ góc phải dưới) tự mờ còn 40% sau 3 giây không di chuột trên
+  khung. Nền sân khấu nhuộm theo trạng thái Mặt Trời của báo cáo
+  (ngày/chạng vạng/đêm) với chuyển tiếp 1 giây.
+- **Panel dưới breakpoint `lg` là bottom sheet** dính đáy viewport, ba
+  nấc (5,25rem / 52dvh / 88dvh), kéo bằng tay cầm (pointer events, ngưỡng
+  48px) hoặc chạm để luân phiên; chọn thiên thể nâng sheet lên ít nhất
+  nấc giữa. Sheet nằm ngoài phần tử toàn màn hình nên tự biến mất khi
+  fullscreen — lúc đó sàn điều khiển là bề mặt điều khiển duy nhất, đúng
+  ý đồ.
+- **Máy thời gian** (`lib/night-sky/moments.ts`): năm khoảnh khắc có
+  thật (Apollo 11, nhật thực toàn phần 24/10/1995 ở Phan Thiết, sao chổi
+  Halley 1986/2061, tối 2/9/1945) + "ngày bạn sinh" (21:00 giờ địa phương
+  tại nơi đang chọn). Quy tắc biên tập như mọi nội dung của trang: chỉ
+  sự kiện và mốc giờ kiểm chứng được mới vào lời dẫn — không bịa phút
+  toàn phần, không bịa chi tiết hiện trường; thẻ khoảnh khắc luôn kèm
+  dòng lưu ý vị trí hành tinh xa hiện tại chỉ gần đúng trong khung dựng
+  hình (số trong panel vẫn do astronomy-engine tính). Hai địa điểm mới
+  vào danh mục vì khoảnh khắc cần: Houston và Phan Thiết.
+- **Tour + trắc nghiệm sinh từ chính báo cáo đang xem**
+  (`lib/night-sky/tour.ts`, thuần, có kiểm thử): điểm dừng = mở đầu →
+  Mặt Trăng trước nếu đang trên trời → các hành tinh theo độ cao giảm
+  dần (tối đa 4) → 3 câu trắc nghiệm sinh từ cùng ảnh chụp đó (cao nhất
+  / pha trăng / hành tinh mọc tiếp theo, hết dữ kiện mọc thì đổi sang
+  câu hỏi hướng). Dưới 2 thiên thể trên chân trời thì tour từ chối chạy
+  và đề nghị nhảy tới hoàng hôn. Lời dẫn mỗi điểm dừng là trường
+  `factVi/factEn` một câu trong `catalog.ts` — rút từ mô tả sẵn có,
+  không thêm số liệu mới.
+- **AI giải thích đi qua hạ tầng trợ lý sẵn có, không có đường riêng.**
+  `POST /api/night-sky/explain` nhận CHỈ các dữ kiện đã tính bằng
+  astronomy-engine (nơi, lúc, trạng thái Mặt Trời, pha trăng, thiên thể
+  trên chân trời kèm độ cao/hướng), gọi `streamAnswer` của `lib/ai.ts`
+  (Gemini → OpenRouter, cùng giới hạn tần suất dùng chung với
+  `/api/ai/chat`) với chỉ dẫn hệ thống cấm dùng bất cứ thứ gì ngoài dữ
+  kiện được cấp, rồi trả `{text}`. AI ở đây là lớp diễn giải trên số đã
+  đo — không bao giờ là một nguồn số thứ hai.
+
 ---
 
 ## Bản đồ cơ thể người — Human Atlas thành module, không thành app

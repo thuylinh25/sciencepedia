@@ -224,10 +224,20 @@ const COMPASS: ReadonlyArray<{ vi: string; en: string }> = [
   { vi: "Tây Bắc", en: "Northwest" },
 ];
 
+/** Chỉ số hướng 0–7 (0 = Bắc, tăng theo chiều kim đồng hồ) theo phương vị. */
+export function compassIndexFor(azimuthDeg: number): number {
+  const normalized = ((azimuthDeg % 360) + 360) % 360;
+  return Math.floor((normalized + 22.5) / 45) % 8;
+}
+
 /** Tên hướng 8 hướng theo phương vị (0° = Bắc, 90° = Đông). */
 export function compassFor(azimuthDeg: number): { vi: string; en: string } {
-  const normalized = ((azimuthDeg % 360) + 360) % 360;
-  return COMPASS[Math.floor((normalized + 22.5) / 45) % 8];
+  return COMPASS[compassIndexFor(azimuthDeg)];
+}
+
+/** Tên hướng theo chỉ số 0–7 — cho HUD và câu hỏi trắc nghiệm dùng chỉ số. */
+export function compassName(index: number): { vi: string; en: string } {
+  return COMPASS[((index % 8) + 8) % 8];
 }
 
 const MOON_PHASES: ReadonlyArray<{ vi: string; en: string }> = [
@@ -241,13 +251,23 @@ const MOON_PHASES: ReadonlyArray<{ vi: string; en: string }> = [
   { vi: "Lưỡi liềm cuối tháng", en: "Waning Crescent" },
 ];
 
+/** Chỉ số khoảng pha 0–7 theo góc pha (0° = trăng non, 180° = trăng tròn). */
+export function moonPhaseIndexFor(phaseAngleDeg: number): number {
+  const normalized = ((phaseAngleDeg % 360) + 360) % 360;
+  return Math.floor((normalized + 22.5) / 45) % 8;
+}
+
 /** Tám khoảng pha biên tập theo góc pha (0° = trăng non, 180° = trăng tròn). */
 export function moonPhaseName(phaseAngleDeg: number): {
   vi: string;
   en: string;
 } {
-  const normalized = ((phaseAngleDeg % 360) + 360) % 360;
-  return MOON_PHASES[Math.floor((normalized + 22.5) / 45) % 8];
+  return MOON_PHASES[moonPhaseIndexFor(phaseAngleDeg)];
+}
+
+/** Tên pha theo chỉ số 0–7 — cho câu hỏi trắc nghiệm dùng chỉ số. */
+export function moonPhaseNameAt(index: number): { vi: string; en: string } {
+  return MOON_PHASES[((index % 8) + 8) % 8];
 }
 
 /* ------------------------------------------------------------------ */

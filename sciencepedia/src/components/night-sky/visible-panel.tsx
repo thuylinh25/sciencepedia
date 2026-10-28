@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { ChevronRight, Moon as MoonIcon, Sun } from "lucide-react";
+import { ChevronRight, Moon as MoonIcon, Route, Sun } from "lucide-react";
 
 import type { SkyReport } from "@/lib/night-sky/astro";
 import { findCatalogEntry, type CatalogEntry } from "@/lib/night-sky/catalog";
@@ -21,6 +21,7 @@ export function VisiblePanel({
   viewedTime,
   isNow,
   onSelect,
+  onStartTour,
 }: {
   report: SkyReport | null;
   placeLabel: string;
@@ -28,6 +29,8 @@ export function VisiblePanel({
   viewedTime: Date;
   isNow: boolean;
   onSelect: (entry: CatalogEntry) => void;
+  /** Mở tour dẫn — tour dựng từ chính báo cáo này (xem `tour.ts`). */
+  onStartTour?: () => void;
 }) {
   const t = useTranslations("nightSky");
   const locale = useLocale();
@@ -77,9 +80,22 @@ export function VisiblePanel({
 
   return (
     <section className="rounded-2xl border bg-card p-4">
-      <h2 className="text-sm font-semibold tracking-tight">
-        {isNow ? t("visibleNow") : t("visibleAtTime")}
-      </h2>
+      <div className="flex items-center justify-between gap-3">
+        <h2 className="text-sm font-semibold tracking-tight">
+          {isNow ? t("visibleNow") : t("visibleAtTime")}
+        </h2>
+        {onStartTour && (
+          <button
+            type="button"
+            onClick={onStartTour}
+            disabled={!report}
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium transition-colors hover:bg-muted/60 disabled:opacity-50"
+          >
+            <Route className="size-3.5" />
+            {t("tourStart")}
+          </button>
+        )}
+      </div>
 
       {!report ? (
         <p className="mt-3 animate-pulse text-sm text-muted-foreground">
