@@ -16,11 +16,12 @@ export type CategoryNoticeKind = "health" | "traditional";
 
 const NOTICES: Record<string, CategoryNoticeKind> = {
   "suc-khoe": "health",
-  // Ba nhóm phương pháp truyền thống: công dụng được MÔ TẢ theo trường phái,
-  // không được trình bày như hiệu quả điều trị đã chứng minh.
-  "tac-dong-cot-song": "traditional",
-  "bam-huyet": "traditional",
-  "y-hoc-co-truyen": "traditional",
+  // Loại "traditional" từng gắn cho ba nhóm Tác động cột sống / Bấm huyệt /
+  // Y học cổ truyền (công dụng được MÔ TẢ theo trường phái, không trình bày
+  // như hiệu quả đã chứng minh). Cả ba nhóm đã bị xóa khỏi CSDL ngày
+  // 2026-10-28 theo quyết định của Linh — xem
+  // `scripts/remove-traditional-categories.ts`. Loại khung vẫn giữ ở đây
+  // cho một nhóm truyền thống tương lai nếu có quyết định biên tập mới.
 };
 
 export function categoryNotice(

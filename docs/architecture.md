@@ -1776,6 +1776,14 @@ trong iframe. Mỗi lúc một khung: mỗi khung là một WebGL context.
 Chốt 2026-10-05 (chủ sản phẩm). Tác động cột sống, Bấm huyệt, Y học cổ truyền (cùng Cơ thể
 người) là danh mục CON của `suc-khoe` trong bảng `Category` — `npm run taxonomy:health`.
 
+**Đã thay thế 2026-10-28:** cả ba nhóm truyền thống bị xóa khỏi production theo quyết
+định của chủ sản phẩm — danh mục lẫn 14 bài Tác động cột sống, bằng
+`scripts/remove-traditional-categories.ts` (có sao lưu, sửa link chết ở bài còn lại,
+xóa trong một transaction). Ánh xạ khung `traditional` trong `category-notices.ts` đã
+gỡ (loại khung vẫn giữ cho quyết định biên tập tương lai); `seed-health-groups.ts` chỉ
+còn sở hữu Cơ thể người. Mục dưới đây ghi lại quyết định 2026-10-05 khi các nhóm còn
+tồn tại.
+
 **Vì sao không lên menu.** Menu Khám phá đọc `getNavigationCategories` (chỉ `parentId: null`).
 Lên gốc là menu dài thêm và đặt phương pháp truyền thống ngang hàng Vật lý, Hoá học — ngầm
 nói chúng là một ngành khoa học. Submenu bay sang phải bị loại vì làm menu phức tạp. Đường vào

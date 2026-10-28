@@ -26,6 +26,16 @@ thần kinh, lưới góc nhìn theo hệ kiểu Human Anatomy Atlas, chất li�
 HAA), **thẩm định nối tiếp từng bài** đăng qua /admin, và **Hành trình thu phóng**
 (đợt 2026-10-26). Việc biên tập còn treo của nhánh Sức khoẻ vẫn ở mục 2.
 
+**ĐÓNG ĐỢT 2026-10-28 — Linh quyết định xóa hẳn mảng truyền thống.** Ba danh mục
+Tác động cột sống / Bấm huyệt / Y học cổ truyền cùng 14 bài Tác động cột sống bị
+xóa khỏi CSDL bằng `npm run taxonomy:remove-traditional -- --write` (script có
+sao lưu + sửa link chết trong bài Huyệt đạo; bước ghi CSDL là bước người chạy).
+Phía code: gỡ 3 slug khỏi `seed-health-groups.ts` và `category-notices.ts`.
+Mọi việc treo của đợt này ở mục 2 (xếp bài Huyệt đạo, nội dung Bấm huyệt / Y học
+cổ truyền, Q-2/P-2/P-10/P-22, PDF nguồn) đều hết hiệu lực. Pipeline spine
+(`src/lib/spine/`, `scripts/spine-*`, `content/tac-dong-cot-song/`) còn trong
+repo nhưng đã mồ côi — gỡ hay giữ là quyết định riêng, chưa chốt.
+
 ## 2. Việc đang dở / bước tiếp theo
 
 ### Thẩm định bài đăng thẳng qua /admin
