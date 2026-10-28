@@ -80,7 +80,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { SkyCanvas } from "@/components/night-sky/sky-canvas";
+import {
+  SkyCanvas,
+  type SkyCursorPos,
+} from "@/components/night-sky/sky-canvas";
 import { SkyDeck } from "@/components/night-sky/sky-deck";
 import { ObjectSearch } from "@/components/night-sky/object-search";
 import { VisiblePanel } from "@/components/night-sky/visible-panel";
@@ -90,8 +93,10 @@ import {
 } from "@/components/night-sky/object-panel";
 import {
   fmtDayMonth,
+  fmtDecDm,
   fmtDegrees,
   fmtEventTime,
+  fmtRaHm,
 } from "@/components/night-sky/sky-format";
 import { Badge } from "@/components/ui/badge";
 
@@ -566,6 +571,57 @@ export function NightSky() {
       if (hudTimerRef.current) window.clearTimeout(hudTimerRef.current);
     };
   }, [wakeHud]);
+
+  /* Ô đọc toạ độ tại con trỏ: RA/Dec do engine vẽ tính từ phép chiếu
+     của chính nó (callback cursor qua SkyCanvas); độ cao + hướng đổi
+     tại đây bằng ĐÚNG đường đổi của panel (`equatorialAltAz` — RA của
+     engine là độ, chia 15 thành giờ như catalog vẫn dùng). Di chuột
+     bắn sự kiện nhanh hơn nhịp render nhiều, nên handler ghi thẳng
+     text/opacity vào nút DOM qua ref — không một lần setState nào.
+     Bối cảnh (engine tính, nơi, lúc) cũng qua ref để handler không
+     đổi danh tính theo nhịp render của trang. */
+  const cursorBoxRef = useRef<HTMLDivElement>(null);
+  const cursorContextRef = useRef({
+    engine,
+    lat: observer.lat,
+    lon: observer.lon,
+    time,
+    isEnglish,
+  });
+  cursorContextRef.current = {
+    engine,
+    lat: observer.lat,
+    lon: observer.lon,
+    time,
+    isEnglish,
+  };
+  const handleCursor = useCallback(
+    (pos: SkyCursorPos | null) => {
+      const box = cursorBoxRef.current;
+      if (!box) return;
+      if (!pos) {
+        box.style.opacity = "0";
+        return;
+      }
+      const ctx = cursorContextRef.current;
+      let text = `${t("cursorRa")} ${fmtRaHm(pos.raDeg)} · ${t("cursorDec")} ${fmtDecDm(pos.decDeg)}`;
+      if (ctx.engine) {
+        const { altitudeDeg, azimuthDeg } = equatorialAltAz(
+          ctx.engine,
+          pos.raDeg / 15,
+          pos.decDeg,
+          ctx.lat,
+          ctx.lon,
+          ctx.time,
+        );
+        const compass = compassFor(azimuthDeg);
+        text += ` · ${t("statAltitude")} ${fmtDegrees(altitudeDeg)} · ${ctx.isEnglish ? compass.en : compass.vi}`;
+      }
+      box.textContent = text;
+      box.style.opacity = "1";
+    },
+    [t],
+  );
 
   const applyMoment = useCallback(
     (moment: SkyMoment) => {
@@ -1088,6 +1144,7 @@ export function NightSky() {
               onReady={() => setReady(true)}
               focusRequest={focusRequest}
               onAzimuth={setViewAzimuth}
+              onCursor={handleCursor}
             />
 
             {!ready && (
@@ -1128,6 +1185,18 @@ export function NightSky() {
                 · {Math.round(viewAzimuth)}°
               </div>
             )}
+            {/* Ô đọc toạ độ tại con trỏ, ngay dưới HUD la bàn: cột trái
+                phía trên là chỗ trống duy nhất trong mọi trạng thái —
+                góc trái phía dưới đã có thẻ tour/thẻ đề nghị hoàng hôn
+                (bottom-24, z-20) nên đặt ở đó là bị che mỗi khi tour
+                chạy. Nội dung do handleCursor ghi thẳng vào DOM; ở đây
+                chỉ dựng khung rỗng đang ẩn. Nằm trong phần tử toàn màn
+                hình nên vào toàn màn hình vẫn đi theo, như sàn. */}
+            <div
+              ref={cursorBoxRef}
+              aria-hidden
+              className="pointer-events-none absolute top-12 left-3 z-10 max-w-[calc(100%-1.5rem)] truncate rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-xs font-medium text-white tabular-nums opacity-0 backdrop-blur-sm transition-opacity duration-300"
+            />
             <div
               aria-hidden
               className={cn(
