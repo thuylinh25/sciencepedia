@@ -844,6 +844,10 @@ calvaria, không phải sọ não). Viết lại một trường đã duyệt th
 
 ## Tác động cột sống: tư liệu được lưu, không phải kết luận của Sciencepedia
 
+**Đã hết hiệu lực 2026-10-28:** mảng Tác động cột sống đã bị xóa khỏi site (bài, danh
+mục và cả pipeline) theo quyết định của chủ sản phẩm. Mục này chỉ còn là hồ sơ của
+chính sách lúc tư liệu còn được lưu.
+
 Chốt 2026-10-05 (chủ sản phẩm), khi nhập tài liệu "Phương pháp Tác động Cột sống Việt Nam"
 (Chi hội Tác động cột sống Hà Nội — Hội Đông y TP Hà Nội). Dữ liệu ở
 `sciencepedia/content/tac-dong-cot-song/`, máy ở `src/lib/spine/` + `scripts/spine-extract.ts`.

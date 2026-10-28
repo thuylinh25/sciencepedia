@@ -11,7 +11,7 @@ import { ScrollStrip } from "@/components/ui/scroll-strip";
 import { AtlasEmbed } from "@/components/article/atlas-embed";
 
 /**
- * Link `…#atlas-embed` (sinh bởi `npm run spine:build`) là chỗ đặt khung Bản đồ cơ thể
+ * Link `…#atlas-embed` là chỗ đặt khung Bản đồ cơ thể
  * người ngay trong bài, bấm mới tải. Link `#atlas-viewer` thường vẫn dẫn sang trang atlas.
  */
 const ATLAS_EMBED = /^\/(?:[a-z]{2}\/)?human-atlas\?[^#]*#atlas-embed$/;
