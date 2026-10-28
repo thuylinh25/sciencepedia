@@ -9,7 +9,12 @@ import { useProgressiveTexture } from "@/components/solar/use-progressive-textur
 import {
   TargetTracker,
   type ZoomTargetRef,
+  type ZoomTargetWorldRef,
 } from "@/components/zoom/target-tracker";
+import {
+  CenterTargetRig,
+  type CenterTargetRef,
+} from "@/components/zoom/center-target-rig";
 import {
   ASTEROID_BELT,
   PLANETS,
@@ -352,6 +357,7 @@ function PlanetBody({
   locale,
   realLongitude,
   targetRef,
+  worldRef,
 }: {
   planet: Planet;
   settings: SceneSettings;
@@ -361,6 +367,7 @@ function PlanetBody({
   /** Hành trình thu phóng: chỉ Trái Đất nhận hộp này — neo nằm trong nhóm
       thân nên bám theo hành tinh trên quỹ đạo. */
   targetRef?: ZoomTargetRef;
+  worldRef?: ZoomTargetWorldRef;
   /** Kinh độ hoàng đạo thật lấy từ JPL Horizons, radian; undefined thì dùng góc tượng trưng */
   realLongitude?: number;
 }) {
@@ -445,7 +452,7 @@ function PlanetBody({
           startAngle,
         )}
       >
-        {targetRef && <TargetTracker targetRef={targetRef} />}
+        {targetRef && <TargetTracker targetRef={targetRef} worldRef={worldRef} />}
         {settings.showMoons &&
           moons.map((moon, index) => (
             <MoonBody
@@ -876,6 +883,7 @@ export function SolarScene({
   cameraDistance,
   lowPower = false,
   targetRef,
+  centerRef,
 }: {
   settings: SceneSettings;
   selectedId: string | null;
@@ -919,7 +927,10 @@ export function SolarScene({
   longitudes?: Record<string, number>;
   /** Hành trình thu phóng: hộp nhận toạ độ màn hình của Trái Đất mỗi khung. */
   targetRef?: ZoomTargetRef;
+  /** Hành trình thu phóng: hộp lệnh trượt camera đưa Trái Đất về giữa khung. */
+  centerRef?: CenterTargetRef;
 }) {
+  const targetWorldRef = useRef<THREE.Vector3 | null>(null);
   const sunRadius = settings.realScale ? 2.2 : SUN.displayRadius;
 
   return (
@@ -1012,12 +1023,21 @@ export function SolarScene({
             locale={locale}
             realLongitude={longitudes?.[planet.id]}
             targetRef={planet.id === "earth" ? targetRef : undefined}
+            worldRef={planet.id === "earth" ? targetWorldRef : undefined}
           />
         </group>
       ))}
 
+      {centerRef && (
+        <CenterTargetRig centerRef={centerRef} worldRef={targetWorldRef} />
+      )}
+
       {interactive && (
         <OrbitControls
+          /* makeDefault để rig trượt camera (và các rig sau này) lấy được
+             điều khiển qua state — trước đây không chỗ nào cần nên chưa đặt;
+             không component nào trong cây Hệ Mặt Trời đọc state.controls. */
+          makeDefault
           enablePan
           enableDamping
           dampingFactor={0.06}

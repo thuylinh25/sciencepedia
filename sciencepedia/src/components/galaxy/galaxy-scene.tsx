@@ -26,7 +26,12 @@ import {
 import {
   TargetTracker,
   type ZoomTargetRef,
+  type ZoomTargetWorldRef,
 } from "@/components/zoom/target-tracker";
+import {
+  CenterTargetRig,
+  type CenterTargetRef,
+} from "@/components/zoom/center-target-rig";
 
 export type CameraView = "top" | "side" | "free";
 
@@ -118,6 +123,7 @@ function Galaxy({
   locale,
   lowPower,
   targetRef,
+  worldRef,
 }: {
   settings: GalaxySettings;
   onSelect: (id: string | null) => void;
@@ -125,6 +131,7 @@ function Galaxy({
   lowPower: boolean;
   /** Hành trình thu phóng: neo bám Mặt Trời. */
   targetRef?: ZoomTargetRef;
+  worldRef?: ZoomTargetWorldRef;
 }) {
   const group = useRef<THREE.Group>(null);
   const sprite = useRadialSprite(STAR_SPRITE_SIZE, STAR_STOPS);
@@ -236,7 +243,12 @@ function Galaxy({
             speed={settings.speed}
             scientific={settings.scientific}
           />
-          <SunMarker sprite={sprite} onSelect={onSelect} targetRef={targetRef} />
+          <SunMarker
+            sprite={sprite}
+            onSelect={onSelect}
+            targetRef={targetRef}
+            worldRef={worldRef}
+          />
         </>
       )}
 
@@ -588,12 +600,14 @@ function SunMarker({
   sprite,
   onSelect,
   targetRef,
+  worldRef,
 }: {
   sprite: THREE.Texture;
   onSelect: (id: string) => void;
   /** Hành trình thu phóng: neo đặt trong nhóm này, thừa hưởng vòng quay
       của đĩa nên luôn bám đúng Mặt Trời trên màn hình. */
   targetRef?: ZoomTargetRef;
+  worldRef?: ZoomTargetWorldRef;
 }) {
   const ring = useRef<THREE.Mesh>(null);
   const sun = GALAXY_FEATURES.find((feature) => feature.id === "sun");
@@ -617,7 +631,7 @@ function SunMarker({
 
   return (
     <group position={[x, y, z]}>
-      {targetRef && <TargetTracker targetRef={targetRef} />}
+      {targetRef && <TargetTracker targetRef={targetRef} worldRef={worldRef} />}
       {/* Đường dẫn từ nhãn xuống đúng vị trí trong đĩa */}
       <mesh position={[0, LABEL_HEIGHT / 2, 0]}>
         <cylinderGeometry args={[0.012, 0.012, LABEL_HEIGHT, 6]} />
@@ -788,6 +802,7 @@ export function GalaxyScene({
   transparent = false,
   lowPower = false,
   targetRef,
+  centerRef,
 }: {
   settings: GalaxySettings;
   onSelect: (id: string | null) => void;
@@ -814,8 +829,11 @@ export function GalaxyScene({
   lowPower?: boolean;
   /** Hành trình thu phóng: hộp nhận toạ độ màn hình của Mặt Trời mỗi khung. */
   targetRef?: ZoomTargetRef;
+  /** Hành trình thu phóng: hộp lệnh trượt camera đưa Mặt Trời về giữa khung. */
+  centerRef?: CenterTargetRef;
 }) {
   const controls = useRef<OrbitControlsImpl>(null);
+  const targetWorldRef = useRef<THREE.Vector3 | null>(null);
 
   return (
     <Canvas
@@ -858,7 +876,12 @@ export function GalaxyScene({
         locale={locale}
         lowPower={lowPower}
         targetRef={targetRef}
+        worldRef={targetWorldRef}
       />
+
+      {centerRef && (
+        <CenterTargetRig centerRef={centerRef} worldRef={targetWorldRef} />
+      )}
 
       {/* Tour giành quyền điều khiển camera; CameraRig nhường lại khi tour bật */}
       {settings.tour ? (
