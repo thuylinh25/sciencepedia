@@ -1,7 +1,7 @@
 # VirtualSky — ghi công và giấy phép
 
 Thư mục này chứa bản sao **tự host** của VirtualSky, planetarium chạy trên
-trình duyệt, phục vụ trang `/night-sky` ("Bầu trời đêm nay") của Sciencepedia.
+trình duyệt, phục vụ trang `/night-sky` ("Mô phỏng bầu trời") của Sciencepedia.
 
 - Tác giả: **Stuart Lowe**, khởi tạo tại **Las Cumbres Observatory (LCO)**
   — "(c) Stuart Lowe, Las Cumbres Observatory Global Telescope" (theo dòng
@@ -34,4 +34,30 @@ thử, trang ví dụ và `excanvas.min.js` (chỉ cho Internet Explorer).
 
 ## Sửa đổi so với bản gốc
 
-Không sửa đổi mã engine. `lang/vi.json` là tệp mới do Sciencepedia viết.
+- `lang/vi.json` là tệp mới do Sciencepedia viết.
+- **Phase 2 (2026-10-28):** `VirtualSky.prototype.toggleInfoBox` trong
+  `virtualsky.js` được thêm một dòng `return this;` ở đầu hàm (có chú thích
+  tại chỗ) để vô hiệu hoá hộp thông tin tích sẵn của engine — thông tin
+  thiên thể do panel của Sciencepedia hiển thị. Đây là sửa đổi mã engine
+  duy nhất; cấu hình của Sciencepedia vốn không truyền tuỳ chọn `objects`
+  nên hộp đó cũng không bao giờ có nội dung, dòng `return` chỉ chốt chặn
+  để bản nâng cấp engine sau này không vô tình bật lại nó (kèm theo các
+  request tra cứu ra ngoài mà Sciencepedia không cho phép).
+
+## astronomy-engine — thư viện tính toán thiên văn (Phase 2)
+
+Cùng thư mục này chứa `astronomy.browser.js`: bản dựng trình duyệt của
+**astronomy-engine 2.1.19** (Don Cross — cosinekitty), thư viện tính vị
+trí Mặt Trời, Mặt Trăng và các hành tinh, giờ mọc/lặn và pha trăng ngay
+trong trình duyệt.
+
+- Nguồn: gói npm chính thức `astronomy-engine@2.1.19`,
+  https://registry.npmjs.org/astronomy-engine/-/astronomy-engine-2.1.19.tgz
+  (dự án gốc: https://github.com/cosinekitty/astronomy).
+- Giấy phép: **MIT** — bản đầy đủ ở `astronomy-engine.LICENSE.txt` cùng
+  thư mục (gói npm không kèm tệp LICENSE riêng; văn bản giấy phép lấy từ
+  phần đầu `@preserve` của mã nguồn, và cũng được giữ nguyên trong chính
+  tệp `astronomy.browser.js`).
+- Chỉ tệp bản dựng trình duyệt được vendor; mã nguồn còn lại của gói
+  không đưa vào. Sciencepedia không sửa đổi tệp này — mọi lời gọi đi qua
+  lớp bọc có kiểu trong `src/lib/night-sky/astro.ts`.
