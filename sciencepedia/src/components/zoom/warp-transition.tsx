@@ -4,6 +4,8 @@
 
 import { useEffect, useRef } from "react";
 
+import type { ZoomTargetRef } from "@/components/zoom/target-tracker";
+
 type Direction = "in" | "out";
 
 /** Số vệt sao. Đủ dày để đọc ra "đang lao đi", đủ thưa để điện thoại yếu
@@ -13,9 +15,18 @@ const STREAKS = 160;
 /**
  * Lớp "bay xuyên không gian" phủ lên lúc chuyển cấp.
  *
- * Thu vào: vệt sao toả ra từ tâm (ta lao tới trước) và một tàu vũ trụ bay chéo
- * từ góc dưới-trái vào giữa, nhỏ dần rồi mất hút vào cảnh kế tiếp. Thu ra: vệt
- * sao rút về tâm và tàu từ giữa quay đầu bay ngược ra phía người xem.
+ * Thu vào: vệt sao toả ra từ điểm đích (ta lao tới trước) và một tàu vũ trụ
+ * bay chéo từ góc dưới-trái vào đúng điểm đó, nhỏ dần rồi mất hút vào cảnh kế
+ * tiếp. Thu ra: vệt sao rút về điểm đích và tàu từ đó quay đầu bay ngược ra
+ * phía người xem.
+ *
+ * Điểm đích (`focusRef`) là vị trí trên màn hình của cấp kế tiếp trong cảnh
+ * hiện tại — không phải tâm khung. Trước đây mọi thứ đều nhắm vào tâm, nên
+ * cảnh Ngân Hà lao vào lõi thiên hà rồi hiện ra Hệ Mặt Trời (nằm ngoài rìa
+ * đĩa), và cảnh Hệ Mặt Trời lao vào Mặt Trời rồi hiện ra Trái Đất: hình ảnh
+ * dạy sai vị trí. Điểm đích do các cảnh 3D báo ra từng khung (xem
+ * `target-tracker.tsx`); không nhắm được thì hành trình đưa tâm khung vào,
+ * giữ hành vi cũ.
  *
  * Vẽ bằng canvas 2D chứ không thêm một cảnh WebGL: lúc này đã có hai cảnh 3D
  * cùng sống để hoà mờ, thêm ngữ cảnh WebGL thứ ba là chỗ điện thoại dễ mất
@@ -24,9 +35,22 @@ const STREAKS = 160;
 export function WarpTransition({
   direction,
   durationMs,
+  focusRef,
+  shipX,
+  shipY,
+  shipRot,
+  shipFlip,
 }: {
   direction: Direction;
   durationMs: number;
+  /** Điểm đích theo phần trăm khung; đọc lại mỗi khung hình vẽ. */
+  focusRef: ZoomTargetRef;
+  /** Đích của tàu (phần trăm khung) và hướng mũi tàu, hành trình tính sẵn
+      ở lúc bắt đầu chuyển cấp — keyframes CSS chốt giá trị khi chạy. */
+  shipX: number;
+  shipY: number;
+  shipRot: number;
+  shipFlip: 1 | -1;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -41,9 +65,9 @@ export function WarpTransition({
     canvas.height = Math.round(height * dpr);
     ctx.scale(dpr, dpr);
 
-    const cx = width / 2;
-    const cy = height / 2;
-    const maxR = Math.hypot(cx, cy);
+    /* Bán kính phủ: đường chéo khung, đủ cho điểm tụ ở bất cứ đâu trong khung
+       (trước đây là khoảng cách từ tâm tới góc — điểm tụ ghim ở tâm). */
+    const maxR = Math.hypot(width, height);
 
     /* Mỗi vệt là một hướng cố định và một bán kính. Đi vào: bán kính tăng theo
        cấp số nhân (gần tâm chậm, ra rìa nhanh — đúng phối cảnh khi lao tới).
@@ -66,6 +90,13 @@ export function WarpTransition({
       const t = Math.min((now - start) / durationMs, 1);
       const dt = Math.min((now - last) / 1000, 0.05);
       last = now;
+
+      /* Điểm tụ đọc lại mỗi khung: khi lùi ra, đích nằm trong cảnh cha vừa
+         gắn và vẫn đang di chuyển (đĩa quay, Trái Đất chạy), vệt sao phải
+         bám theo chứ không chốt ở toạ độ lúc bắt đầu. */
+      const focus = focusRef.current;
+      const cx = ((focus?.x ?? 50) / 100) * width;
+      const cy = ((focus?.y ?? 50) / 100) * height;
 
       /* Tốc độ lên rồi xuống theo nửa sóng sin: tăng tốc, lao, hãm. */
       const speed = Math.sin(Math.PI * t);
@@ -116,13 +147,19 @@ export function WarpTransition({
 
     frame = requestAnimationFrame(draw);
     return () => cancelAnimationFrame(frame);
-  }, [direction, durationMs]);
+  }, [direction, durationMs, focusRef]);
 
   return (
     <div
       aria-hidden
       className="pointer-events-none absolute inset-0 overflow-hidden"
-      style={{ ["--warp-ms" as string]: `${durationMs}ms` }}
+      style={{
+        ["--warp-ms" as string]: `${durationMs}ms`,
+        ["--ship-x" as string]: `${shipX}%`,
+        ["--ship-y" as string]: `${shipY}%`,
+        ["--ship-rot" as string]: `${shipRot}deg`,
+        ["--ship-flx" as string]: `${shipFlip}`,
+      }}
     >
       {/* Quầng tối ở tâm và viền: kéo mắt vào điểm tụ của phối cảnh. */}
       <div className="warp-vignette absolute inset-0" />

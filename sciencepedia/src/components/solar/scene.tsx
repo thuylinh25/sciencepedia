@@ -7,6 +7,10 @@ import * as THREE from "three";
 
 import { useProgressiveTexture } from "@/components/solar/use-progressive-texture";
 import {
+  TargetTracker,
+  type ZoomTargetRef,
+} from "@/components/zoom/target-tracker";
+import {
   ASTEROID_BELT,
   PLANETS,
   SUN,
@@ -347,12 +351,16 @@ function PlanetBody({
   onSelect,
   locale,
   realLongitude,
+  targetRef,
 }: {
   planet: Planet;
   settings: SceneSettings;
   selected: boolean;
   onSelect: (id: string) => void;
   locale: string;
+  /** Hành trình thu phóng: chỉ Trái Đất nhận hộp này — neo nằm trong nhóm
+      thân nên bám theo hành tinh trên quỹ đạo. */
+  targetRef?: ZoomTargetRef;
   /** Kinh độ hoàng đạo thật lấy từ JPL Horizons, radian; undefined thì dùng góc tượng trưng */
   realLongitude?: number;
 }) {
@@ -437,6 +445,7 @@ function PlanetBody({
           startAngle,
         )}
       >
+        {targetRef && <TargetTracker targetRef={targetRef} />}
         {settings.showMoons &&
           moons.map((moon, index) => (
             <MoonBody
@@ -866,6 +875,7 @@ export function SolarScene({
   transparent = false,
   cameraDistance,
   lowPower = false,
+  targetRef,
 }: {
   settings: SceneSettings;
   selectedId: string | null;
@@ -907,6 +917,8 @@ export function SolarScene({
   lowPower?: boolean;
   /** Kinh độ hoàng đạo thật theo id hành tinh, nếu lấy được từ JPL Horizons */
   longitudes?: Record<string, number>;
+  /** Hành trình thu phóng: hộp nhận toạ độ màn hình của Trái Đất mỗi khung. */
+  targetRef?: ZoomTargetRef;
 }) {
   const sunRadius = settings.realScale ? 2.2 : SUN.displayRadius;
 
@@ -999,6 +1011,7 @@ export function SolarScene({
             onSelect={onSelect}
             locale={locale}
             realLongitude={longitudes?.[planet.id]}
+            targetRef={planet.id === "earth" ? targetRef : undefined}
           />
         </group>
       ))}

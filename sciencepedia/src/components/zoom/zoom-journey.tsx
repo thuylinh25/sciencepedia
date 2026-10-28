@@ -16,6 +16,10 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { WarpTransition } from "@/components/zoom/warp-transition";
+import type {
+  ZoomTargetPoint,
+  ZoomTargetRef,
+} from "@/components/zoom/target-tracker";
 
 const UniverseScene = dynamic(
   () =>
@@ -71,6 +75,136 @@ function supportsWebGL(): boolean {
   }
 }
 
+/** Tâm khung — đích dự phòng khi không nhắm được đích thật (đích ra khỏi
+    khung sau khi người xem kéo xoay, hoặc ở sau camera). Bay vào tâm là hành
+    vi cũ trước P2; giữ nó làm phương án lùi thì một cú kéo xấu chỉ làm mất
+    độ chính xác của một lượt chuyển, không làm hỏng cả hành trình. */
+const CENTER: ZoomTargetPoint = { x: 50, y: 50 };
+
+/** Điểm đích dùng được hay không: phải nằm trong khung. Ngoài khung thì
+    phóng quanh nó chỉ kéo cảnh đi ngang, đọc không ra "lao vào chấm đó". */
+function usableTarget(point: ZoomTargetPoint | null): ZoomTargetPoint | null {
+  if (!point) return null;
+  return point.x >= 0 && point.x <= 100 && point.y >= 0 && point.y <= 100
+    ? point
+    : null;
+}
+
+/** Góc xuất phát của tàu trong lớp bay, phần trăm khung (xem keyframes
+    `warp-ship-*` trong globals.css: điểm đầu của chiều vào, điểm cuối của
+    chiều ra). */
+const SHIP_START: ZoomTargetPoint = { x: 28, y: 74 };
+
+/**
+ * Hướng mũi tàu cho một chuyến bay từ `from` tới `to`.
+ *
+ * Tàu vẽ mũi hướng phải. Bay về phía phải thì xoay thẳng theo hướng bay;
+ * bay về phía trái thì lật gương (`flip: -1`) rồi mới xoay — xoay 180° sẽ
+ * lộn buồng lái xuống dưới, cùng lý do lớp bay trước đây dùng `scaleX(-1)`
+ * cho chiều ra. `aspect` là tỉ lệ rộng/cao của khung: toạ độ đang là phần
+ * trăm, hai trục khác đơn vị thật, không quy đổi thì góc lệch theo khung.
+ */
+function shipPose(
+  from: ZoomTargetPoint,
+  to: ZoomTargetPoint,
+  aspect: number,
+): { rot: number; flip: 1 | -1 } {
+  const theta =
+    (Math.atan2(to.y - from.y, (to.x - from.x) * aspect) * 180) / Math.PI;
+  if (theta >= -90 && theta <= 90) return { rot: theta, flip: 1 };
+  return { rot: 180 - theta, flip: -1 };
+}
+
+/**
+ * Vòng đánh dấu đích cấp kế tiếp, nổi trên cảnh hiện tại.
+ *
+ * Vị trí đọc từ `targetRef` bằng rAF và ghi thẳng vào style: đích di chuyển
+ * liên tục (đĩa quay, Trái Đất chạy) mà đưa qua state thì cả cây React render
+ * lại 60 lần mỗi giây. Đích ra khỏi khung thì vòng mờ hẳn đi — không có vòng
+ * nào để bấm, và nút Thu vào vẫn còn đó với phương án lùi vào tâm.
+ */
+function TargetMarker({
+  targetRef,
+  color,
+  label,
+  ariaLabel,
+  reducedMotion,
+  onActivate,
+}: {
+  targetRef: ZoomTargetRef;
+  color: string;
+  label: string;
+  ariaLabel: string;
+  reducedMotion: boolean;
+  onActivate: () => void;
+}) {
+  const ref = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    let raf = 0;
+    const tick = () => {
+      const el = ref.current;
+      const point = usableTarget(targetRef.current);
+      if (el) {
+        if (point) {
+          el.style.left = `${point.x}%`;
+          el.style.top = `${point.y}%`;
+          el.style.opacity = "1";
+          el.style.pointerEvents = "auto";
+        } else {
+          el.style.opacity = "0";
+          el.style.pointerEvents = "none";
+        }
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [targetRef]);
+
+  return (
+    <button
+      ref={ref}
+      type="button"
+      onClick={onActivate}
+      aria-label={ariaLabel}
+      className="absolute z-10 size-11 -translate-x-1/2 -translate-y-1/2 rounded-full transition-opacity duration-300 focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:outline-none"
+      style={{ left: "50%", top: "50%", opacity: 0, pointerEvents: "none" }}
+    >
+      {/* Vòng lan toả + vòng tĩnh + chấm tâm: cùng ngữ pháp với vòng đập ở
+          dấu Mặt Trời và vòng ngắm của mạng vũ trụ trong cảnh 3D. */}
+      <span
+        aria-hidden
+        className={cn(
+          "absolute inset-0 rounded-full border-2",
+          !reducedMotion && "zoom-target-ring",
+        )}
+        style={{ borderColor: color }}
+      />
+      <span
+        aria-hidden
+        className="absolute inset-0 rounded-full border-2"
+        style={{ borderColor: color }}
+      />
+      <span
+        aria-hidden
+        className="absolute top-1/2 left-1/2 size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full"
+        style={{ backgroundColor: color }}
+      />
+      <span
+        className="absolute top-1/2 left-full ml-2 -translate-y-1/2 rounded-full border px-2 py-0.5 text-[11px] font-medium whitespace-nowrap backdrop-blur"
+        style={{
+          borderColor: color,
+          color,
+          backgroundColor: "rgb(0 0 0 / 0.45)",
+        }}
+      >
+        {label}
+      </span>
+    </button>
+  );
+}
+
 /*
  * Ba cảnh trong hành trình đều BẬT nhãn, giống hệt trang mô hình đầy đủ.
  *
@@ -82,9 +216,14 @@ function supportsWebGL(): boolean {
 function LevelScene({
   level,
   locale,
+  targetRef,
 }: {
   level: ZoomLevel;
   locale: string;
+  /** Hộp để cảnh ghi toạ độ màn hình của đích cấp kế tiếp (Ngân Hà trong
+      mạng vũ trụ, Mặt Trời trong đĩa, Trái Đất trên quỹ đạo). Cấp Trái Đất
+      không có cấp kế tiếp nên không dùng. */
+  targetRef?: ZoomTargetRef;
 }) {
   const earth = PLANETS.find((planet) => planet.id === "earth");
 
@@ -103,6 +242,7 @@ function LevelScene({
             distance: 26,
           }}
           locale={locale}
+          targetRef={targetRef}
         />
       );
     case "milky-way":
@@ -122,6 +262,7 @@ function LevelScene({
           locale={locale}
           onTourStep={() => {}}
           onTourEnd={() => {}}
+          targetRef={targetRef}
         />
       );
     case "solar-system":
@@ -140,6 +281,7 @@ function LevelScene({
           selectedId={null}
           onSelect={() => {}}
           locale={locale}
+          targetRef={targetRef}
         />
       );
     case "earth":
@@ -192,6 +334,13 @@ function LevelScene({
  * Phủ lên trên là lớp bay xuyên không gian (`WarpTransition`): vệt sao và một
  * tên lửa lao vào tâm khi thu vào, bay ngược ra khi thu ra — chủ sản phẩm yêu
  * cầu 2026-10-03. Người bật "giảm chuyển động" không thấy lớp này.
+ *
+ * Từ P2, "tâm" ở trên là đích thật của cấp kế tiếp trong cảnh — Ngân Hà,
+ * Mặt Trời, Trái Đất — do các cảnh báo ra qua `target-tracker.tsx`, và cả
+ * ba lớp (phóng của cảnh cũ, vệt sao, tàu) cùng nhắm vào đó; cảnh hiện tại
+ * còn hiện một vòng "Phóng vào đây" tại đích. Trước P2 mọi lớp đều nhắm tâm
+ * khung: Ngân Hà → Hệ Mặt Trời lao vào lõi thiên hà, Hệ Mặt Trời → Trái Đất
+ * lao vào Mặt Trời — hình ảnh dạy sai vị trí trên một trang dạy tỉ lệ.
  */
 export function ZoomJourney() {
   const t = useTranslations("zoom");
@@ -210,6 +359,34 @@ export function ZoomJourney() {
   const seq = useRef(0);
   const [reducedMotion, setReducedMotion] = useState(false);
   const timer = useRef<number | null>(null);
+  const frameRef = useRef<HTMLDivElement>(null);
+
+  /* Một hộp đích cho mỗi cấp, cảnh của cấp đó ghi toạ độ màn hình của cấp
+     kế tiếp vào hộp của mình (xem `target-tracker.tsx`). Tạo một lần rồi giữ
+     nguyên danh tính qua mọi lần render: cảnh nhận hộp qua props, hộp đổi
+     chủ là neo trong cảnh mất chỗ ghi. */
+  const targetRefs = useRef<ZoomTargetRef[]>([]);
+  if (targetRefs.current.length === 0) {
+    targetRefs.current = ZOOM_LEVELS.map(() => ({ current: null }));
+  }
+
+  /* Điểm đích "sống" cho lớp bay đọc mỗi khung hình. Thu vào thì chốt ở lúc
+     bấm (ảnh chụp vị trí Trái Đất đúng khoảnh khắc đó); lùi ra thì effect bên
+     dưới chép liên tục từ hộp của cảnh cha vừa gắn. */
+  const focusRef = useRef<ZoomTargetPoint | null>(null);
+
+  /* Thông số tàu cho lượt chuyển hiện tại. Keyframes CSS chốt giá trị lúc
+     hoạt ảnh bắt đầu nên tàu phải có số trước khi lớp bay gắn; chiều lùi ra
+     phải chờ cảnh cha báo đích nên state này có thể đến trễ vài khung — lớp
+     bay chỉ gắn khi state khớp `seq` của lượt chuyển. */
+  const [ship, setShip] = useState<{
+    seq: number;
+    x: number;
+    y: number;
+    rot: number;
+    flip: 1 | -1;
+  } | null>(null);
+  const shipTimer = useRef<number | null>(null);
 
   useEffect(() => {
     setWebgl(supportsWebGL());
@@ -217,6 +394,23 @@ export function ZoomJourney() {
   }, []);
   useEffect(() => () => {
     if (timer.current) window.clearTimeout(timer.current);
+    if (shipTimer.current) window.clearTimeout(shipTimer.current);
+  }, []);
+
+  const frameAspect = useCallback(() => {
+    const frame = frameRef.current;
+    if (!frame || frame.clientHeight === 0) return 16 / 10;
+    return frame.clientWidth / frame.clientHeight;
+  }, []);
+
+  /* Ghi tâm phóng vào biến CSS trên khung: hai lớp cảnh (transform-origin),
+     quầng tối của lớp bay đều đọc từ đây. Ghi thẳng vào style chứ không qua
+     state — chiều lùi ra cập nhật theo từng khung hình. */
+  const writeFocusVars = useCallback((point: ZoomTargetPoint) => {
+    const frame = frameRef.current;
+    if (!frame) return;
+    frame.style.setProperty("--ox", `${point.x}%`);
+    frame.style.setProperty("--oy", `${point.y}%`);
   }, []);
 
   const go = useCallback(
@@ -224,14 +418,79 @@ export function ZoomJourney() {
       if (next < 0 || next >= ZOOM_LEVELS.length || next === index) return;
       const direction = next > index ? "in" : "out";
       seq.current += 1;
-      setOutgoing({ id: ZOOM_LEVELS[index].id, direction, seq: seq.current });
+      const thisSeq = seq.current;
+
+      if (shipTimer.current) window.clearTimeout(shipTimer.current);
+
+      if (direction === "in") {
+        /* Chốt đích NGAY lúc bấm, từ hộp của cảnh sắp rời: Trái Đất đang
+           chạy trên quỹ đạo, chậm một nhịp là tàu lao vào chỗ nó vừa rời. */
+        const focus =
+          usableTarget(targetRefs.current[index]?.current ?? null) ?? CENTER;
+        focusRef.current = focus;
+        writeFocusVars(focus);
+        const pose = shipPose(SHIP_START, focus, frameAspect());
+        setShip({ seq: thisSeq, x: focus.x, y: focus.y, ...pose });
+      } else {
+        /* Lùi ra: đích nằm trong cảnh cha CHƯA gắn, chưa có toạ độ. Xoá
+           điểm cũ, chờ effect chép điểm mới; quá 250 ms mà cảnh cha vẫn
+           chưa báo được (đích sau camera chẳng hạn) thì lùi về tâm. */
+        focusRef.current = null;
+        setShip(null);
+        shipTimer.current = window.setTimeout(() => {
+          focusRef.current = CENTER;
+          const pose = shipPose(CENTER, SHIP_START, frameAspect());
+          setShip({ seq: thisSeq, x: CENTER.x, y: CENTER.y, ...pose });
+        }, 250);
+      }
+
+      setOutgoing({ id: ZOOM_LEVELS[index].id, direction, seq: thisSeq });
       setIndex(next);
 
       if (timer.current) window.clearTimeout(timer.current);
       timer.current = window.setTimeout(() => setOutgoing(null), FADE_MS);
     },
-    [index],
+    [frameAspect, index, writeFocusVars],
   );
+
+  /* Trong lúc lùi ra, chép đích từ hộp của cảnh cha vào điểm sống + biến CSS
+     + thông số tàu (lần đầu có đích). Cảnh cha vừa gắn nên vài khung đầu hộp
+     còn trống; đĩa Ngân Hà lại quay và Trái Đất chạy nên phải chép liên tục
+     suốt lượt chuyển, không chốt sớm. */
+  useEffect(() => {
+    if (!outgoing || outgoing.direction !== "out") return;
+    let raf = 0;
+    const tick = () => {
+      const point = usableTarget(targetRefs.current[index]?.current ?? null);
+      if (point) {
+        focusRef.current = point;
+        writeFocusVars(point);
+        setShip((current) =>
+          current && current.seq === outgoing.seq
+            ? current
+            : {
+                seq: outgoing.seq,
+                x: point.x,
+                y: point.y,
+                ...shipPose(point, SHIP_START, frameAspect()),
+              },
+        );
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [frameAspect, index, outgoing, writeFocusVars]);
+
+  /* Hết lượt chuyển thì gỡ tâm phóng: lớp cảnh về scale 1, để lại biến thì
+     lượt sau (nếu không ghi đè) phóng quanh một điểm của cảnh khác. */
+  useEffect(() => {
+    if (outgoing) return;
+    const frame = frameRef.current;
+    if (!frame) return;
+    frame.style.removeProperty("--ox");
+    frame.style.removeProperty("--oy");
+  }, [outgoing]);
 
   /* Con lăn đổi cấp, theo quy ước bản đồ: cuộn tới (deltaY < 0) là thu vào.
 
@@ -242,7 +501,6 @@ export function ZoomJourney() {
 
      Ở cấp đầu/cuối, cuộn theo chiều không còn cấp thì KHÔNG chặn mặc định —
      trang cuộn tiếp, người đọc không bị kẹt trong khung cao gần một màn hình. */
-  const frameRef = useRef<HTMLDivElement>(null);
   const goRef = useRef(go);
   const indexRef = useRef(index);
   useEffect(() => {
@@ -357,7 +615,17 @@ export function ZoomJourney() {
                     outgoing.direction === "in" ? "2.6" : "0.35",
                 }}
               >
-                <LevelScene level={outgoingLevel} locale={locale} />
+                <LevelScene
+                  level={outgoingLevel}
+                  locale={locale}
+                  targetRef={
+                    targetRefs.current[
+                      ZOOM_LEVELS.findIndex(
+                        (item) => item.id === outgoingLevel.id,
+                      )
+                    ]
+                  }
+                />
               </div>
             )}
 
@@ -370,14 +638,43 @@ export function ZoomJourney() {
                   outgoing?.direction === "out" ? "2.6" : "0.35",
               }}
             >
-              <LevelScene level={level} locale={locale} />
+              <LevelScene
+                level={level}
+                locale={locale}
+                targetRef={targetRefs.current[index]}
+              />
             </div>
 
-            {outgoing && !reducedMotion && (
+            {/* Lớp bay chỉ gắn khi thông số tàu của ĐÚNG lượt này đã có:
+                chiều vào có ngay lúc bấm, chiều ra chờ cảnh cha báo đích
+                (hoặc quá hạn thì dùng tâm). Vệt sao đọc điểm sống mỗi khung
+                nên tự bám đích đang di chuyển. */}
+            {outgoing && !reducedMotion && ship && ship.seq === outgoing.seq && (
               <WarpTransition
                 key={`warp-${outgoing.seq}`}
                 direction={outgoing.direction}
                 durationMs={FADE_MS}
+                focusRef={focusRef}
+                shipX={ship.x}
+                shipY={ship.y}
+                shipRot={ship.rot}
+                shipFlip={ship.flip}
+              />
+            )}
+
+            {/* Vòng đánh dấu đích cấp kế tiếp — bấm vào cũng là thu vào.
+                Đang chuyển cấp thì ẩn: đích của cảnh cũ không còn ý nghĩa
+                khi cảnh mới đang lớn lên. */}
+            {!outgoing && index < ZOOM_LEVELS.length - 1 && (
+              <TargetMarker
+                targetRef={targetRefs.current[index]}
+                color={ZOOM_LEVELS[index + 1].color}
+                label={t("zoomInHere")}
+                ariaLabel={t("zoomInHereTo", {
+                  name: name(ZOOM_LEVELS[index + 1]),
+                })}
+                reducedMotion={reducedMotion}
+                onActivate={() => go(index + 1)}
               />
             )}
           </>

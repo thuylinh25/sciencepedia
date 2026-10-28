@@ -872,6 +872,35 @@
   animation: zoom-in var(--zoom-ms, 900ms) cubic-bezier(0, 0.55, 0.45, 1) forwards;
 }
 
+/* Tâm phóng của hai lớp: mặc định là tâm khung, nhưng hành trình đặt
+   `--ox`/`--oy` (phần trăm) vào đúng vị trí của cấp kế tiếp trong cảnh —
+   Ngân Hà trong mạng vũ trụ, Mặt Trời trong đĩa Ngân Hà, Trái Đất trên quỹ
+   đạo — để cú lao đi vào đúng cái chấm mà người xem vừa nhìn, không lao vào
+   tâm thiên hà hay vào Mặt Trời rồi hiện ra thứ khác (P2, "sai mạch không
+   gian"). Thiếu biến thì hành vi cũ: phóng quanh tâm. */
+.zoom-layer-out,
+.zoom-layer-in {
+  transform-origin: var(--ox, 50%) var(--oy, 50%);
+}
+
+/* Vòng đánh dấu đích "Phóng vào đây" trong hành trình thu phóng: một vòng
+   lan toả lặp lại quanh chấm đích, cùng nhịp với các vòng đập trong cảnh 3D
+   (dấu Mặt Trời của Ngân Hà, vòng ngắm của mạng vũ trụ đều đập ~2 giây). */
+.zoom-target-ring {
+  animation: zoom-target-pulse 1.9s ease-out infinite;
+}
+
+@keyframes zoom-target-pulse {
+  from {
+    transform: scale(0.55);
+    opacity: 0.95;
+  }
+  to {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+
 /* Tàu vũ trụ của lớp bay xuyên không gian (`zoom/warp-transition.tsx`).
    Thu vào: từ góc dưới-trái lao chéo vào tâm, nhỏ dần tới mất hút — người xem
    đi theo nó vào cấp nhỏ hơn. Thu ra: từ tâm quay đầu lao về phía người xem,
@@ -901,12 +930,18 @@
   animation: warp-ship-out var(--warp-ms, 1300ms) cubic-bezier(0.2, 0.4, 0.55, 1) forwards;
 }
 
+/* Đích của tàu không còn cố định ở tâm: `--ship-x`/`--ship-y` là vị trí của
+   cấp kế tiếp trong cảnh (phần trăm khung), `--ship-rot`/`--ship-flx` là
+   hướng mũi tàu tính từ hướng bay thật — bay sang trái thì lật gương thay vì
+   xoay, để buồng lái không lộn xuống dưới (cùng lý do với scaleX(-1) trước
+   đây). Thiếu biến thì giữ hành vi cũ: bay vào tâm, mũi chếch -28°. */
 @keyframes warp-ship-in {
   0% {
     left: 28%;
     top: 74%;
     opacity: 0;
-    transform: translate(-50%, -50%) rotate(-28deg) scale(1.15);
+    transform: translate(-50%, -50%) scaleX(var(--ship-flx, 1))
+      rotate(var(--ship-rot, -28deg)) scale(1.15);
   }
   15% {
     opacity: 1;
@@ -915,19 +950,21 @@
     opacity: 1;
   }
   100% {
-    left: 50%;
-    top: 50%;
+    left: var(--ship-x, 50%);
+    top: var(--ship-y, 50%);
     opacity: 0;
-    transform: translate(-50%, -50%) rotate(-28deg) scale(0.04);
+    transform: translate(-50%, -50%) scaleX(var(--ship-flx, 1))
+      rotate(var(--ship-rot, -28deg)) scale(0.04);
   }
 }
 
 @keyframes warp-ship-out {
   0% {
-    left: 50%;
-    top: 50%;
+    left: var(--ship-x, 50%);
+    top: var(--ship-y, 50%);
     opacity: 0;
-    transform: translate(-50%, -50%) scaleX(-1) rotate(28deg) scale(0.04);
+    transform: translate(-50%, -50%) scaleX(var(--ship-flx, -1))
+      rotate(var(--ship-rot, 28deg)) scale(0.04);
   }
   20% {
     opacity: 1;
@@ -939,7 +976,8 @@
     left: 28%;
     top: 74%;
     opacity: 0;
-    transform: translate(-50%, -50%) scaleX(-1) rotate(28deg) scale(1.6);
+    transform: translate(-50%, -50%) scaleX(var(--ship-flx, -1))
+      rotate(var(--ship-rot, 28deg)) scale(1.6);
   }
 }
 
@@ -959,8 +997,10 @@
 }
 
 .warp-vignette {
+  /* Quầng tối quanh điểm tụ của chuyến bay: cùng `--ox`/`--oy` với tâm
+     phóng của hai lớp cảnh, không còn ghim ở tâm khung. */
   background: radial-gradient(
-    circle at center,
+    circle at var(--ox, 50%) var(--oy, 50%),
     rgb(2 3 10 / 0.55) 0%,
     rgb(2 3 10 / 0) 22%,
     rgb(2 3 10 / 0) 60%,

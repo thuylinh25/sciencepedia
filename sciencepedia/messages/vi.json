@@ -609,6 +609,8 @@
     "levelOf": "Cấp {step}/{total}",
     "zoomIn": "Thu vào",
     "zoomOut": "Lùi ra",
+    "zoomInHere": "Phóng vào đây",
+    "zoomInHereTo": "Phóng vào {name}",
     "openFull": "Mở mô hình đầy đủ",
     "nextIsSmaller": "Cấp sau nhỏ hơn khoảng {factor} lần",
     "frameLabel": "Khung thu phóng",
