@@ -26,6 +26,10 @@ import {
   UNIVERSE_SCALES,
   landmarkPosition,
 } from "@/lib/universe-data";
+import {
+  TargetTracker,
+  type ZoomTargetRef,
+} from "@/components/zoom/target-tracker";
 
 export type UniverseSettings = {
   playing: boolean;
@@ -166,6 +170,7 @@ function Landmarks({
   hiddenLabels,
   locale,
   onSelect,
+  targetRef,
 }: {
   sprite: THREE.Texture;
   showLabels: boolean;
@@ -173,6 +178,8 @@ function Landmarks({
   hiddenLabels: Set<string>;
   locale: string;
   onSelect: (id: string) => void;
+  /** Hành trình thu phóng: neo bám mốc "nhà" (vị trí của Ngân Hà). */
+  targetRef?: ZoomTargetRef;
 }) {
   const pulse = useRef<THREE.Mesh>(null);
   const reticle = useCanvasTexture(RETICLE_SPRITE_SIZE, drawReticle);
@@ -198,6 +205,10 @@ function Landmarks({
 
         return (
           <group key={landmark.id} position={position}>
+            {/* Neo cho hành trình thu phóng: mốc "nhà" chính là Ngân Hà,
+                đích của cấp này. Neo là con của nhóm mốc nên thừa hưởng
+                cả vòng quay của mạng vũ trụ. */}
+            {home && targetRef && <TargetTracker targetRef={targetRef} />}
             {home && (
               <HomeMarkerScale>
                 <mesh ref={pulse}>
@@ -334,10 +345,12 @@ function Web({
   settings,
   locale,
   onSelect,
+  targetRef,
 }: {
   settings: UniverseSettings;
   locale: string;
   onSelect: (id: string) => void;
+  targetRef?: ZoomTargetRef;
 }) {
   const group = useRef<THREE.Group>(null);
   const sprite = useRadialSprite(STAR_SPRITE_SIZE, STAR_STOPS);
@@ -426,6 +439,7 @@ function Web({
         hiddenLabels={hiddenLabels}
         locale={locale}
         onSelect={onSelect}
+        targetRef={targetRef}
       />
     </group>
   );
@@ -520,10 +534,13 @@ export function UniverseScene({
   settings,
   locale,
   onSelect,
+  targetRef,
 }: {
   settings: UniverseSettings;
   locale: string;
   onSelect?: (id: string) => void;
+  /** Hành trình thu phóng: hộp nhận toạ độ màn hình của Ngân Hà mỗi khung. */
+  targetRef?: ZoomTargetRef;
 }) {
   return (
     <Canvas
@@ -555,6 +572,7 @@ export function UniverseScene({
         settings={settings}
         locale={locale}
         onSelect={onSelect ?? (() => {})}
+        targetRef={targetRef}
       />
 
       <ScaleRig distance={settings.distance} />

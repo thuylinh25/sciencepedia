@@ -23,6 +23,10 @@ import {
   TOUR_STOPS,
   galacticToScene,
 } from "@/lib/galaxy-data";
+import {
+  TargetTracker,
+  type ZoomTargetRef,
+} from "@/components/zoom/target-tracker";
 
 export type CameraView = "top" | "side" | "free";
 
@@ -113,11 +117,14 @@ function Galaxy({
   onSelect,
   locale,
   lowPower,
+  targetRef,
 }: {
   settings: GalaxySettings;
   onSelect: (id: string | null) => void;
   locale: string;
   lowPower: boolean;
+  /** Hành trình thu phóng: neo bám Mặt Trời. */
+  targetRef?: ZoomTargetRef;
 }) {
   const group = useRef<THREE.Group>(null);
   const sprite = useRadialSprite(STAR_SPRITE_SIZE, STAR_STOPS);
@@ -229,7 +236,7 @@ function Galaxy({
             speed={settings.speed}
             scientific={settings.scientific}
           />
-          <SunMarker sprite={sprite} onSelect={onSelect} />
+          <SunMarker sprite={sprite} onSelect={onSelect} targetRef={targetRef} />
         </>
       )}
 
@@ -580,9 +587,13 @@ const LABEL_HEIGHT = 1.6;
 function SunMarker({
   sprite,
   onSelect,
+  targetRef,
 }: {
   sprite: THREE.Texture;
   onSelect: (id: string) => void;
+  /** Hành trình thu phóng: neo đặt trong nhóm này, thừa hưởng vòng quay
+      của đĩa nên luôn bám đúng Mặt Trời trên màn hình. */
+  targetRef?: ZoomTargetRef;
 }) {
   const ring = useRef<THREE.Mesh>(null);
   const sun = GALAXY_FEATURES.find((feature) => feature.id === "sun");
@@ -606,6 +617,7 @@ function SunMarker({
 
   return (
     <group position={[x, y, z]}>
+      {targetRef && <TargetTracker targetRef={targetRef} />}
       {/* Đường dẫn từ nhãn xuống đúng vị trí trong đĩa */}
       <mesh position={[0, LABEL_HEIGHT / 2, 0]}>
         <cylinderGeometry args={[0.012, 0.012, LABEL_HEIGHT, 6]} />
@@ -775,6 +787,7 @@ export function GalaxyScene({
   interactive = true,
   transparent = false,
   lowPower = false,
+  targetRef,
 }: {
   settings: GalaxySettings;
   onSelect: (id: string | null) => void;
@@ -799,6 +812,8 @@ export function GalaxyScene({
    * Không đổi bố cục cảnh — xem chú thích ở `Galaxy`.
    */
   lowPower?: boolean;
+  /** Hành trình thu phóng: hộp nhận toạ độ màn hình của Mặt Trời mỗi khung. */
+  targetRef?: ZoomTargetRef;
 }) {
   const controls = useRef<OrbitControlsImpl>(null);
 
@@ -842,6 +857,7 @@ export function GalaxyScene({
         onSelect={onSelect}
         locale={locale}
         lowPower={lowPower}
+        targetRef={targetRef}
       />
 
       {/* Tour giành quyền điều khiển camera; CameraRig nhường lại khi tour bật */}
