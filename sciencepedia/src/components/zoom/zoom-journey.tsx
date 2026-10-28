@@ -130,14 +130,12 @@ function shipPose(
 function TargetMarker({
   targetRef,
   color,
-  label,
   ariaLabel,
   reducedMotion,
   onActivate,
 }: {
   targetRef: ZoomTargetRef;
   color: string;
-  label: string;
   ariaLabel: string;
   reducedMotion: boolean;
   onActivate: () => void;
@@ -195,16 +193,6 @@ function TargetMarker({
         className="absolute top-1/2 left-1/2 size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{ backgroundColor: color }}
       />
-      <span
-        className="absolute top-1/2 left-full ml-2 -translate-y-1/2 rounded-full border px-2 py-0.5 text-[11px] font-medium whitespace-nowrap backdrop-blur"
-        style={{
-          borderColor: color,
-          color,
-          backgroundColor: "rgb(0 0 0 / 0.45)",
-        }}
-      >
-        {label}
-      </span>
     </button>
   );
 }
@@ -348,7 +336,9 @@ function LevelScene({
  * Từ P2, "tâm" ở trên là đích thật của cấp kế tiếp trong cảnh — Ngân Hà,
  * Mặt Trời, Trái Đất — do các cảnh báo ra qua `target-tracker.tsx`, và cả
  * ba lớp (phóng của cảnh cũ, vệt sao, tàu) cùng nhắm vào đó; cảnh hiện tại
- * còn hiện một vòng "Phóng vào đây" tại đích. Trước P2 mọi lớp đều nhắm tâm
+ * còn hiện một vòng đánh dấu tại đích — chỉ vòng, không chữ: chủ sản phẩm
+ * bỏ nhãn "Phóng vào đây" ngày 2026-10-28, tên đích vẫn ở `aria-label`
+ * cho trình đọc màn hình. Trước P2 mọi lớp đều nhắm tâm
  * khung: Ngân Hà → Hệ Mặt Trời lao vào lõi thiên hà, Hệ Mặt Trời → Trái Đất
  * lao vào Mặt Trời — hình ảnh dạy sai vị trí trên một trang dạy tỉ lệ.
  * Mục 3 của P2 bổ sung sau: trước cú lao, camera của cảnh hiện tại trượt
@@ -741,7 +731,6 @@ export function ZoomJourney() {
               <TargetMarker
                 targetRef={targetRefs.current[index]}
                 color={ZOOM_LEVELS[index + 1].color}
-                label={t("zoomInHere")}
                 ariaLabel={t("zoomInHereTo", {
                   name: name(ZOOM_LEVELS[index + 1]),
                 })}

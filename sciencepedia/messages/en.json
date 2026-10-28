@@ -609,7 +609,6 @@
     "levelOf": "Level {step} of {total}",
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",
-    "zoomInHere": "Zoom in here",
     "zoomInHereTo": "Zoom into {name}",
     "openFull": "Open the full model",
     "nextIsSmaller": "The next level is about {factor} times smaller",
