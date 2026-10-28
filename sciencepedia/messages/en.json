@@ -817,6 +817,13 @@
         "cta": "View live",
         "metaA": "NASA EPIC imagery",
         "metaB": "One full rotation a day"
+      },
+      "nightSky": {
+        "title": "Sky Simulator",
+        "body": "See the stars, planets and constellations from anywhere on Earth, at any moment — past, present or future.",
+        "cta": "Open the simulator",
+        "metaA": "The sky from the ground",
+        "metaB": "{count} observing locations"
       }
     },
     "startHere": "Start here"
