@@ -41,8 +41,11 @@ import { revalidateSite } from "./revalidate-site";
  * `scripts/seed-health-groups.ts` (chạy lại seed không sinh lại chúng) và
  * khỏi ánh xạ khung "traditional" trong `src/lib/category-notices.ts`.
  * Pipeline spine (`src/lib/spine/`, `scripts/spine-*`,
- * `content/tac-dong-cot-song/`) KHÔNG thuộc đợt này — nó thành mồ côi sau
- * khi dữ liệu xóa, gỡ hay giữ là quyết định riêng.
+ * `content/tac-dong-cot-song/`) không thuộc đợt xóa dữ liệu này; nó đã bị
+ * gỡ khỏi repo ngay sau đó, cùng ngày, theo quyết định "dọn luôn" của Linh
+ * (PR dọn pipeline spine) — gồm cả tích hợp lúc chạy trong trang Human
+ * Atlas (chỉ mục đốt sống ↔ bài ở `human-atlas/page.tsx` và khung riêng
+ * trong bảng chi tiết cấu trúc).
  */
 const prisma = new PrismaClient();
 

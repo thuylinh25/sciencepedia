@@ -45,7 +45,6 @@ import {
  * Thêm danh mục có icon mới thì sửa file này trong cùng một thay đổi.
  */
 const ICONS: Record<string, LucideIcon> = {
-  // `spine:import` ghi "Activity" cho `tac-dong-cot-song`.
   Activity,
   Atom,
   Bone,

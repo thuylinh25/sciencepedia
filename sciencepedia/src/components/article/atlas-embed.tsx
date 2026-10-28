@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 
 /**
  * Bản đồ cơ thể người nhúng ngay trong bài, tại chỗ link
- * `[…](/human-atlas?structure=…#atlas-embed)` do `npm run spine:build` sinh.
+ * `[…](/human-atlas?structure=…#atlas-embed)` trong nội dung bài.
  *
  * ## Vì sao iframe tới chính trang `/human-atlas?embed=1`
  *

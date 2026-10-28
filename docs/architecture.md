@@ -1739,6 +1739,11 @@ sau ranh giới đó rồi; việc cần làm là đừng đẩy thêm bài nào
 
 ## Tác động cột sống — chỉ mục đốt sống ↔ bài sinh lúc build, không ở CSDL
 
+**Đã gỡ 2026-10-28:** toàn bộ mảng Tác động cột sống đã bị xóa (bài + danh mục khỏi
+CSDL; pipeline `src/lib/spine/`, `scripts/spine-*`, `content/tac-dong-cot-song/` và
+tích hợp chỉ mục này trong trang Human Atlas khỏi repo) theo quyết định của chủ sản
+phẩm. Mục này giữ lại như hồ sơ thiết kế của một tính năng đã thôi tồn tại.
+
 Chốt 2026-10-05. Bài "Tác động cột sống" nằm trong bảng `Article` như mọi bài; quan hệ
 đốt sống ↔ bài thì KHÔNG. Nó là `src/lib/spine/index.generated.json` (mã FMA → slug + vai),
 do `npm run spine:build` sinh từ `sciencepedia/content/tac-dong-cot-song/topics/*.json`.

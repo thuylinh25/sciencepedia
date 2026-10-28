@@ -33,8 +33,9 @@ sao lưu + sửa link chết trong bài Huyệt đạo; bước ghi CSDL là bư
 Phía code: gỡ 3 slug khỏi `seed-health-groups.ts` và `category-notices.ts`.
 Mọi việc treo của đợt này ở mục 2 (xếp bài Huyệt đạo, nội dung Bấm huyệt / Y học
 cổ truyền, Q-2/P-2/P-10/P-22, PDF nguồn) đều hết hiệu lực. Pipeline spine
-(`src/lib/spine/`, `scripts/spine-*`, `content/tac-dong-cot-song/`) còn trong
-repo nhưng đã mồ côi — gỡ hay giữ là quyết định riêng, chưa chốt.
+(`src/lib/spine/`, `scripts/spine-*`, `content/tac-dong-cot-song/`) đã được gỡ
+khỏi repo ngay sau đó cùng ngày theo quyết định "dọn luôn" của Linh (PR dọn
+pipeline spine), gồm cả tích hợp chỉ mục đốt sống ↔ bài trong trang Human Atlas.
 
 ## 2. Việc đang dở / bước tiếp theo
 
@@ -102,9 +103,8 @@ Tính năng cũ (trang `/zoom`, từ 09/2026: hành trình qua các cấp từ v
 
 ## 3. Command hay dùng
 
-Tác động cột sống:
-`npx tsx scripts/spine-extract.ts` (phải báo 0 cờ mở) · `npm run spine:build` (không có ✖) ·
-`npx tsx --test src/lib/spine/*.test.ts`.
+Tác động cột sống: ĐÃ GỠ 2026-10-28 (dữ liệu + pipeline) — không còn lệnh nào;
+xem ghi chú đóng đợt ở mục 1.
 
 
 ```bash
