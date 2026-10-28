@@ -64,7 +64,7 @@ export function PlanetPanel({
                 <h2 className="font-display text-2xl font-bold tracking-tight">
                   {locale === "en" ? planet.nameEn : planet.name}
                 </h2>
-                <p className="mt-0.5 text-xs tracking-widest text-white/50 uppercase">
+                <p className="mt-0.5 text-xs text-white/60">
                   {locale === "en" ? planet.name : planet.nameEn}
                 </p>
               </div>
@@ -111,7 +111,7 @@ export function PlanetPanel({
                 { label: t("gravity"), value: `${planet.gravity} m/s²` },
               ].map((row) => (
                 <div key={row.label}>
-                  <dt className="text-[11px] tracking-wide text-white/45 uppercase">
+                  <dt className="text-[11px] text-white/55">
                     {row.label}
                   </dt>
                   <dd className="mt-0.5 font-medium">{row.value}</dd>

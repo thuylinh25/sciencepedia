@@ -101,7 +101,7 @@ export function SkyObjectPanel({
     <div className="space-y-6">
       {/* --------------------------------------------------------- Infobox */}
       <section className="rounded-2xl border bg-card p-5 sm:p-6">
-        <p className="flex items-center gap-2 text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+        <p className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
           <Target className="size-3.5 text-primary-strong" aria-hidden />
           {t("observing")}
         </p>

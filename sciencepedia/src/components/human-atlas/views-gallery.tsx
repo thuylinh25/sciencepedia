@@ -234,7 +234,7 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
                       <section aria-labelledby="atlas-views-group" className="mt-6">
                         <h4
                           id="atlas-views-group"
-                          className="text-[11px] font-semibold tracking-[0.14em] text-(--gallery-muted) uppercase"
+                          className="text-[11px] font-semibold text-(--gallery-muted)"
                         >
                           {t("section.group")}
                         </h4>
@@ -418,7 +418,7 @@ function OverviewCard({
     >
       <Stage src={src} usable={usable} className="w-28 shrink-0 rounded-lg sm:w-44" />
       <span className="flex min-w-0 flex-col justify-center gap-1.5">
-        <span className="text-[11px] font-semibold tracking-[0.14em] text-(--gallery-muted) uppercase">
+        <span className="text-[11px] font-semibold text-(--gallery-muted)">
           {t("section.overview")}
         </span>
         <span className="font-display text-lg leading-tight text-(--gallery-fg) sm:text-2xl">{pick(view.name)}</span>

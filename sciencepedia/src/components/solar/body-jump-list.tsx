@@ -36,7 +36,7 @@ export function BodyJumpList({
 
   return (
     <div className="mt-4 border-t border-white/10 pt-3">
-      <p className="text-[11px] tracking-widest text-white/40 uppercase">
+      <p className="text-[11px] text-white/55">
         {t("exploreNext")}
       </p>
 

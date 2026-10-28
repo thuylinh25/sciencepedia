@@ -879,11 +879,11 @@ export function HumanAtlas({
 
       {/* ---------------------------------------------------- tiêu đề */}
       <header data-atlas-avoid="top" className="pointer-events-none absolute top-3 left-4 z-10 max-w-[calc(100%-8rem)] sm:top-5 lg:left-6">
-        <p className="flex items-center gap-2 text-[10px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">
-          <span aria-hidden className="size-1.5 rounded-full bg-success" />
-          {t("eyebrow")}
-        </p>
-        <h1 className="mt-1 font-display text-lg leading-tight min-[400px]:text-xl font-bold tracking-tight sm:text-3xl">
+        {/* Không eyebrow trên H1 (Hallmark gate 54, polish 2026-10-28): dòng
+            “Giải phẫu tương tác” + chấm xanh trang trí đã bỏ — H1 tự nó nói rõ
+            công cụ là gì, dòng meta bên dưới ghi số mảnh/nguồn. Khoá
+            humanAtlas.eyebrow đã xoá khỏi messages. */}
+        <h1 className="font-display text-lg leading-tight min-[400px]:text-xl font-bold tracking-tight sm:text-3xl">
           {t("title")}
         </h1>
         <p className="mt-1 text-xs text-muted-foreground atlas-short:hidden">
@@ -1159,7 +1159,7 @@ export function HumanAtlas({
 
       <p
         aria-hidden
-        className="pointer-events-none absolute bottom-[6.75rem] left-1/2 hidden -translate-x-1/2 items-center gap-3 text-[11px] tracking-[0.15em] whitespace-nowrap text-muted-foreground uppercase atlas-wide:flex"
+        className="pointer-events-none absolute bottom-[6.75rem] left-1/2 hidden -translate-x-1/2 items-center gap-3 text-[11px] whitespace-nowrap text-muted-foreground atlas-wide:flex"
       >
         <span className="h-px w-6 bg-border" />
         {caption}
@@ -1317,9 +1317,11 @@ export function HumanAtlas({
               aria-valuenow={progress}
               className="mt-3 h-1 overflow-hidden rounded-full bg-muted"
             >
+              {/* Bề rộng đầy + scaleX thay cho animate width (Hallmark gate
+                  10a): transform không kích hoạt layout như width. */}
               <div
-                className="h-full rounded-full bg-accent transition-[width] duration-300"
-                style={{ width: `${progress}%` }}
+                className="h-full w-full origin-left rounded-full bg-accent transition-transform duration-300"
+                style={{ transform: `scaleX(${progress / 100})` }}
               />
             </div>
           </div>
@@ -1345,7 +1347,7 @@ export function HumanAtlas({
       {/* ------------------------------------------------ nguồn & ghi công */}
       <Sheet open={about} onOpenChange={setAbout}>
         <SheetContent className="w-[min(28rem,100vw)] overflow-y-auto p-6 pt-12 sm:max-w-md">
-          <p className="text-[11px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">
+          <p className="text-[11px] font-semibold text-muted-foreground">
             {t("aboutSheet.eyebrow")}
           </p>
           <SheetTitle className="font-display text-2xl font-bold tracking-tight">
@@ -1527,7 +1529,7 @@ function SourceBlock({
 }) {
   return (
     <section>
-      <h3 className="text-[11px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">
+      <h3 className="text-[11px] font-semibold text-muted-foreground">
         {heading}
       </h3>
       {name && <p className="mt-1 font-medium text-foreground">{name}</p>}
