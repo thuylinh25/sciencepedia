@@ -702,6 +702,7 @@
     "subtitle": "Real sky imagery from astronomical surveys. Drag to pan, scroll to zoom, type an object name to fly there.",
     "loading": "Loading the sky map…",
     "error": "The sky map could not be loaded. The CDS servers may be busy, or your browser may not support WebGL2.",
+    "stalled": "The sky imagery is loading very slowly. The CDS image server (France) may be busy, or the connection to it is interrupted — if the server responds again, the imagery will appear on its own; you can also retry now.",
     "retry": "Try again",
     "open": "Open the map",
     "searchPlaceholder": "M31, Orion Nebula, Sgr A*, or coordinates…",

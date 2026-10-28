@@ -97,6 +97,7 @@ export function AladinCanvas({
   const {
     containerRef,
     status,
+    stalled,
     isFullscreen,
     toggleFullscreen,
     goTo,
@@ -519,6 +520,42 @@ export function AladinCanvas({
               <RotateCcw className="size-4" />
               {t("retry")}
             </Button>
+          </div>
+        </div>
+      )}
+
+      {/* Thông báo nghẽn máy chủ ảnh — KHÁC lớp phủ `error` ở trên.
+          `error` là khi script Aladin không nạp nổi hoặc thiếu WebGL2: khung
+          CHẾT, nên phủ kín và bắt thử lại. Nghẽn tile thì khung vẫn sống:
+          người xem vẫn kéo/phóng được, và ảnh có thể tự về khi máy chủ đáp
+          ứng (hook tự gỡ thông báo khi tile đầu tiên tới). Nên nó là một dải
+          ở đáy khung, không chặn thao tác, kèm nút thử lại = dựng lại
+          instance để Aladin xin tile lại từ đầu thay vì chờ những request
+          đã bị bỏ cuộc. */}
+      {status === "ready" && stalled && (
+        <div className="absolute inset-x-0 bottom-4 z-10 flex justify-center px-4">
+          <div
+            role="status"
+            className="flex max-w-md items-start gap-3 rounded-xl border border-amber-300/25 bg-[#0a0e1a]/95 px-4 py-3 shadow-2xl backdrop-blur"
+          >
+            <AlertTriangle
+              className="mt-0.5 size-5 shrink-0 text-amber-400"
+              aria-hidden
+            />
+            <div>
+              <p className="text-sm leading-relaxed text-white/80">
+                {t("stalled")}
+              </p>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={retry}
+                className="mt-2.5 gap-2"
+              >
+                <RotateCcw className="size-4" />
+                {t("retry")}
+              </Button>
+            </div>
           </div>
         </div>
       )}
