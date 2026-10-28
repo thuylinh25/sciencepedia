@@ -37,6 +37,10 @@ type VirtualSkyInstance = {
   setClock: (date: Date) => void;
   resize: () => void;
   changeAzimuth: (inc: number) => void;
+  /** Lệch phương vị nội bộ của engine: nó tự cập nhật khi người đọc kéo
+      khung và khi `changeAzimuth` chạy. Phương vị tâm khung = az_off + 180
+      (xem ghi chú ở `currentAzimuth` trong `createSkyEngine`). */
+  az_off: number;
 };
 
 declare global {
@@ -52,6 +56,8 @@ export type SkyEngine = {
   setObserver: (lat: number, lon: number) => void;
   setTime: (date: Date) => void;
   setAzimuth: (azimuthDeg: number) => void;
+  /** Phương vị tâm khung hiện tại (độ, 0 = Bắc) — đọc sống cho HUD la bàn. */
+  getAzimuth: () => number;
   resize: () => void;
   destroy: () => void;
 };
@@ -137,6 +143,11 @@ async function createSkyEngine(
       if (delta !== 0) instance.changeAzimuth(delta);
       currentAzimuth = target;
     },
+    getAzimuth() {
+      // Đọc thẳng az_off thay vì biến theo dõi của ta: người đọc kéo khung
+      // thì chỉ engine biết, biến `currentAzimuth` ở trên không hề hay.
+      return (((instance.az_off + 180) % 360) + 360) % 360;
+    },
     resize() {
       instance.resize();
     },
@@ -156,6 +167,7 @@ export function SkyCanvas({
   time,
   lang,
   onReady,
+  onAzimuth,
   focusRequest,
 }: {
   latitude: number;
@@ -163,6 +175,10 @@ export function SkyCanvas({
   time: Date;
   lang: string;
   onReady?: () => void;
+  /** Báo phương vị tâm khung cho HUD la bàn: gọi khi lệch ≥ 0,5° so với
+      lần báo trước, thăm dò 4 lần/giây — đủ mượt cho một con số đọc tham
+      khảo mà không bắt React dựng lại theo từng khung hình kéo. */
+  onAzimuth?: (azimuthDeg: number) => void;
   /** Yêu cầu xoay tâm khung tới một phương vị (chọn thiên thể đang ở trên
       chân trời). `nonce` đổi mỗi lần yêu cầu để chọn lại cùng một thiên thể
       vẫn xoay lại được sau khi người đọc đã kéo khung đi chỗ khác. */
@@ -172,6 +188,8 @@ export function SkyCanvas({
   const engineRef = useRef<SkyEngine | null>(null);
   const readyRef = useRef(onReady);
   readyRef.current = onReady;
+  const azimuthRef = useRef(onAzimuth);
+  azimuthRef.current = onAzimuth;
   /* Giá trị mới nhất, để instance tạo bất đồng bộ xong không áp trạng thái cũ. */
   const latestRef = useRef({ latitude, longitude, time });
   latestRef.current = { latitude, longitude, time };
@@ -181,6 +199,7 @@ export function SkyCanvas({
     if (!element) return;
     let cancelled = false;
     let engine: SkyEngine | null = null;
+    let azimuthPoll: number | null = null;
 
     void createSkyEngine(element, { ...latestRef.current, lang })
       .then((created) => {
@@ -194,6 +213,18 @@ export function SkyCanvas({
         created.setObserver(latest.latitude, latest.longitude);
         created.setTime(latest.time);
         readyRef.current?.();
+
+        // Thăm dò phương vị cho HUD: kéo khung không bắn sự kiện nào ra
+        // ngoài, nên chỉ còn cách đọc lại theo nhịp thưa.
+        let lastAzimuth = created.getAzimuth();
+        azimuthRef.current?.(lastAzimuth);
+        azimuthPoll = window.setInterval(() => {
+          const azimuth = created.getAzimuth();
+          if (Math.abs(azimuth - lastAzimuth) >= 0.5) {
+            lastAzimuth = azimuth;
+            azimuthRef.current?.(azimuth);
+          }
+        }, 250);
       })
       .catch(() => {
         // Nạp engine hỏng (mất mạng giữa chừng): khung nền vẫn ở đó, trang
@@ -212,6 +243,7 @@ export function SkyCanvas({
 
     return () => {
       cancelled = true;
+      if (azimuthPoll !== null) window.clearInterval(azimuthPoll);
       document.removeEventListener("fullscreenchange", onFullscreenChange);
       engine?.destroy();
       engineRef.current = null;
@@ -223,7 +255,13 @@ export function SkyCanvas({
   }, [latitude, longitude]);
 
   useEffect(() => {
-    engineRef.current?.setTime(time);
+    // Gộp theo khung hình: kéo thanh trượt thời gian hay chạy thời gian
+    // đổi `time` nhanh hơn nhịp vẽ — engine chỉ cần nhận giá trị mới nhất
+    // của mỗi khung hình, không cần nhận đủ mọi giá trị trung gian.
+    const frame = requestAnimationFrame(() => {
+      engineRef.current?.setTime(time);
+    });
+    return () => cancelAnimationFrame(frame);
   }, [time]);
 
   useEffect(() => {

@@ -123,7 +123,7 @@ test("quiz: đáp án luôn nằm trong lựa chọn, lựa chọn không trùng
   for (const question of quiz) {
     assert.ok(question.options.length >= 3, question.kind);
     assert.equal(
-      new Set(question.options).size,
+      new Set<string | number>(question.options).size,
       question.options.length,
       `${question.kind}: lựa chọn trùng`,
     );
