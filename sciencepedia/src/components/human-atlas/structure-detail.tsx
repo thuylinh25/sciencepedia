@@ -162,7 +162,7 @@ export function StructureDetail({
           style={{ background: system ? SYSTEM_COLORS[system] : undefined }}
         />
         <div className="min-w-0">
-          <p className="text-[11px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">
+          <p className="text-[11px] font-semibold text-muted-foreground">
             {system ? t(`systemNames.${system}`) : t("detail.anatomy")}
           </p>
           <h2
@@ -211,7 +211,7 @@ export function StructureDetail({
           <StructureText content={resolved.content} locale={locale} />
         ) : resolved && aboutName ? (
           <div className="rounded-xl border border-dashed p-3">
-            <h3 className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
+            <h3 className="text-[11px] font-semibold text-muted-foreground">
               {t("detail.aboutParent", { name: aboutName })}
             </h3>
             <div className="mt-1.5">
@@ -232,7 +232,7 @@ export function StructureDetail({
           <WikipediaText desc={wiki} locale={locale} />
         ) : group ? (
           <div className="rounded-xl border border-dashed p-3">
-            <h3 className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
+            <h3 className="text-[11px] font-semibold text-muted-foreground">
               {t("detail.groupOverview", { group: locale === "vi" ? group.name.vi : group.name.en })}
             </h3>
             <div className="mt-1.5">
@@ -250,7 +250,7 @@ export function StructureDetail({
         ) : (
           system && SYSTEM_DESCRIPTIONS[system] && (
             <div className="rounded-xl border border-dashed p-3">
-              <h3 className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
+              <h3 className="text-[11px] font-semibold text-muted-foreground">
                 {t("detail.systemOverview", { system: t(`systemNames.${system}`) })}
               </h3>
               <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">

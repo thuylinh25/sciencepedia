@@ -390,7 +390,7 @@ export function ZoomJourney() {
             biết mình đang ở đâu. Trong khung chỉ giữ tên + kích thước + bội
             số (ba dòng ngắn, không bắt chuột); đoạn mô tả vẫn ở dưới. */}
         <div className="pointer-events-none absolute top-4 left-4 max-w-[17rem] rounded-xl bg-black/35 px-3 py-2 backdrop-blur-sm">
-          <p className="text-[11px] tracking-widest text-white/60 uppercase">
+          <p className="text-[11px] text-white/70">
             {t("levelOf", { step: index + 1, total: ZOOM_LEVELS.length })}
           </p>
           <h2

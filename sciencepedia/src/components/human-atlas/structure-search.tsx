@@ -183,7 +183,7 @@ export function StructureSearch({
         className="mt-2 min-h-0 flex-1 overflow-y-auto overscroll-contain"
       >
         {views.length > 0 && (
-          <li role="presentation" className="px-3 pt-1 pb-1 text-[11px] font-semibold tracking-[0.12em] text-muted-foreground uppercase">
+          <li role="presentation" className="px-3 pt-1 pb-1 text-[11px] font-semibold text-muted-foreground">
             {t("atlasViews.searchHeading")}
           </li>
         )}

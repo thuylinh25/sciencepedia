@@ -179,7 +179,7 @@ export function MilkyWay() {
         {/* ------------------------------------------------ Lời dẫn chuyến bay */}
         {settings.tour && TOUR_STOPS[tourStep] && (
           <div className="absolute inset-x-4 top-4 rounded-2xl border border-white/10 bg-black/60 p-4 backdrop-blur-xl sm:inset-x-auto sm:left-1/2 sm:w-[26rem] sm:-translate-x-1/2">
-            <p className="text-[11px] tracking-widest text-white/50 uppercase">
+            <p className="text-[11px] text-white/60">
               {t("tourProgress", {
                 step: tourStep + 1,
                 total: TOUR_STOPS.length,

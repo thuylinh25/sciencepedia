@@ -219,7 +219,7 @@ export function SkyMap() {
             */
             <div className="space-y-4">
               <div className="pr-6">
-                <p className="text-[11px] tracking-wide text-white/45 uppercase">
+                <p className="text-[11px] text-white/60">
                   {t("centeredOn")}
                 </p>
                 <p className="font-display text-base font-semibold">{label}</p>
@@ -250,7 +250,7 @@ export function SkyMap() {
               </div>
 
               <div>
-                <p className="text-[11px] tracking-wide text-white/45 uppercase">
+                <p className="text-[11px] text-white/60">
                   {t("catalogTitle")}
                 </p>
                 <ul className="-mx-2 mt-1.5">
@@ -293,7 +293,7 @@ export function SkyMap() {
           gì" và "nhìn cái gì" — và câu thứ hai nay có hẳn một bảng bên dưới,
           nên nhồi cả hai vào một thanh chỉ làm cả hai khó thấy. */}
       <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 rounded-2xl border bg-card px-5 py-3.5">
-        <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+        <p className="text-xs font-semibold text-muted-foreground">
           {t("surveyLabel")}
         </p>
 
