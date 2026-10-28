@@ -40,6 +40,10 @@ scripts/tmp-*
 # Phản hồi thô của nguồn ngoài (scripts/anatomy-enrich.ts) — dựng lại được, không phải nguồn
 /.cache
 
+# Sao lưu dữ liệu do các script xóa/ghi CSDL sinh ra (vd
+# scripts/remove-traditional-categories.ts) — dữ liệu production, không commit.
+/backups
+
 # Python
 __pycache__/
 *.pyc
