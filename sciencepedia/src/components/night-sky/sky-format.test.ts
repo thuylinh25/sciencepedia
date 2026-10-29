@@ -113,7 +113,7 @@ test("daylightOverlay: trưa phủ ngày gần kín, hết ấm chạng vạng",
 test("daylightOverlay: hoàng hôn còn ấm và đã sáng đáng kể", () => {
   const o = daylightOverlay(-4);
   assert.ok(o.twilight > 0.4 && o.twilight <= 0.42);
-  assert.ok(o.day > 0.55 && o.day < 0.88);
+  assert.ok(o.day > 0.35 && o.day < 0.6);
 });
 
 test("daylightOverlay: lớp ngày đơn điệu theo độ cao Mặt Trời", () => {

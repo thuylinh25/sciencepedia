@@ -1223,13 +1223,16 @@ export function NightSky() {
                 kín, lớp ấm chỉ ghé qua dải chạng vạng. */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#16264d] via-[#3a4a7a]/40 to-[#ff8c42] transition-opacity duration-700"
-              style={{ opacity: overlay.twilight }}
-            />
-            <div
-              aria-hidden
               className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#5f9fd8] via-[#8fc0e8] to-[#d7ecf9] transition-opacity duration-700"
               style={{ opacity: overlay.day }}
+            />
+            {/* Lớp ấm nằm TRÊN lớp ngày: ở hoàng hôn lớp ngày đã rút
+                nhanh theo độ cao Mặt Trời, sắc cam phủ lên trên tạo
+                đúng cảm giác chạng vạng thay vì xanh trưa kéo dài. */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#16264d] via-[#3a4a7a]/40 to-[#ff8c42] transition-opacity duration-700"
+              style={{ opacity: overlay.twilight }}
             />
             {report?.sun.state === "day" && report.sun.sunset && (
               <div className="pointer-events-none absolute left-1/2 top-3 z-10 flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-black/45 px-3 py-1 text-xs font-medium text-amber-100 backdrop-blur-sm">
