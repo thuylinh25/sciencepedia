@@ -68,6 +68,19 @@ export function fmtDecDm(decDeg: number): string {
 }
 
 /**
+ * Góc nhìn sau một bước thu/phóng: `factor > 1` là phóng to nên góc
+ * nhìn CHIA cho factor. Kẹp vào [1, 60] — đúng giới hạn cứng `setFOV`
+ * của engine — để nút bấm và con lăn chuột dùng chung một luật và ô
+ * hiển thị không bao giờ hứa một góc nhìn engine không cho.
+ */
+export function zoomFov(current: number, factor: number): number {
+  if (!Number.isFinite(current) || !Number.isFinite(factor) || factor <= 0) {
+    return current;
+  }
+  return Math.min(60, Math.max(1, current / factor));
+}
+
+/**
  * Chỗ đặt ô đọc toạ độ: BÁM THEO con trỏ (yêu cầu của Linh 2026-10-29,
  * theo mẫu TheSkyLive — toạ độ hiện ngay chỗ trỏ, không phải ở một góc
  * cố định bắt mắt phải đi tìm). Ô lệch phải/xuống một nhịp để không che

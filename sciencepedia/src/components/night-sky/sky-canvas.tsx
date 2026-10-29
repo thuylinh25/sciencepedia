@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
+import { zoomFov } from "@/components/night-sky/sky-format";
+
 /**
  * Khung bầu trời — đảo client bọc engine VirtualSky tự host ở
  * `public/night-sky/` (xem `NOTICE.md` trong thư mục đó về nguồn và giấy
@@ -41,6 +43,11 @@ type VirtualSkyInstance = {
       khung và khi `changeAzimuth` chạy. Phương vị tâm khung = az_off + 180
       (xem ghi chú ở `currentAzimuth` trong `createSkyEngine`). */
   az_off: number;
+  /** Góc nhìn hiện tại (độ). `setFOV` của engine tự kẹp vào [1, 60] và
+      KHÔNG tự vẽ lại — muốn hiện ngay phải gọi `draw()` sau đó. */
+  fov: number;
+  setFOV: (fov: number) => void;
+  draw: () => void;
 };
 
 declare global {
@@ -70,6 +77,11 @@ export type SkyEngine = {
   setAzimuth: (azimuthDeg: number) => void;
   /** Phương vị tâm khung hiện tại (độ, 0 = Bắc) — đọc sống cho HUD la bàn. */
   getAzimuth: () => number;
+  /** Góc nhìn hiện tại (độ) — đọc sống cho cụm nút thu phóng. */
+  getFov: () => number;
+  /** Thu/phóng theo hệ số: factor > 1 là phóng to (góc nhìn hẹp lại).
+      Trả góc nhìn THẬT sau khi engine đã kẹp vào [1, 60]. */
+  zoomBy: (factor: number) => number;
   resize: () => void;
   destroy: () => void;
 };
@@ -195,6 +207,15 @@ async function createSkyEngine(
       // thì chỉ engine biết, biến `currentAzimuth` ở trên không hề hay.
       return (((instance.az_off + 180) % 360) + 360) % 360;
     },
+    getFov() {
+      return instance.fov;
+    },
+    zoomBy(factor) {
+      // setFOV kẹp [1, 60] nhưng không vẽ lại — draw() chốt khung mới.
+      instance.setFOV(zoomFov(instance.fov, factor));
+      instance.draw();
+      return instance.fov;
+    },
     resize() {
       instance.resize();
     },
@@ -215,8 +236,10 @@ export function SkyCanvas({
   lang,
   onReady,
   onAzimuth,
+  onFov,
   onCursor,
   focusRequest,
+  zoomRequest,
 }: {
   latitude: number;
   longitude: number;
@@ -227,6 +250,9 @@ export function SkyCanvas({
       lần báo trước, thăm dò 4 lần/giây — đủ mượt cho một con số đọc tham
       khảo mà không bắt React dựng lại theo từng khung hình kéo. */
   onAzimuth?: (azimuthDeg: number) => void;
+  /** Báo góc nhìn cho cụm nút thu phóng: cùng nhịp thăm dò với phương
+      vị, gọi khi lệch ≥ 0,5° so với lần báo trước. */
+  onFov?: (fovDeg: number) => void;
   /** Toạ độ tại con trỏ theo từng mousemove của engine — nhịp nhanh
       hơn nhịp render nhiều, nên phía nhận phải cập nhật kiểu ra lệnh
       (ghi thẳng DOM), không setState theo từng lần gọi. */
@@ -235,6 +261,9 @@ export function SkyCanvas({
       chân trời). `nonce` đổi mỗi lần yêu cầu để chọn lại cùng một thiên thể
       vẫn xoay lại được sau khi người đọc đã kéo khung đi chỗ khác. */
   focusRequest?: { azimuthDeg: number; nonce: number } | null;
+  /** Yêu cầu thu/phóng theo hệ số (nút bấm và con lăn chuột trên khung
+      đều gửi qua đây). `nonce` như ở `focusRequest`. */
+  zoomRequest?: { factor: number; nonce: number } | null;
 }) {
   const mountRef = useRef<HTMLDivElement>(null);
   const engineRef = useRef<SkyEngine | null>(null);
@@ -242,6 +271,8 @@ export function SkyCanvas({
   readyRef.current = onReady;
   const azimuthRef = useRef(onAzimuth);
   azimuthRef.current = onAzimuth;
+  const fovRef = useRef(onFov);
+  fovRef.current = onFov;
   const cursorRef = useRef(onCursor);
   cursorRef.current = onCursor;
   /* Giá trị mới nhất, để instance tạo bất đồng bộ xong không áp trạng thái cũ. */
@@ -274,15 +305,22 @@ export function SkyCanvas({
         created.setTime(latest.time);
         readyRef.current?.();
 
-        // Thăm dò phương vị cho HUD: kéo khung không bắn sự kiện nào ra
-        // ngoài, nên chỉ còn cách đọc lại theo nhịp thưa.
+        // Thăm dò phương vị + góc nhìn cho HUD: kéo khung không bắn sự
+        // kiện nào ra ngoài, nên chỉ còn cách đọc lại theo nhịp thưa.
         let lastAzimuth = created.getAzimuth();
         azimuthRef.current?.(lastAzimuth);
+        let lastFov = created.getFov();
+        fovRef.current?.(lastFov);
         azimuthPoll = window.setInterval(() => {
           const azimuth = created.getAzimuth();
           if (Math.abs(azimuth - lastAzimuth) >= 0.5) {
             lastAzimuth = azimuth;
             azimuthRef.current?.(azimuth);
+          }
+          const fov = created.getFov();
+          if (Math.abs(fov - lastFov) >= 0.5) {
+            lastFov = fov;
+            fovRef.current?.(fov);
           }
         }, 250);
       })
@@ -329,6 +367,12 @@ export function SkyCanvas({
       engineRef.current?.setAzimuth(focusRequest.azimuthDeg);
     }
   }, [focusRequest]);
+
+  useEffect(() => {
+    if (zoomRequest) {
+      engineRef.current?.zoomBy(zoomRequest.factor);
+    }
+  }, [zoomRequest]);
 
   /* Hai lớp div, cố ý: VirtualSky tự đặt `position: relative` dạng inline
      lên phần tử mang id của nó. Nếu phần tử đó chính là lớp `absolute

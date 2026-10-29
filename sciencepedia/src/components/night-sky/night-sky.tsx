@@ -17,7 +17,9 @@ import {
   LocateFixed,
   Maximize,
   Minimize,
+  Minus,
   Moon,
+  Plus,
   RotateCcw,
   Share2,
   Sparkles,
@@ -202,6 +204,10 @@ export function NightSky() {
   const [geoNote, setGeoNote] = useState<string | null>(null);
   const [locating, setLocating] = useState(false);
   const [ready, setReady] = useState(false);
+  /* Gương ref của `ready` cho các listener native (wheel) — chúng chốt
+     một lần lúc gắn, không đọc được state mới qua closure. */
+  const engineReadyRef = useRef(false);
+  engineReadyRef.current = ready;
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [engine, setEngine] = useState<RawAstronomy | null>(null);
   const [selected, setSelected] = useState<CatalogEntry | null>(null);
@@ -217,6 +223,16 @@ export function NightSky() {
   const [playing, setPlaying] = useState(false);
   const [speed, setSpeed] = useState(300);
   const [viewAzimuth, setViewAzimuth] = useState<number | null>(null);
+  /* Thu phóng khung trời: góc nhìn do SkyCanvas báo lên (onFov); yêu cầu
+     thu/phóng gửi xuống theo mẫu focusRequest (nút + con lăn dùng chung). */
+  const [viewFov, setViewFov] = useState<number | null>(null);
+  const [zoomRequest, setZoomRequest] = useState<{
+    factor: number;
+    nonce: number;
+  } | null>(null);
+  const requestZoom = useCallback((factor: number) => {
+    setZoomRequest({ factor, nonce: Date.now() });
+  }, []);
   const [hudDimmed, setHudDimmed] = useState(false);
   const hudTimerRef = useRef<number | null>(null);
   const [sheetSnap, setSheetSnap] = useState<SheetSnap>("half");
@@ -421,6 +437,24 @@ export function NightSky() {
     document.addEventListener("fullscreenchange", onChange);
     return () => document.removeEventListener("fullscreenchange", onChange);
   }, []);
+
+  /* Con lăn chuột trên khung = thu/phóng. Engine có sẵn xử lý wheel
+     nhưng CHỈ cho phép chiếu gnomic; trang dùng stereo nên đường đó
+     chết — tự bắt ở đây và đi qua cùng `requestZoom` với nút bấm.
+     Nghe kiểu native với passive: false vì phải chặn cuộn trang khi
+     con trỏ đang trên khung (React gắn wheel dạng passive ở gốc,
+     preventDefault trong onWheel sẽ bị bỏ qua). */
+  useEffect(() => {
+    const frame = frameRef.current;
+    if (!frame) return;
+    const onWheel = (event: WheelEvent) => {
+      if (!engineReadyRef.current) return;
+      event.preventDefault();
+      requestZoom(event.deltaY < 0 ? 1.15 : 1 / 1.15);
+    };
+    frame.addEventListener("wheel", onWheel, { passive: false });
+    return () => frame.removeEventListener("wheel", onWheel);
+  }, [requestZoom]);
 
   /* Nút chụp chỉ sống khi khung trời đã có canvas thật để chụp. */
   useEffect(() => {
@@ -1158,7 +1192,9 @@ export function NightSky() {
               lang={locale}
               onReady={() => setReady(true)}
               focusRequest={focusRequest}
+              zoomRequest={zoomRequest}
               onAzimuth={setViewAzimuth}
+              onFov={setViewFov}
               onCursor={handleCursor}
             />
 
@@ -1182,6 +1218,42 @@ export function NightSky() {
                 <Maximize className="size-4" />
               )}
             </Button>
+
+            {/* Cụm thu phóng: cạnh phải, giữa chiều cao khung — góc
+                trên-phải đã có nút toàn màn hình, dưới-phải có đồng hồ.
+                Số giữa là góc nhìn hiện tại (độ), engine kẹp [1, 60]
+                nên hai đầu mút thì nút tương ứng mờ đi. */}
+            {ready && viewFov !== null && (
+              <div
+                role="group"
+                aria-label={t("zoomLabel")}
+                className="absolute top-1/2 right-3 z-20 flex -translate-y-1/2 flex-col items-center gap-1 rounded-full border border-white/15 bg-black/45 px-1.5 py-2 text-white shadow-lg backdrop-blur-md"
+              >
+                <button
+                  type="button"
+                  onClick={() => requestZoom(1.4)}
+                  disabled={viewFov <= 1.01}
+                  aria-label={t("zoomIn")}
+                  title={t("zoomIn")}
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-white/70 disabled:pointer-events-none disabled:opacity-35"
+                >
+                  <Plus className="size-4" />
+                </button>
+                <span className="text-[11px] leading-none font-semibold tabular-nums">
+                  {Math.round(viewFov)}°
+                </span>
+                <button
+                  type="button"
+                  onClick={() => requestZoom(1 / 1.4)}
+                  disabled={viewFov >= 59.9}
+                  aria-label={t("zoomOut")}
+                  title={t("zoomOut")}
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-white/70 disabled:pointer-events-none disabled:opacity-35"
+                >
+                  <Minus className="size-4" />
+                </button>
+              </div>
+            )}
 
             {/* HUD: la bàn (góc phương vị tâm khung, đọc từ chính thể
                 hiện của engine) + đồng hồ giờ tường. Cả hai tự mờ sau 3
