@@ -163,6 +163,22 @@ export function headingFromOrientation(
   return norm(360 - alpha + screenAngleDeg);
 }
 
+/** Chỉ iOS/iPadOS mới thật sự cần (và tôn trọng) lời gọi xin quyền
+ * cảm biến: Safari/WebKit từ iOS 13 chặn sự kiện orientation cho tới
+ * khi `requestPermission` được chấp thuận. Các môi trường khác có
+ * thể cũng phơi hàm này nhưng trả "denied" giả (stub trên desktop
+ * không có cảm biến) — tin nó là báo sai lý do cho người đọc. */
+export function needsOrientationPermission(
+  userAgent: string,
+  platform: string,
+  maxTouchPoints: number,
+): boolean {
+  if (/iPhone|iPad|iPod/i.test(userAgent)) return true;
+  // iPadOS giả danh Macintosh nhưng có cảm ứng đa điểm.
+  if (platform === "MacIntel" && maxTouchPoints > 1) return true;
+  return false;
+}
+
 /** Làm mượt hướng la bàn theo vòng tròn (350° → 10° đi qua 0°, không
  * vòng ngược 340°). `factor` là tỉ lệ bước nhảy mỗi sự kiện. */
 export function smoothHeading(

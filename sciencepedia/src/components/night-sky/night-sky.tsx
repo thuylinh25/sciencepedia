@@ -103,6 +103,7 @@ import {
   altitudeBand,
   altitudeBandLabel,
   headingFromOrientation,
+  needsOrientationPermission,
   smoothHeading,
   daylightOverlay,
   placeCursorBox,
@@ -296,7 +297,14 @@ export function NightSky() {
     const doe = window.DeviceOrientationEvent as unknown as {
       requestPermission?: () => Promise<string>;
     };
-    if (typeof doe?.requestPermission === "function") {
+    if (
+      typeof doe?.requestPermission === "function" &&
+      needsOrientationPermission(
+        navigator.userAgent,
+        navigator.platform,
+        navigator.maxTouchPoints,
+      )
+    ) {
       try {
         if ((await doe.requestPermission()) !== "granted") {
           // Trả lời "denied" rõ ràng = người đọc vừa từ chối ở hộp
