@@ -146,7 +146,12 @@ async function createSkyEngine(
     transparent: true,
     keyboard: false,
     lang: options.lang,
-    credit: true,
+    // Trang tự lo phần chữ: dòng ngày giờ + toạ độ engine vẽ ở góc
+    // khung đè lên HUD của trang và bị cắt ở mép; ghi công LCO đã có
+    // ở đoạn ghi công dưới khung nên tắt cả ba trong canvas.
+    showdate: false,
+    showposition: false,
+    credit: false,
     callback: {
       // Engine gọi hàm này ở MỖI mousemove với sự kiện đã gắn sẵn
       // `ra`/`dec` (độ) — xem `getXYProperties` trong virtualsky.js.

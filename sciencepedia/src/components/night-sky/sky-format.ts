@@ -115,3 +115,54 @@ export function placeCursorBox(
     ),
   };
 }
+
+/**
+ * Độ đậm hai lớp phủ khí quyển trong khung theo độ cao Mặt Trời (độ):
+ * `day` là lớp xanh ngày (làm chìm sao như mắt thật bị chói), `twilight`
+ * là lớp ấm chạng vạng. Nội suy tuyến tính giữa các mốc, kẹp ở hai đầu.
+ * Engine vẽ sao bất kể ngày đêm nên lớp phủ này là nơi duy nhất nói cho
+ * khung trời biết "đang sáng đến mức nào" — thuần hàm để kiểm thử được.
+ */
+export function daylightOverlay(altDeg: number): {
+  day: number;
+  twilight: number;
+} {
+  const ramp = (
+    stops: ReadonlyArray<readonly [number, number]>,
+    x: number,
+  ): number => {
+    if (x <= stops[0][0]) return stops[0][1];
+    for (let i = 1; i < stops.length; i++) {
+      if (x <= stops[i][0]) {
+        const [x0, y0] = stops[i - 1];
+        const [x1, y1] = stops[i];
+        return y0 + ((y1 - y0) * (x - x0)) / (x1 - x0);
+      }
+    }
+    return stops[stops.length - 1][1];
+  };
+  return {
+    day: ramp(
+      [
+        [-18, 0],
+        [-12, 0.12],
+        [-6, 0.3],
+        [-2, 0.45],
+        [0, 0.6],
+        [2, 0.85],
+        [6, 0.93],
+      ],
+      altDeg,
+    ),
+    twilight: ramp(
+      [
+        [-16, 0],
+        [-10, 0.3],
+        [-4, 0.55],
+        [0, 0.38],
+        [3, 0],
+      ],
+      altDeg,
+    ),
+  };
+}

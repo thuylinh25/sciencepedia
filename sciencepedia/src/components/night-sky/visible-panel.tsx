@@ -22,6 +22,7 @@ export function VisiblePanel({
   isNow,
   onSelect,
   onStartTour,
+  tonightMode,
 }: {
   report: SkyReport | null;
   placeLabel: string;
@@ -31,6 +32,10 @@ export function VisiblePanel({
   onSelect: (entry: CatalogEntry) => void;
   /** Mở tour dẫn — tour dựng từ chính báo cáo này (xem `tour.ts`). */
   onStartTour?: () => void;
+  /** Đang liệt kê bầu trời TỐI NAY (giờ đang xem là ban ngày, báo cáo
+   *  được tính tại hoàng hôn) — tiêu đề và gợi ý phải nói đúng điều đó
+   *  thay vì hứa "đang nhìn thấy" giữa ban ngày. */
+  tonightMode?: boolean;
 }) {
   const t = useTranslations("nightSky");
   const locale = useLocale();
@@ -82,7 +87,11 @@ export function VisiblePanel({
     <section className="rounded-2xl border bg-card p-4">
       <div className="flex items-center justify-between gap-3">
         <h2 className="text-sm font-semibold tracking-tight">
-          {isNow ? t("visibleNow") : t("visibleAtTime")}
+          {tonightMode
+            ? t("visibleTonight")
+            : isNow
+              ? t("visibleNow")
+              : t("visibleAtTime")}
         </h2>
         {onStartTour && (
           <button
@@ -107,6 +116,11 @@ export function VisiblePanel({
             <Sun className="mt-0.5 size-4 shrink-0 text-amber-500" />
             <span>{sunBanner()}</span>
           </p>
+          {tonightMode && (
+            <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+              {t("tonightHint")}
+            </p>
+          )}
 
           <button
             type="button"
