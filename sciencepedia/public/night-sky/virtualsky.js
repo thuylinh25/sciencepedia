@@ -1214,7 +1214,15 @@ VirtualSky.prototype.setWH = function(w,h){
 	// DEPRECATED // Bug fix for IE 8 which sets a width of zero to a div within the <canvas>
 	// DEPRECATED if(this.ie && S.browser.version == 8) $('#'+this.idinner).find('div').css({'width':w,'height':h});
 	this.canvas.css({'width':w+'px','height':h+'px'});
-	if(this.ctx) this.ctx.setTransform(dpr,0,0,dpr,0,0);
+	// Ngữ cảnh phải lấy thẳng từ canvas, không qua this.ctx: lần gọi
+	// setWH đầu tiên chạy trong constructor TRƯỚC khi this.ctx được
+	// gán, nên bản vá đầu tin vào this.ctx là bỏ qua hệ số ở lần dựng
+	// đầu — trên điện thoại (DPR 2–3) bầu trời chỉ vẽ vào một góc bộ
+	// đệm, phần còn lại giữ hình cũ nên kéo là chồng hình (Linh báo
+	// 2026-10-29). getContext trả cùng một ngữ cảnh nên lấy ở đây an
+	// toàn cho mọi lần gọi.
+	var ctx2d = this.ctx || (this.c.getContext ? this.c.getContext('2d') : null);
+	if(ctx2d) ctx2d.setTransform(dpr,0,0,dpr,0,0);
 };
 VirtualSky.prototype.changeFOV = function(delta){
 	var fov = this.fov;

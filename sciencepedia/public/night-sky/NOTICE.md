@@ -63,6 +63,13 @@ thử, trang ví dụ và `excanvas.min.js` (chỉ cho Internet Explorer).
   Toạ độ vẽ vẫn là điểm CSS (`wide`/`tall` không đổi), toạ độ chuột
   của engine vốn tính theo `pageX` nên không lệch; ảnh chụp của trang
   dùng đúng buffer nên nét theo.
+  *Sửa tiếp cùng ngày:* bản vá đầu đặt hệ số qua `this.ctx`, nhưng lần
+  gọi `setWH` đầu tiên chạy trong constructor *trước* khi `this.ctx`
+  được gán nên hệ số bị bỏ qua — trên điện thoại bầu trời chỉ vẽ vào
+  một góc bộ đệm và kéo là chồng hình (Linh báo 2026-10-29; máy tính
+  kiểm tra có DPR 1 nên không lộ). Nay `setWH` lấy ngữ cảnh thẳng từ
+  canvas (`this.c.getContext('2d')`, cùng một đối tượng) nên hệ số
+  được áp ngay từ lần dựng đầu tiên.
 - **2026-10-29 (PATCH-SCIENCEPEDIA-4):** khối tạo nút trợ giúp `?`
   (`_btn_help`) trong `draw()` vốn chạy vô điều kiện ở góc trên-phải
   canvas, đè lên nút toàn màn hình của trang. Nay khối đó chỉ chạy
