@@ -1199,14 +1199,22 @@ VirtualSky.prototype.resize = function(w,h){
 };
 VirtualSky.prototype.setWH = function(w,h){
 	if(!w || !h) return;
-	this.c.width = w;
-	this.c.height = h;
+	// PATCH-SCIENCEPEDIA-3 (NOTICE.md): vẽ theo mật độ điểm ảnh của
+	// máy (tối đa 2x). Bản gốc gán buffer bằng đúng điểm CSS nên trên
+	// điện thoại retina hình bị phóng mờ. Mọi toạ độ vẽ vẫn tính theo
+	// điểm CSS (wide/tall không đổi); chỉ buffer to ra và ngữ cảnh
+	// được co theo hệ số — gán width ở trên đã reset trạng thái ngữ
+	// cảnh nên setTransform phải nằm trong chính hàm này, sau khi gán.
+	var dpr = Math.min(window.devicePixelRatio || 1, 2);
+	this.c.width = Math.round(w * dpr);
+	this.c.height = Math.round(h * dpr);
 	this.wide = w;
 	this.tall = h;
 	this.changeFOV();
 	// DEPRECATED // Bug fix for IE 8 which sets a width of zero to a div within the <canvas>
 	// DEPRECATED if(this.ie && S.browser.version == 8) $('#'+this.idinner).find('div').css({'width':w,'height':h});
 	this.canvas.css({'width':w+'px','height':h+'px'});
+	if(this.ctx) this.ctx.setTransform(dpr,0,0,dpr,0,0);
 };
 VirtualSky.prototype.changeFOV = function(delta){
 	var fov = this.fov;
@@ -2403,7 +2411,11 @@ VirtualSky.prototype.drawImmediate = function(proj){
 		d.find('.'+this.id+'_help').find('a').css({color:txtcolour});
 	}
 	// Make help button
-	if(this.container.find('.'+this.id+'_btn_help').length == 0){
+	// PATCH-SCIENCEPEDIA-4 (NOTICE.md): bản gốc tạo nút "?" vô điều
+	// kiện ở góc trên-phải canvas, đè lên nút toàn màn hình của trang.
+	// Nay nút chỉ hiện khi cấu hình bật showhelp (như liên kết trợ
+	// giúp dạng chữ ở trên); Sciencepedia không bật nên không hiện.
+	if(this.showhelp && this.container.find('.'+this.id+'_btn_help').length == 0){
 		this.container.append('<div class="'+this.id+'_btn_help virtualskybutton" title="'+this.getPhrase('help')+'">?</div>');
 		off = S('#'+this.idinner).position();
 		this.container.find('.'+this.id+'_btn_help').css({

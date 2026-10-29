@@ -1116,7 +1116,7 @@ export function NightSky() {
             ref={frameRef}
             onPointerMove={wakeHud}
             className={cn(
-              "relative overflow-hidden border border-white/10",
+              "relative flex flex-col overflow-hidden border border-white/10",
               "bg-gradient-to-b from-[#0a1030] via-[#060a20] to-[#03040c]",
               "shadow-[inset_0_0_120px_rgba(0,0,0,0.55)]",
               // Chiều cao phải CHỌN MỘT trong hai bộ, không cộng dồn: `h-full` đặt
@@ -1267,7 +1267,7 @@ export function NightSky() {
             <div
               aria-hidden
               className={cn(
-                "pointer-events-none absolute right-3 bottom-24 z-10 text-right transition-opacity duration-500",
+                "pointer-events-none absolute right-3 bottom-3 z-10 text-right transition-opacity duration-500 lg:bottom-24",
                 hudDimmed && "opacity-40",
               )}
             >
@@ -1295,7 +1295,7 @@ export function NightSky() {
 
             {/* Thẻ đề nghị nhảy hoàng hôn khi trời chưa đủ tối cho tour. */}
             {tourNotice && !tour && (
-              <div className="absolute bottom-24 left-3 z-20 w-[calc(100%-1.5rem)] max-w-xs rounded-2xl border border-white/15 bg-black/60 p-4 text-white backdrop-blur-md">
+              <div className="absolute bottom-3 lg:bottom-24 left-3 z-20 w-[calc(100%-1.5rem)] max-w-xs rounded-2xl border border-white/15 bg-black/60 p-4 text-white backdrop-blur-md">
                 <div className="flex items-start justify-between gap-3">
                   <p className="text-sm leading-relaxed">
                     {t("tourNeedsSunset")}
@@ -1326,7 +1326,7 @@ export function NightSky() {
 
             {/* Thẻ tour: lời dẫn từng điểm dừng + trắc nghiệm cuối tour. */}
             {tour && tourStop && (
-              <div className="absolute bottom-24 left-3 z-20 max-h-[52%] w-[calc(100%-1.5rem)] max-w-xs overflow-y-auto rounded-2xl border border-white/15 bg-black/60 p-4 text-white backdrop-blur-md">
+              <div className="absolute bottom-3 lg:bottom-24 left-3 z-20 max-h-[52%] w-[calc(100%-1.5rem)] max-w-xs overflow-y-auto rounded-2xl border border-white/15 bg-black/60 p-4 text-white backdrop-blur-md">
                 <div className="flex items-center justify-between gap-3">
                   <span className="text-[11px] font-medium tracking-wide text-white/70 uppercase">
                     {t("tourStopOf", {

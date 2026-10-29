@@ -55,6 +55,20 @@ thử, trang ví dụ và `excanvas.min.js` (chỉ cho Internet Explorer).
   chọn và toạ độ con trỏ vẫn nhất quán. Ngoài khối `'stereo'` không chỗ
   nào bị đụng.
 
+- **2026-10-29 (PATCH-SCIENCEPEDIA-3):** `VirtualSky.prototype.setWH`
+  gán buffer canvas theo `devicePixelRatio` (tối đa 2) và đặt
+  `ctx.setTransform(dpr, …)` ngay trong `setWH` (sau khi gán width,
+  vì gán width reset trạng thái ngữ cảnh). Bản gốc gán buffer bằng
+  điểm CSS nên trên màn hình retina/điện thoại hình bị phóng mờ.
+  Toạ độ vẽ vẫn là điểm CSS (`wide`/`tall` không đổi), toạ độ chuột
+  của engine vốn tính theo `pageX` nên không lệch; ảnh chụp của trang
+  dùng đúng buffer nên nét theo.
+- **2026-10-29 (PATCH-SCIENCEPEDIA-4):** khối tạo nút trợ giúp `?`
+  (`_btn_help`) trong `draw()` vốn chạy vô điều kiện ở góc trên-phải
+  canvas, đè lên nút toàn màn hình của trang. Nay khối đó chỉ chạy
+  khi tuỳ chọn `showhelp` bật — Sciencepedia không bật `showhelp`
+  (trang đã có dòng hướng dẫn riêng), nên nút không còn xuất hiện.
+
 ## astronomy-engine — thư viện tính toán thiên văn (Phase 2)
 
 Cùng thư mục này chứa `astronomy.browser.js`: bản dựng trình duyệt của
