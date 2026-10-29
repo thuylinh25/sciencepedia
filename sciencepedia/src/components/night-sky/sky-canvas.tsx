@@ -184,6 +184,7 @@ async function createSkyEngine(
      `az_off + 180`, và muốn tới một phương vị tuyệt đối thì cộng phần chênh
      ngắn nhất. Giá trị đầu 180 khớp tuỳ chọn `az` truyền lúc tạo instance. */
   let currentAzimuth = 180;
+  let zoomAnim: number | null = null;
 
   return {
     setObserver(lat, lon) {
@@ -212,14 +213,46 @@ async function createSkyEngine(
     },
     zoomBy(factor) {
       // setFOV kẹp [1, 60] nhưng không vẽ lại — draw() chốt khung mới.
-      instance.setFOV(zoomFov(instance.fov, factor));
-      instance.draw();
-      return instance.fov;
+      // Nội suy hình học trong ~300 ms: chuyển động là bằng chứng mắt
+      // thấy được của thu phóng (cắt cứng từng bị nhầm là "không zoom").
+      // PATCH-SCIENCEPEDIA-2 trong virtualsky.js khiến setFOV đổi thật
+      // hình vẽ của phép chiếu stereo; ở đây chỉ lo phần chuyển động.
+      const from = instance.fov;
+      const to = zoomFov(from, factor);
+      if (zoomAnim !== null) cancelAnimationFrame(zoomAnim);
+      zoomAnim = null;
+      const reduce =
+        typeof window !== "undefined" &&
+        typeof window.matchMedia === "function" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (to === from || reduce) {
+        instance.setFOV(to);
+        instance.draw();
+        return instance.fov;
+      }
+      const started = performance.now();
+      const step = (now: number) => {
+        const t = Math.min(1, (now - started) / 300);
+        const eased = 1 - Math.pow(1 - t, 3);
+        instance.setFOV(from * Math.pow(to / from, eased));
+        instance.draw();
+        if (t < 1) {
+          zoomAnim = requestAnimationFrame(step);
+        } else {
+          zoomAnim = null;
+          instance.setFOV(to);
+          instance.draw();
+        }
+      };
+      zoomAnim = requestAnimationFrame(step);
+      return to;
     },
     resize() {
       instance.resize();
     },
     destroy() {
+      if (zoomAnim !== null) cancelAnimationFrame(zoomAnim);
+      zoomAnim = null;
       // Mọi lớp phủ của engine (canvas, hộp thông tin, trợ giúp, ghi công)
       // đều nằm trong container — làm rỗng là tháo sạch.
       element.innerHTML = "";
