@@ -2,6 +2,8 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 
 import {
+  altitudeBand,
+  altitudeBandLabel,
   daylightOverlay,
   fmtDecDm,
   fmtRaHm,
@@ -119,4 +121,16 @@ test("daylightOverlay: hoàng hôn còn ấm và đã sáng đáng kể", () => 
 test("daylightOverlay: lớp ngày đơn điệu theo độ cao Mặt Trời", () => {
   assert.ok(daylightOverlay(0).day > daylightOverlay(-6).day);
   assert.ok(daylightOverlay(-6).day > daylightOverlay(-12).day);
+
+test("altitudeBand: mốc lời thường cho độ cao con trỏ", () => {
+  assert.equal(altitudeBand(-3), "below");
+  assert.equal(altitudeBand(0), "horizon");
+  assert.equal(altitudeBand(14.9), "horizon");
+  assert.equal(altitudeBand(15), "low");
+  assert.equal(altitudeBand(39.9), "low");
+  assert.equal(altitudeBand(40), "high");
+  assert.equal(altitudeBand(64.9), "high");
+  assert.equal(altitudeBand(65), "zenith");
+  assert.equal(altitudeBandLabel("zenith").vi, "gần ngay đỉnh đầu");
+});
 });

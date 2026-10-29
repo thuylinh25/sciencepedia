@@ -123,6 +123,30 @@ export function placeCursorBox(
  * Engine vẽ sao bất kể ngày đêm nên lớp phủ này là nơi duy nhất nói cho
  * khung trời biết "đang sáng đến mức nào" — thuần hàm để kiểm thử được.
  */
+/** Dải độ cao nói bằng lời thường cho ô toạ độ con trỏ: người mới
+ * không hình dung "47°" là cao cỡ nào cho tới khi có mốc so sánh. */
+export type AltitudeBand = "below" | "horizon" | "low" | "high" | "zenith";
+
+export function altitudeBand(altDeg: number): AltitudeBand {
+  if (altDeg < 0) return "below";
+  if (altDeg < 15) return "horizon";
+  if (altDeg < 40) return "low";
+  if (altDeg < 65) return "high";
+  return "zenith";
+}
+
+const ALTITUDE_BAND_LABELS: Record<AltitudeBand, { vi: string; en: string }> = {
+  below: { vi: "dưới chân trời", en: "below the horizon" },
+  horizon: { vi: "sát chân trời", en: "near the horizon" },
+  low: { vi: "thấp trên bầu trời", en: "low in the sky" },
+  high: { vi: "cao trên bầu trời", en: "high in the sky" },
+  zenith: { vi: "gần ngay đỉnh đầu", en: "almost overhead" },
+};
+
+export function altitudeBandLabel(band: AltitudeBand): { vi: string; en: string } {
+  return ALTITUDE_BAND_LABELS[band];
+}
+
 export function daylightOverlay(altDeg: number): {
   day: number;
   twilight: number;

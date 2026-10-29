@@ -99,6 +99,8 @@ import {
   fmtDegrees,
   fmtEventTime,
   fmtRaHm,
+  altitudeBand,
+  altitudeBandLabel,
   daylightOverlay,
   placeCursorBox,
 } from "@/components/night-sky/sky-format";
@@ -634,6 +636,8 @@ export function NightSky() {
      Bối cảnh (engine tính, nơi, lúc) cũng qua ref để handler không
      đổi danh tính theo nhịp render của trang. */
   const cursorBoxRef = useRef<HTMLDivElement>(null);
+  const cursorMainRef = useRef<HTMLDivElement>(null);
+  const cursorSubRef = useRef<HTMLDivElement>(null);
   const cursorContextRef = useRef({
     engine,
     lat: observer.lat,
@@ -657,7 +661,13 @@ export function NightSky() {
         return;
       }
       const ctx = cursorContextRef.current;
-      let text = `${t("cursorRa")} ${fmtRaHm(pos.raDeg)} · ${t("cursorDec")} ${fmtDecDm(pos.decDeg)}`;
+      const main = cursorMainRef.current;
+      const sub = cursorSubRef.current;
+      if (!main || !sub) return;
+      /* Dòng chính nói bằng ngôn ngữ thường (hướng + cao cỡ nào) vì đó
+         là thứ người mới cần; xích kinh/xích vĩ lùi xuống dòng phụ nhỏ
+         cho người đã quen toạ độ xích đạo. */
+      const raDec = `${t("cursorRa")} ${fmtRaHm(pos.raDeg)} · ${t("cursorDec")} ${fmtDecDm(pos.decDeg)}`;
       if (ctx.engine) {
         const { altitudeDeg, azimuthDeg } = equatorialAltAz(
           ctx.engine,
@@ -668,9 +678,14 @@ export function NightSky() {
           ctx.time,
         );
         const compass = compassFor(azimuthDeg);
-        text += ` · ${t("statAltitude")} ${fmtDegrees(altitudeDeg)} · ${ctx.isEnglish ? compass.en : compass.vi}`;
+        const band = altitudeBandLabel(altitudeBand(altitudeDeg));
+        main.textContent = `${ctx.isEnglish ? compass.en : compass.vi} · ${ctx.isEnglish ? band.en : band.vi} · ${fmtDegrees(altitudeDeg)}`;
+        sub.textContent = raDec;
+        sub.style.display = "";
+      } else {
+        main.textContent = raDec;
+        sub.style.display = "none";
       }
-      box.textContent = text;
       /* Ô bám theo con trỏ: engine cho sẵn px của con trỏ trong hệ toạ
          độ canvas, mà canvas phủ kín khung nên dùng thẳng làm hệ toạ độ
          của khung (offsetParent của ô). Sự kiện không mang px (không
@@ -1068,96 +1083,6 @@ export function NightSky() {
           )}
       </div>
 
-      {/* Máy thời gian: khoảnh khắc có thật trong moments.ts, mở bằng
-          đúng các setter của trang nên URL/Chia sẻ/Chụp bám theo. */}
-      <div className="mt-3 flex flex-wrap items-center gap-2">
-        <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
-          <History className="size-3.5" aria-hidden />
-          {t("momentsTitle")}
-        </span>
-        {SKY_MOMENTS.map((moment) =>
-          presetButton(
-            moment.id,
-            null,
-            isEnglish ? moment.labelEn : moment.labelVi,
-            () => applyMoment(moment),
-          ),
-        )}
-        {presetButton(
-          "birthday",
-          <Cake className="size-3.5" />,
-          t("birthdayChip"),
-          () => setBirthdayOpen((open) => !open),
-        )}
-      </div>
-
-      {birthdayOpen && (
-        <form
-          className="mt-3 flex flex-wrap items-end gap-2 rounded-2xl border bg-card p-3"
-          onSubmit={(event) => {
-            event.preventDefault();
-            applyBirthday();
-          }}
-        >
-          <label className="flex flex-col gap-1 text-xs font-medium">
-            {t("birthdayLabel")}
-            <Input
-              type="date"
-              required
-              value={birthdayDate}
-              onChange={(event) => setBirthdayDate(event.target.value)}
-              className="w-44"
-            />
-          </label>
-          <Button type="submit" size="sm">
-            {t("birthdayGo")}
-          </Button>
-        </form>
-      )}
-
-      {activeMoment && (
-        <div className="mt-3 rounded-2xl border bg-card p-4">
-          <div className="flex items-start justify-between gap-3">
-            <h3 className="font-display text-base font-bold">
-              {activeMoment.kind === "moment"
-                ? isEnglish
-                  ? activeMoment.moment.labelEn
-                  : activeMoment.moment.labelVi
-                : t("birthdayTitle")}
-            </h3>
-            <button
-              type="button"
-              onClick={() => setActiveMoment(null)}
-              aria-label={t("momentClose")}
-              className="rounded-full p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-            >
-              <X className="size-4" aria-hidden />
-            </button>
-          </div>
-          <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-            {activeMoment.kind === "moment"
-              ? isEnglish
-                ? activeMoment.moment.blurbEn
-                : activeMoment.moment.blurbVi
-              : t("birthdayBlurb", { date: activeMoment.dateText })}
-          </p>
-          <p className="mt-2 text-xs font-medium">
-            {t("momentViewing", {
-              place: observer.label,
-              when: formatDateTimeInTz(tz, time, locale),
-            })}
-          </p>
-          {activeMoment.kind === "birthday" && (
-            <p className="mt-1 text-xs text-muted-foreground">
-              {t("birthdayCaptureHint")}
-            </p>
-          )}
-          <p className="mt-3 border-t pt-2 text-[11px] leading-relaxed text-muted-foreground">
-            {t("momentApproxNote")}
-          </p>
-        </div>
-      )}
-
       <p className="mt-2 text-xs text-muted-foreground" aria-live="polite">
         {observer.label} · {formatDateTimeInTz(tz, time, locale)} ·{" "}
         {gmtOffsetLabel(tz, time)}
@@ -1334,8 +1259,11 @@ export function NightSky() {
             <div
               ref={cursorBoxRef}
               aria-hidden
-              className="pointer-events-none absolute top-0 left-0 z-30 max-w-[calc(100%-1.5rem)] truncate rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-xs font-medium text-white tabular-nums opacity-0 backdrop-blur-sm transition-opacity duration-300"
-            />
+              className="pointer-events-none absolute top-0 left-0 z-30 max-w-[calc(100%-1.5rem)] rounded-2xl border border-white/15 bg-black/35 px-3 py-1.5 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300"
+            >
+              <div ref={cursorMainRef} className="text-xs font-medium tabular-nums" />
+              <div ref={cursorSubRef} className="text-[10px] text-white/65 tabular-nums" />
+            </div>
             <div
               aria-hidden
               className={cn(
@@ -1774,6 +1702,99 @@ export function NightSky() {
           </div>
         </div>
       </div>
+
+      {/* Máy thời gian nằm DƯỚI khung trời (PR-C): là nội dung
+          khám phá, không phải điều khiển chính — để nó trên khung
+          thì khung bị đẩy khỏi tầm nhìn đầu tiên. */}
+      {/* Máy thời gian: khoảnh khắc có thật trong moments.ts, mở bằng
+          đúng các setter của trang nên URL/Chia sẻ/Chụp bám theo. */}
+      <div className="mt-3 flex flex-wrap items-center gap-2">
+        <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
+          <History className="size-3.5" aria-hidden />
+          {t("momentsTitle")}
+        </span>
+        {SKY_MOMENTS.map((moment) =>
+          presetButton(
+            moment.id,
+            null,
+            isEnglish ? moment.labelEn : moment.labelVi,
+            () => applyMoment(moment),
+          ),
+        )}
+        {presetButton(
+          "birthday",
+          <Cake className="size-3.5" />,
+          t("birthdayChip"),
+          () => setBirthdayOpen((open) => !open),
+        )}
+      </div>
+
+      {birthdayOpen && (
+        <form
+          className="mt-3 flex flex-wrap items-end gap-2 rounded-2xl border bg-card p-3"
+          onSubmit={(event) => {
+            event.preventDefault();
+            applyBirthday();
+          }}
+        >
+          <label className="flex flex-col gap-1 text-xs font-medium">
+            {t("birthdayLabel")}
+            <Input
+              type="date"
+              required
+              value={birthdayDate}
+              onChange={(event) => setBirthdayDate(event.target.value)}
+              className="w-44"
+            />
+          </label>
+          <Button type="submit" size="sm">
+            {t("birthdayGo")}
+          </Button>
+        </form>
+      )}
+
+      {activeMoment && (
+        <div className="mt-3 rounded-2xl border bg-card p-4">
+          <div className="flex items-start justify-between gap-3">
+            <h3 className="font-display text-base font-bold">
+              {activeMoment.kind === "moment"
+                ? isEnglish
+                  ? activeMoment.moment.labelEn
+                  : activeMoment.moment.labelVi
+                : t("birthdayTitle")}
+            </h3>
+            <button
+              type="button"
+              onClick={() => setActiveMoment(null)}
+              aria-label={t("momentClose")}
+              className="rounded-full p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+            >
+              <X className="size-4" aria-hidden />
+            </button>
+          </div>
+          <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+            {activeMoment.kind === "moment"
+              ? isEnglish
+                ? activeMoment.moment.blurbEn
+                : activeMoment.moment.blurbVi
+              : t("birthdayBlurb", { date: activeMoment.dateText })}
+          </p>
+          <p className="mt-2 text-xs font-medium">
+            {t("momentViewing", {
+              place: observer.label,
+              when: formatDateTimeInTz(tz, time, locale),
+            })}
+          </p>
+          {activeMoment.kind === "birthday" && (
+            <p className="mt-1 text-xs text-muted-foreground">
+              {t("birthdayCaptureHint")}
+            </p>
+          )}
+          <p className="mt-3 border-t pt-2 text-[11px] leading-relaxed text-muted-foreground">
+            {t("momentApproxNote")}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
