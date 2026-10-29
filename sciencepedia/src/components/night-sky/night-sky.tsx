@@ -97,6 +97,7 @@ import {
   fmtDegrees,
   fmtEventTime,
   fmtRaHm,
+  placeCursorBox,
 } from "@/components/night-sky/sky-format";
 import { Badge } from "@/components/ui/badge";
 
@@ -618,6 +619,20 @@ export function NightSky() {
         text += ` · ${t("statAltitude")} ${fmtDegrees(altitudeDeg)} · ${ctx.isEnglish ? compass.en : compass.vi}`;
       }
       box.textContent = text;
+      /* Ô bám theo con trỏ: engine cho sẵn px của con trỏ trong hệ toạ
+         độ canvas, mà canvas phủ kín khung nên dùng thẳng làm hệ toạ độ
+         của khung (offsetParent của ô). Sự kiện không mang px (không
+         xảy ra trên đường chuột) thì giữ nguyên vị trí cũ của ô. */
+      const parent = box.offsetParent;
+      if (pos.x !== null && pos.y !== null && parent) {
+        const placed = placeCursorBox(
+          { x: pos.x, y: pos.y },
+          { width: box.offsetWidth, height: box.offsetHeight },
+          { width: parent.clientWidth, height: parent.clientHeight },
+        );
+        box.style.left = `${placed.left}px`;
+        box.style.top = `${placed.top}px`;
+      }
       box.style.opacity = "1";
     },
     [t],
@@ -1185,17 +1200,17 @@ export function NightSky() {
                 · {Math.round(viewAzimuth)}°
               </div>
             )}
-            {/* Ô đọc toạ độ tại con trỏ, ngay dưới HUD la bàn: cột trái
-                phía trên là chỗ trống duy nhất trong mọi trạng thái —
-                góc trái phía dưới đã có thẻ tour/thẻ đề nghị hoàng hôn
-                (bottom-24, z-20) nên đặt ở đó là bị che mỗi khi tour
-                chạy. Nội dung do handleCursor ghi thẳng vào DOM; ở đây
-                chỉ dựng khung rỗng đang ẩn. Nằm trong phần tử toàn màn
-                hình nên vào toàn màn hình vẫn đi theo, như sàn. */}
+            {/* Ô đọc toạ độ BÁM THEO con trỏ (trước đây cố định dưới
+                HUD la bàn; Linh đổi theo mẫu TheSkyLive 2026-10-29: toạ
+                độ hiện ngay chỗ trỏ). Nội dung và vị trí đều do
+                handleCursor ghi thẳng vào DOM (placeCursorBox lo phần
+                lật mép); ở đây chỉ dựng khung rỗng đang ẩn. Nằm trong
+                phần tử toàn màn hình nên vào toàn màn hình vẫn đi theo,
+                như sàn. */}
             <div
               ref={cursorBoxRef}
               aria-hidden
-              className="pointer-events-none absolute top-12 left-3 z-10 max-w-[calc(100%-1.5rem)] truncate rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-xs font-medium text-white tabular-nums opacity-0 backdrop-blur-sm transition-opacity duration-300"
+              className="pointer-events-none absolute top-0 left-0 z-10 max-w-[calc(100%-1.5rem)] truncate rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-xs font-medium text-white tabular-nums opacity-0 backdrop-blur-sm transition-opacity duration-300"
             />
             <div
               aria-hidden

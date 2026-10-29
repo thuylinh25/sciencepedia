@@ -52,8 +52,16 @@ declare global {
 }
 
 /** Toạ độ xích đạo tại con trỏ, do engine vẽ tự tính từ phép chiếu của
-    nó (`callback.cursor`): RA/Dec đều là ĐỘ thập phân. */
-export type SkyCursorPos = { raDeg: number; decDeg: number };
+    nó (`callback.cursor`): RA/Dec đều là ĐỘ thập phân. `x`/`y` là vị trí
+    con trỏ theo px trong hệ toạ độ của chính canvas (engine gắn vào sự
+    kiện qua `getXY`) — ô đọc bám theo con trỏ nhờ hai số này; null khi
+    sự kiện không mang theo. */
+export type SkyCursorPos = {
+  raDeg: number;
+  decDeg: number;
+  x: number | null;
+  y: number | null;
+};
 
 /** Engine handle — thứ duy nhất phần còn lại của trang được phép giữ. */
 export type SkyEngine = {
@@ -132,15 +140,22 @@ async function createSkyEngine(
       // `ra`/`dec` (độ) — xem `getXYProperties` trong virtualsky.js.
       // Nó chỉ chạy trên đường chuột; cảm ứng không qua đây, nên ô đọc
       // toạ độ tự nhiên không bao giờ hiện trên thiết bị cảm ứng.
-      cursor: (event: { ra?: unknown; dec?: unknown }) => {
+      cursor: (event: {
+        ra?: unknown;
+        dec?: unknown;
+        x?: unknown;
+        y?: unknown;
+      }) => {
         const ra = event?.ra;
         const dec = event?.dec;
+        const px = (value: unknown): number | null =>
+          typeof value === "number" && Number.isFinite(value) ? value : null;
         options.onCursor(
           typeof ra === "number" &&
             Number.isFinite(ra) &&
             typeof dec === "number" &&
             Number.isFinite(dec)
-            ? { raDeg: ra, decDeg: dec }
+            ? { raDeg: ra, decDeg: dec, x: px(event?.x), y: px(event?.y) }
             : null,
         );
       },
