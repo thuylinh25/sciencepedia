@@ -2839,6 +2839,12 @@ VirtualSky.prototype.drawPlanet = function(x,y,d,colour,label){
 			return this;
 		}
 		var r = Math.max(d, 3) * zoomK;
+		// Muted, naturalistic presentation tints (the plugin's raw
+		// colours are marker-like: pure red Mars, pink Jupiter and
+		// Saturn). Presentation only — positions are untouched.
+		var tints = { Me: "#b8a89a", V: "#f2e3b3", Ma: "#d97b4f", J: "#e3cda3", S: "#e6c88a", U: "#a8d8d2", N: "#7f9ff0" };
+		if(tints[label]) colour = tints[label];
+		if(label === "S") r = Math.max(r, 4.5 * zoomK);
 		if(label === "V"){
 			var gv = c.createRadialGradient(x,y,r*0.5,x,y,r*2.6);
 			gv.addColorStop(0,"rgba(255,246,214,0.35)");
@@ -2888,8 +2894,8 @@ VirtualSky.prototype.drawSaturnRing = function(x,y,r,colour,front){
 	c.scale(1,0.36);
 	c.beginPath();
 	c.strokeStyle = colour;
-	c.globalAlpha = 0.85;
-	c.lineWidth = Math.max(1.2, r*0.45);
+	c.globalAlpha = 0.95;
+	c.lineWidth = Math.max(1.6, r*0.5);
 	if(front) c.arc(0,0,r*2.05,0,Math.PI,false);
 	else c.arc(0,0,r*2.05,Math.PI,Math.PI*2,false);
 	c.stroke();
