@@ -118,6 +118,16 @@ thử, trang ví dụ và `excanvas.min.js` (chỉ cho Internet Explorer).
   mang thêm độ cao đích để thiên thể ở cao cũng vào giữa khung khi
   được chọn, và chế độ la bàn đặt `el_off` về 0 khi bật (khóa chân
   trời như thiết kế S3).
+  Bổ sung cùng ngày — bù tâm khi zoom trong `setFOV`: phép chiếu
+  neo `el_off` ở MÉP DƯỚI của canvas, nên độ cao tại tâm khung là
+  `el_off + 2·atan(0.25/f)` với `f = 0.42·30/fov`; giữ nguyên
+  `el_off` trong lúc zoom sẽ kéo tâm khung tụt hàng chục độ (Sao
+  Thổ đã vào giữa khung ở 65° bị chiếu lên −254 px sau khi zoom
+  30°→11° — QA bản xem trước 2026-10-29). `setFOV` nay dịch
+  `el_off` đúng bằng phần thay đổi của độ lệch tâm (kẹp [−15, 85])
+  nên zoom — nút bấm, con lăn, pinch đều qua `setFOV` — giữ
+  nguyên hướng tâm khung. Kiểm chứng số học: Sao Thổ ở đúng pixel
+  giữa khung cả trước và sau khi zoom.
 
 - **2026-10-29 (PATCH-SCIENCEPEDIA-8):** `drawPlanets` — bỏ cổng
   cấp sao cho hành tinh. Bản gốc chỉ vẽ hành tinh khi

@@ -1232,9 +1232,24 @@ VirtualSky.prototype.changeFOV = function(delta){
 	return this.setFOV(fov);
 };
 VirtualSky.prototype.setFOV = function(fov){
-	if(fov > 60 || typeof fov!=="number") this.fov = 60;
-	else if(fov < 1) this.fov = 1;
-	else this.fov = fov;
+	var newfov;
+	if(fov > 60 || typeof fov!=="number") newfov = 60;
+	else if(fov < 1) newfov = 1;
+	else newfov = fov;
+	// PATCH-SCIENCEPEDIA-7 (zoom-centre compensation, see NOTICE.md):
+	// the stereo projection anchors el_off at the canvas BOTTOM edge,
+	// so the elevation at the frame centre is el_off + 2*atan(0.25/f)
+	// with f = 0.42*30/fov. Holding el_off while zooming therefore
+	// drags the centre down by tens of degrees (Saturn centred at 65
+	// degrees left the frame after three zoom clicks, QA 2026-10-29).
+	// Shift el_off by the change in the centre offset so zooming
+	// keeps the centre direction fixed; clamped to the drag range.
+	var prevfov = (typeof this.fov==="number" && this.fov>0) ? this.fov : 30;
+	if(newfov !== prevfov){
+		var shift = 2*Math.atan(0.25/(0.42*30/prevfov)) - 2*Math.atan(0.25/(0.42*30/newfov));
+		this.el_off = Math.max(-15, Math.min(85, (this.el_off||0) + shift*180/Math.PI));
+	}
+	this.fov = newfov;
 	this.maxangle = this.d2r*this.fov*Math.max(this.wide,this.tall)/this.tall;
 	this.maxangle = Math.min(this.maxangle,Math.PI/2);
 	return this;
