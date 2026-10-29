@@ -29,6 +29,8 @@ model User {
   reviewedTerms    GlossaryTerm[]
   sessions         Session[]
   activities       ContentActivity[]
+  skyReminders     SkyEventReminder[]
+  skyFavorites     SkyFavorite[]
 
   @@index([role])
 }
@@ -85,6 +87,44 @@ model ToolViewStat {
   toolId    String   @id
   views     Int      @default(0)
   updatedAt DateTime @updatedAt
+}
+
+/// Nhắc sự kiện thiên văn của người dùng đã đăng nhập (S1): một hàng
+/// cho mỗi (người dùng, sự kiện) họ bấm "Nhắc tôi" trên thẻ sự kiện.
+/// `eventId`/`nameVi`/`nameEn`/`eventInstant`/`tz` là ảnh chụp của sự
+/// kiện tại lúc đặt nhắc (events.ts tính lại mỗi lần mở trang nên id
+/// ổn định theo năm, còn mốc gửi thư phải đóng băng tại lúc đặt).
+/// Cron hằng ngày gửi một thư khi sự kiện còn cách ≤36 giờ và
+/// `sentAt` còn trống, rồi đóng dấu `sentAt` để không gửi hai lần.
+model SkyEventReminder {
+  id           String    @id @default(cuid())
+  userId       String
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  eventId      String
+  nameVi       String
+  nameEn       String
+  eventInstant DateTime
+  tz           String
+  locale       String    @default("vi")
+  sentAt       DateTime?
+  createdAt    DateTime  @default(now())
+
+  @@unique([userId, eventId])
+  @@index([eventInstant, sentAt])
+}
+
+/// Thiên thể yêu thích của người dùng đã đăng nhập (S1): `targetId`
+/// là id trong catalog thiên thể (`src/lib/night-sky/catalog.ts`) —
+/// tên hiển thị luôn tra lại từ catalog, bảng chỉ giữ id.
+model SkyFavorite {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  targetId  String
+  createdAt DateTime @default(now())
+
+  @@unique([userId, targetId])
+  @@index([userId, createdAt])
 }
 
 model Account {

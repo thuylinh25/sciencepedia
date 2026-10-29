@@ -9,8 +9,14 @@ import {
   type ReactNode,
 } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { useSession } from "next-auth/react";
+import { toast } from "sonner";
+
+import { useRouter } from "@/i18n/navigation";
 import {
   Cake,
+  Bell,
+  BellRing,
   CalendarDays,
   Camera,
   Check,
@@ -1419,6 +1425,114 @@ export function NightSky() {
     void generateBulletin(false);
   }, [generateBulletin]);
 
+  /* ---------------- S1: nhắc sự kiện + yêu thích ----------------
+     Chỉ người đã đăng nhập mới có dữ liệu phía server; khách thì
+     bấm nút là được đưa tới trang đăng nhập (khuôn BookmarkButton).
+     Cập nhật lạc quan như nút lưu bài: đổi giao diện ngay, hỏng
+     thì hoàn tác và báo lỗi nhẹ. */
+
+  const { status: sessionStatus } = useSession();
+  const router = useRouter();
+  const [reminderIds, setReminderIds] = useState<ReadonlySet<string> | null>(
+    null,
+  );
+  const [favoriteIds, setFavoriteIds] = useState<ReadonlySet<string> | null>(
+    null,
+  );
+
+  useEffect(() => {
+    if (sessionStatus !== "authenticated") return;
+    const controller = new AbortController();
+    fetch("/api/night-sky/reminders", { signal: controller.signal })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data: { reminders?: { eventId: string }[] } | null) => {
+        if (data?.reminders) {
+          setReminderIds(new Set(data.reminders.map((row) => row.eventId)));
+        }
+      })
+      .catch(() => undefined);
+    fetch("/api/night-sky/favorites", { signal: controller.signal })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data: { favorites?: { targetId: string }[] } | null) => {
+        if (data?.favorites) {
+          setFavoriteIds(new Set(data.favorites.map((row) => row.targetId)));
+        }
+      })
+      .catch(() => undefined);
+    return () => controller.abort();
+  }, [sessionStatus]);
+
+  const toggleReminder = useCallback(
+    async (event: SkyEvent) => {
+      if (sessionStatus !== "authenticated") {
+        router.push("/login");
+        return;
+      }
+      const active = reminderIds?.has(event.id) ?? false;
+      const flip = (set: ReadonlySet<string> | null) => {
+        const next = new Set(set ?? []);
+        if (active) next.delete(event.id);
+        else next.add(event.id);
+        return next;
+      };
+      setReminderIds((current) => flip(current));
+      try {
+        const response = active
+          ? await fetch("/api/night-sky/reminders", {
+              method: "DELETE",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ eventId: event.id }),
+            })
+          : await fetch("/api/night-sky/reminders", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                eventId: event.id,
+                nameVi: event.nameVi,
+                nameEn: event.nameEn,
+                instant: event.instant.toISOString(),
+                tz,
+                locale,
+              }),
+            });
+        if (!response.ok) throw new Error("reminder toggle failed");
+      } catch {
+        setReminderIds((current) => flip(current));
+        toast.error(t("skyApiError"));
+      }
+    },
+    [locale, reminderIds, router, sessionStatus, t, tz],
+  );
+
+  const toggleFavorite = useCallback(
+    async (entry: CatalogEntry) => {
+      if (sessionStatus !== "authenticated") {
+        router.push("/login");
+        return;
+      }
+      const active = favoriteIds?.has(entry.id) ?? false;
+      const flip = (set: ReadonlySet<string> | null) => {
+        const next = new Set(set ?? []);
+        if (active) next.delete(entry.id);
+        else next.add(entry.id);
+        return next;
+      };
+      setFavoriteIds((current) => flip(current));
+      try {
+        const response = await fetch("/api/night-sky/favorites", {
+          method: active ? "DELETE" : "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ targetId: entry.id }),
+        });
+        if (!response.ok) throw new Error("favorite toggle failed");
+      } catch {
+        setFavoriteIds((current) => flip(current));
+        toast.error(t("skyApiError"));
+      }
+    },
+    [favoriteIds, router, sessionStatus, t],
+  );
+
   const leonids = meteorShowerPeak(tz, new Date(), 11, 17, 19, 0);
   const geminids = meteorShowerPeak(tz, new Date(), 12, 13, 19, 0);
   const isNow = Math.abs(Date.now() - time.getTime()) < 3 * 60_000;
@@ -2332,6 +2446,31 @@ export function NightSky() {
               </div>
             )}
 
+            {favoriteIds && favoriteIds.size > 0 && (
+              <div className="mb-3 rounded-2xl border bg-card p-4">
+                <h3 className="flex items-center gap-2 text-sm font-semibold">
+                  <Star className="size-4 fill-amber-400 text-amber-400" />
+                  {t("favoritesTitle")}
+                </h3>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {[...favoriteIds].map((id) => {
+                    const entry = findCatalogEntry(id);
+                    if (!entry) return null;
+                    return (
+                      <button
+                        key={id}
+                        type="button"
+                        onClick={() => selectObject(entry)}
+                        className="rounded-full border px-2.5 py-1 text-xs transition-colors hover:bg-accent"
+                      >
+                        {isEnglish ? entry.nameEn : entry.nameVi}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
             <ObjectSearch onSelect={selectObject} />
 
             <div className="mt-3">
@@ -2367,6 +2506,8 @@ export function NightSky() {
               {selected ? (
                 <ObjectPanel
                   entry={selected}
+                  isFavorite={favoriteIds?.has(selected.id) ?? false}
+                  onToggleFavorite={() => void toggleFavorite(selected)}
                   data={selectedData}
                   moon={selected.type === "moon" ? (report?.moon ?? null) : null}
                   tz={tz}
@@ -2450,15 +2591,34 @@ export function NightSky() {
                 <p className="mt-1 flex-1 text-xs leading-relaxed text-muted-foreground">
                   {isEnglish ? event.noteEn : event.noteVi}
                 </p>
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="sm"
-                  className="mt-3 self-start"
-                  onClick={() => jumpToEvent(event)}
-                >
-                  {t("eventsView")}
-                </Button>
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    onClick={() => jumpToEvent(event)}
+                  >
+                    {t("eventsView")}
+                  </Button>
+                  <Button
+                    type="button"
+                    variant={
+                      reminderIds?.has(event.id) ? "default" : "outline"
+                    }
+                    size="sm"
+                    aria-pressed={reminderIds?.has(event.id) ?? false}
+                    onClick={() => void toggleReminder(event)}
+                  >
+                    {reminderIds?.has(event.id) ? (
+                      <BellRing className="size-3.5" />
+                    ) : (
+                      <Bell className="size-3.5" />
+                    )}
+                    {reminderIds?.has(event.id)
+                      ? t("reminded")
+                      : t("remind")}
+                  </Button>
+                </div>
               </div>
             ))}
           </div>
