@@ -21,7 +21,9 @@ import {
   Minimize,
   Minus,
   Moon,
+  Newspaper,
   Plus,
+  RefreshCw,
   RotateCcw,
   Share2,
   Sparkles,
@@ -202,6 +204,40 @@ function instantAtWindowMinutes(
     hour: shifted.getUTCHours(),
     minute: shifted.getUTCMinutes(),
   });
+}
+
+/* Bản tin AI buổi tối (S2): một lần soạn cho mỗi (nơi, buổi tối,
+   ngôn ngữ) — bản đã soạn cất ở localStorage của chính thiết bị để
+   cả ngày hôm đó mở lại không gọi AI nữa. Lỗi lưu trữ (chế độ riêng
+   tư, hết quota) thì bỏ qua: bản tin chỉ đơn giản là soạn lại. */
+const BULLETIN_CACHE_KEY = "sciencepedia-night-sky-bulletin-v1";
+
+function readBulletinCache(): Record<string, string> {
+  try {
+    const raw = window.localStorage.getItem(BULLETIN_CACHE_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw) as unknown;
+    if (typeof parsed !== "object" || parsed === null) return {};
+    return parsed as Record<string, string>;
+  } catch {
+    return {};
+  }
+}
+
+function writeBulletinCache(key: string, text: string) {
+  try {
+    const cache = readBulletinCache();
+    cache[key] = text;
+    const entries = Object.entries(cache);
+    if (entries.length > 24) {
+      const trimmed = Object.fromEntries(entries.slice(entries.length - 24));
+      window.localStorage.setItem(BULLETIN_CACHE_KEY, JSON.stringify(trimmed));
+    } else {
+      window.localStorage.setItem(BULLETIN_CACHE_KEY, JSON.stringify(cache));
+    }
+  } catch {
+    // Không cất được thì thôi — lần mở sau sẽ soạn lại.
+  }
 }
 
 export function NightSky() {
@@ -501,6 +537,17 @@ export function NightSky() {
         ? halleyReport(engine, observer.lat, observer.lon, report.sun.sunset)
         : null,
     [engine, observer.lat, observer.lon, report],
+  );
+
+  /* Báo cáo tại hoàng hôn của ngày đang xem — nền sự thật cho bản
+     tin buổi tối (S2): panel "tối nay" ban ngày cũng đang nhìn
+     chính buổi tối này. */
+  const bulletinReport: SkyReport | null = useMemo(
+    () =>
+      engine && report?.sun.sunset
+        ? skyReport(engine, observer.lat, observer.lon, report.sun.sunset)
+        : null,
+    [engine, observer.lat, observer.lon, report?.sun.sunset],
   );
 
   const tonightMode = eveningReport !== null;
@@ -1224,6 +1271,111 @@ export function NightSky() {
       setAiState({ status: "error" });
     }
   }, [aiState.status, isEnglish, locale, observer.label, report, t, time, tz]);
+
+  /* ---------------- Bản tin AI buổi tối (S2) ---------------- */
+
+  type BulletinState =
+    | { status: "loading"; key: string }
+    | { status: "done"; key: string; text: string }
+    | { status: "error"; key: string };
+  const [bulletin, setBulletin] = useState<BulletinState | null>(null);
+  const bulletinFetchRef = useRef<string | null>(null);
+
+  const bulletinSunLine =
+    report?.sun.sunset != null
+      ? report.sun.darkTime
+        ? t("bulletinSun", {
+            sunset: fmtEventTime(tz, report.sun.sunset, locale, report.sun.sunset),
+            dark: fmtEventTime(tz, report.sun.darkTime, locale, report.sun.sunset),
+          })
+        : t("bulletinSunNoDark", {
+            sunset: fmtEventTime(tz, report.sun.sunset, locale, report.sun.sunset),
+          })
+      : null;
+  const bulletinMoonLine = bulletinReport
+    ? `${isEnglish ? bulletinReport.moon.phaseNameEn : bulletinReport.moon.phaseNameVi} · ${t("moonLit", { percent: Math.round(bulletinReport.moon.illumFraction * 100) })}`
+    : null;
+
+  const generateBulletin = useCallback(
+    async (force: boolean) => {
+      if (!bulletinReport || !report?.sun.sunset || !bulletinSunLine) return;
+      const sunset = report.sun.sunset;
+      const wall = utcToWallParts(tz, sunset);
+      const key = `${locationId}|${wall.year}-${wall.month}-${wall.day}|${locale}`;
+      if (!force) {
+        const cached = readBulletinCache()[key];
+        if (cached) {
+          setBulletin((current) =>
+            current?.status === "done" && current.key === key
+              ? current
+              : { status: "done", key, text: cached },
+          );
+          return;
+        }
+      }
+      if (bulletinFetchRef.current === key) return;
+      bulletinFetchRef.current = key;
+      setBulletin({ status: "loading", key });
+      const objects = bulletinReport.planets
+        .filter((planet) => planet.altitudeDeg > 0)
+        .sort((a, b) => b.altitudeDeg - a.altitudeDeg)
+        .slice(0, 6)
+        .map((planet) => {
+          const entry = findCatalogEntry(planet.body.toLowerCase());
+          return {
+            name: entry
+              ? isEnglish
+                ? entry.nameEn
+                : entry.nameVi
+              : planet.body,
+            altDeg: Math.round(planet.altitudeDeg * 10) / 10,
+            compass: isEnglish ? planet.compassEn : planet.compassVi,
+          };
+        });
+      try {
+        const response = await fetch("/api/night-sky/explain", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            locale,
+            placeName: observer.label,
+            wallTimeText: formatDateTimeInTz(tz, sunset, locale),
+            sunState: bulletinSunLine,
+            moonLine: bulletinMoonLine ?? "",
+            objects,
+          }),
+        });
+        if (!response.ok) throw new Error("bulletin failed");
+        const data = (await response.json()) as { text?: string };
+        if (!data.text) throw new Error("bulletin empty");
+        writeBulletinCache(key, data.text);
+        if (bulletinFetchRef.current === key) {
+          setBulletin({ status: "done", key, text: data.text });
+        }
+      } catch {
+        if (bulletinFetchRef.current === key) {
+          setBulletin({ status: "error", key });
+        }
+      } finally {
+        if (bulletinFetchRef.current === key) bulletinFetchRef.current = null;
+      }
+    },
+    [
+      bulletinMoonLine,
+      bulletinReport,
+      bulletinSunLine,
+      isEnglish,
+      locale,
+      locationId,
+      observer.label,
+      report?.sun.sunset,
+      tz,
+    ],
+  );
+
+  useEffect(() => {
+    void generateBulletin(false);
+  }, [generateBulletin]);
 
   const leonids = meteorShowerPeak(tz, new Date(), 11, 17, 19, 0);
   const geminids = meteorShowerPeak(tz, new Date(), 12, 13, 19, 0);
@@ -2080,6 +2232,64 @@ export function NightSky() {
           </button>
 
           <div className="max-lg:min-h-0 max-lg:flex-1 max-lg:overflow-y-auto max-lg:px-3 max-lg:pb-4 lg:contents">
+            {bulletinReport && report?.sun.sunset && (
+              <div className="mb-3 rounded-2xl border bg-card p-4">
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="flex items-center gap-2 text-sm font-semibold">
+                    <Newspaper className="size-4" />
+                    {t("bulletinTitle")}
+                  </h3>
+                  <Badge variant="soft">AI</Badge>
+                </div>
+                {bulletinSunLine && (
+                  <p className="mt-1.5 text-xs text-muted-foreground">
+                    {bulletinSunLine}
+                    {bulletinMoonLine ? ` · ${bulletinMoonLine}` : ""}
+                  </p>
+                )}
+                {(!bulletin || bulletin.status === "loading") && (
+                  <p className="mt-2 animate-pulse text-sm text-muted-foreground">
+                    {t("bulletinLoading")}
+                  </p>
+                )}
+                {bulletin?.status === "done" && (
+                  <>
+                    <p className="mt-2 text-sm leading-relaxed">
+                      {bulletin.text}
+                    </p>
+                    <div className="mt-2 flex items-center justify-between gap-2">
+                      <p className="text-[11px] text-muted-foreground">
+                        {t("aiFactsAt", {
+                          when: formatDateTimeInTz(tz, report.sun.sunset, locale),
+                        })}
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => void generateBulletin(true)}
+                        aria-label={t("bulletinRegenerate")}
+                        title={t("bulletinRegenerate")}
+                        className="rounded-full p-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                      >
+                        <RefreshCw className="size-3.5" />
+                      </button>
+                    </div>
+                  </>
+                )}
+                {bulletin?.status === "error" && (
+                  <p className="mt-2 text-xs text-destructive" role="alert">
+                    {t("bulletinError")}{" "}
+                    <button
+                      type="button"
+                      onClick={() => void generateBulletin(true)}
+                      className="font-medium underline underline-offset-2"
+                    >
+                      {t("bulletinRetry")}
+                    </button>
+                  </p>
+                )}
+              </div>
+            )}
+
             <ObjectSearch onSelect={selectObject} />
 
             <div className="mt-3">

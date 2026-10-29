@@ -754,6 +754,13 @@
     "aiThinking": "AI đang ngắm trời…",
     "aiError": "Chưa gọi được AI lúc này — thử lại sau ít phút nhé.",
     "aiFactsAt": "Giải thích dựa trên dữ kiện của khung cảnh: {when}",
+    "bulletinTitle": "Bản tin bầu trời buổi tối",
+    "bulletinSun": "Hoàng hôn {sunset} · tối hẳn {dark}",
+    "bulletinSunNoDark": "Hoàng hôn {sunset}",
+    "bulletinLoading": "Đang soạn bản tin…",
+    "bulletinError": "Chưa soạn được bản tin lúc này.",
+    "bulletinRetry": "Thử lại",
+    "bulletinRegenerate": "Soạn lại bản tin",
     "cursorRa": "Xích kinh",
     "cursorDec": "Xích vĩ"
   },
