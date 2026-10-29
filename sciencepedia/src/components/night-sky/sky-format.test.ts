@@ -1,7 +1,13 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { fmtDecDm, fmtRaHm, placeCursorBox, zoomFov } from "./sky-format";
+import {
+  daylightOverlay,
+  fmtDecDm,
+  fmtRaHm,
+  placeCursorBox,
+  zoomFov,
+} from "./sky-format";
 
 /**
  * Ô đọc toạ độ tại con trỏ in RA/Dec tới phút — sai một phút là người
@@ -92,4 +98,25 @@ test("zoomFov: kẹp đúng giới hạn cứng [1, 60] của engine", () => {
 test("zoomFov: hệ số hỏng thì giữ nguyên góc nhìn", () => {
   assert.equal(zoomFov(30, 0), 30);
   assert.equal(zoomFov(30, Number.NaN), 30);
+});
+
+test("daylightOverlay: nửa đêm thiên văn không phủ gì", () => {
+  assert.deepEqual(daylightOverlay(-25), { day: 0, twilight: 0 });
+});
+
+test("daylightOverlay: trưa phủ ngày gần kín, hết ấm chạng vạng", () => {
+  const o = daylightOverlay(35);
+  assert.equal(o.day, 0.93);
+  assert.equal(o.twilight, 0);
+});
+
+test("daylightOverlay: hoàng hôn còn ấm và đã sáng đáng kể", () => {
+  const o = daylightOverlay(-4);
+  assert.ok(o.twilight > 0.4 && o.twilight <= 0.42);
+  assert.ok(o.day > 0.55 && o.day < 0.88);
+});
+
+test("daylightOverlay: lớp ngày đơn điệu theo độ cao Mặt Trời", () => {
+  assert.ok(daylightOverlay(0).day > daylightOverlay(-6).day);
+  assert.ok(daylightOverlay(-6).day > daylightOverlay(-12).day);
 });

@@ -99,6 +99,7 @@ import {
   fmtDegrees,
   fmtEventTime,
   fmtRaHm,
+  daylightOverlay,
   placeCursorBox,
 } from "@/components/night-sky/sky-format";
 import { Badge } from "@/components/ui/badge";
@@ -330,6 +331,23 @@ export function NightSky() {
         : null,
     [engine, observer.lat, observer.lon, reportTime],
   );
+
+  /* Ban ngày, danh sách "đang nhìn thấy" nói sai lời hứa: thiên thể ở
+     trên chân trời nhưng chìm trong nắng. Khi giờ đang xem là ban ngày,
+     tính thêm báo cáo tại hoàng hôn của chính ngày đang xem để panel
+     liệt kê "tối nay sẽ thấy"; khung trời giữ nguyên giờ đang xem. */
+  const eveningReport: SkyReport | null = useMemo(
+    () =>
+      engine && report?.sun.state === "day" && report.sun.sunset
+        ? skyReport(engine, observer.lat, observer.lon, report.sun.sunset)
+        : null,
+    [engine, observer.lat, observer.lon, report],
+  );
+  const tonightMode = eveningReport !== null;
+  /* Lớp phủ khí quyển trong khung theo độ cao Mặt Trời của giờ đang xem. */
+  const overlay = report
+    ? daylightOverlay(report.sun.altitudeDeg)
+    : { day: 0, twilight: 0 };
 
   const selectedData: SelectedObjectData | null = useMemo(() => {
     if (!engine || !selected) return null;
@@ -1198,6 +1216,30 @@ export function NightSky() {
               onCursor={handleCursor}
             />
 
+            {/* Lớp phủ khí quyển: engine vẽ sao bất kể ngày đêm (nền
+                trong suốt), nên trang tự làm sáng khung theo độ cao
+                Mặt Trời — sao và nhãn chìm dần như mắt thật bị chói.
+                Thuần thị giác, không đụng dữ kiện; lớp ngày phủ gần
+                kín, lớp ấm chỉ ghé qua dải chạng vạng. */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#16264d] via-[#3a4a7a]/40 to-[#ff8c42] transition-opacity duration-700"
+              style={{ opacity: overlay.twilight }}
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#5f9fd8] via-[#8fc0e8] to-[#d7ecf9] transition-opacity duration-700"
+              style={{ opacity: overlay.day }}
+            />
+            {report?.sun.state === "day" && report.sun.sunset && (
+              <div className="pointer-events-none absolute left-1/2 top-3 z-10 flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-black/45 px-3 py-1 text-xs font-medium text-amber-100 backdrop-blur-sm">
+                <Sunrise className="size-3.5" />
+                {t("daySkyChip", {
+                  time: fmtEventTime(tz, report.sun.sunset, locale, time),
+                })}
+              </div>
+            )}
+
             {!ready && (
               <p className="pointer-events-none absolute inset-0 flex items-center justify-center text-sm text-slate-300">
                 <span className="animate-pulse">{t("loading")}</span>
@@ -1697,12 +1739,24 @@ export function NightSky() {
                 />
               ) : (
                 <VisiblePanel
-                  report={report}
+                  report={eveningReport ?? report}
                   placeLabel={observer.label}
                   tz={tz}
                   viewedTime={time}
                   isNow={isNow}
-                  onSelect={selectObject}
+                  tonightMode={tonightMode}
+                  onSelect={
+                    tonightMode && report?.sun.sunset
+                      ? () => {
+                          // Đang liệt kê tối nay: chạm vào bất kỳ dòng
+                          // nào là nhảy khung trời tới hoàng hôn — tới
+                          // đó danh sách trở lại chế độ thường và chọn
+                          // thiên thể mới có dữ kiện đúng để xoay tới.
+                          setPlaying(false);
+                          setTime(report.sun.sunset as Date);
+                        }
+                      : selectObject
+                  }
                   onStartTour={startTour}
                 />
               )}
