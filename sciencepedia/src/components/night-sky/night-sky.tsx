@@ -109,6 +109,7 @@ import {
   smoothHeading,
   daylightOverlay,
   placeCursorBox,
+  pinchFov,
 } from "@/components/night-sky/sky-format";
 import { Badge } from "@/components/ui/badge";
 
@@ -346,6 +347,7 @@ export function NightSky() {
   const [copied, setCopied] = useState(false);
   const [captureOk, setCaptureOk] = useState(true);
   const frameRef = useRef<HTMLDivElement>(null);
+  const skyAreaRef = useRef<HTMLDivElement>(null);
 
   /* --- Phase 3: dòng thời gian, HUD, sheet, khoảnh khắc, tour, AI --- */
   const [playing, setPlaying] = useState(false);
@@ -360,6 +362,18 @@ export function NightSky() {
   } | null>(null);
   const requestZoom = useCallback((factor: number) => {
     setZoomRequest({ factor, nonce: Date.now() });
+  }, []);
+  /* Pinch cảm ứng lái góc nhìn TUYỆT ĐỐI (không phải hệ số bước)
+     vì cử chỉ cho khoảng cách ngón tay liên tục. viewFovRef là
+     gương của viewFov để handler native đọc góc nhìn tại lúc bắt
+     đầu cử chỉ mà không lệ thuộc vòng render. */
+  const viewFovRef = useRef<number | null>(null);
+  const [fovRequest, setFovRequest] = useState<{
+    fovDeg: number;
+    nonce: number;
+  } | null>(null);
+  const requestFov = useCallback((fovDeg: number) => {
+    setFovRequest({ fovDeg, nonce: Date.now() });
   }, []);
   const [hudDimmed, setHudDimmed] = useState(false);
   const hudTimerRef = useRef<number | null>(null);
@@ -631,6 +645,68 @@ export function NightSky() {
     frame.addEventListener("wheel", onWheel, { passive: false });
     return () => frame.removeEventListener("wheel", onWheel);
   }, [requestZoom]);
+
+  /* Pinch hai ngón tay trên VÙNG TRỜI = thu/phóng. Engine chỉ hiểu
+     kéo một ngón (nó đọc touches[0] để xoay trời) — pinch không hề
+     tồn tại trong engine, trong khi dòng gợi ý của trang đã hứa
+     "chụm hai ngón" từ lâu. Nghe ở pha capture trên vùng trời: đủ
+     hai ngón thì chặn sự kiện, không cho engine nhận (nó sẽ kéo
+     xoay theo ngón đầu tiên), và lái góc nhìn tuyệt đối qua
+     fovRequest. Một ngón vẫn chảy xuống engine để kéo xoay như cũ.
+     Sàn điều khiển nằm ngoài vùng trời nên thao tác trên sàn
+     không bị đụng vào. */
+  useEffect(() => {
+    const area = skyAreaRef.current;
+    if (!area) return;
+    let pinch: { startDist: number; startFov: number } | null = null;
+    let lastSent = Number.NaN;
+    const distance = (touches: TouchList) =>
+      Math.hypot(
+        touches[0].clientX - touches[1].clientX,
+        touches[0].clientY - touches[1].clientY,
+      );
+    const onTouchStart = (event: TouchEvent) => {
+      if (!engineReadyRef.current || event.touches.length !== 2) return;
+      pinch = {
+        startDist: distance(event.touches),
+        startFov: viewFovRef.current ?? 30,
+      };
+      lastSent = pinch.startFov;
+      event.stopPropagation();
+    };
+    const onTouchMove = (event: TouchEvent) => {
+      if (!pinch || event.touches.length !== 2) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const fov = pinchFov(
+        pinch.startFov,
+        pinch.startDist,
+        distance(event.touches),
+      );
+      if (Math.abs(fov - lastSent) >= 0.15) {
+        lastSent = fov;
+        requestFov(fov);
+      }
+    };
+    const onTouchEnd = (event: TouchEvent) => {
+      if (event.touches.length < 2) pinch = null;
+    };
+    area.addEventListener("touchstart", onTouchStart, { capture: true });
+    area.addEventListener("touchmove", onTouchMove, {
+      capture: true,
+      passive: false,
+    });
+    area.addEventListener("touchend", onTouchEnd, { capture: true });
+    area.addEventListener("touchcancel", onTouchEnd, { capture: true });
+    return () => {
+      area.removeEventListener("touchstart", onTouchStart, {
+        capture: true,
+      });
+      area.removeEventListener("touchmove", onTouchMove, { capture: true });
+      area.removeEventListener("touchend", onTouchEnd, { capture: true });
+      area.removeEventListener("touchcancel", onTouchEnd, { capture: true });
+    };
+  }, [requestFov]);
 
   /* Nút chụp chỉ sống khi khung trời đã có canvas thật để chụp. */
   useEffect(() => {
@@ -1319,7 +1395,7 @@ export function NightSky() {
                 điều khiển nằm ở dải riêng ngay dưới nên không che
                 trời ở bất kỳ kích thước nào (trước đây desktop cho
                 sàn nổi đè lên đáy khung — Linh báo 29/10). */}
-            <div className="relative min-h-0 flex-1">
+            <div ref={skyAreaRef} className="relative min-h-0 flex-1">
               <SkyCanvas
                 latitude={observer.lat}
                 longitude={observer.lon}
@@ -1328,8 +1404,12 @@ export function NightSky() {
                 onReady={() => setReady(true)}
                 focusRequest={focusRequest}
                 zoomRequest={zoomRequest}
+                fovRequest={fovRequest}
                 onAzimuth={setViewAzimuth}
-                onFov={setViewFov}
+                onFov={(fov) => {
+                  viewFovRef.current = fov;
+                  setViewFov(fov);
+                }}
                 onCursor={handleCursor}
                 markerTarget={markerTarget}
                 onMarkerPos={setMarkerPos}
