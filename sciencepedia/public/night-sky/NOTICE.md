@@ -119,6 +119,20 @@ thử, trang ví dụ và `excanvas.min.js` (chỉ cho Internet Explorer).
   được chọn, và chế độ la bàn đặt `el_off` về 0 khi bật (khóa chân
   trời như thiết kế S3).
 
+- **2026-10-29 (PATCH-SCIENCEPEDIA-8):** `drawPlanets` — bỏ cổng
+  cấp sao cho hành tinh. Bản gốc chỉ vẽ hành tinh khi
+  `mag < this.magnitude` (giới hạn 5, vốn là giới hạn cho SAO):
+  Sao Hải Vương (cấp ~7,9) không bao giờ được vẽ — không đĩa,
+  không nhãn — và Sao Thiên Vương (cấp ~5,3–5,9) cũng bị ẩn gần
+  như luôn, trong khi catalog/tìm kiếm/panel của trang vẫn tính
+  và giới thiệu chúng; người đọc bấm vào tên hành tinh, khung
+  xoay tới, và không thấy gì (Linh báo với Sao Hải Vương
+  2026-10-29). Bản vá: hành tinh luôn vẽ khi ở trên chân trời
+  (vòng quỹ đạo giữ nguyên cổng cũ); hành tinh mờ hơn mắt thường
+  (mag > 6) được thêm một vòng tròn tìm mảnh bao quanh đĩa trong
+  `drawPlanet` để đọc là "đã đánh dấu cho bạn" thay vì "thấy bằng
+  mắt thường" — panel thông tin vẫn chấm mức nhìn thấy như cũ.
+
 ## astronomy-engine — thư viện tính toán thiên văn (Phase 2)
 
 Cùng thư mục này chứa `astronomy.browser.js`: bản dựng trình duyệt của

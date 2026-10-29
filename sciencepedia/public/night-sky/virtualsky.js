@@ -2738,14 +2738,14 @@ VirtualSky.prototype.drawPlanets = function(){
 		if(!this.negative) colour = this.planets[p][1];
 		if(typeof colour==="string") c.strokeStyle = colour;
 
-		if((this.showplanets || this.showplanetlabels) && this.isVisible(pos.el) && mag < this.magnitude && !this.isPointBad(pos)){
+		if((this.showplanets || this.showplanetlabels) && this.isVisible(pos.el) && !this.isPointBad(pos)){ // PATCH-SCIENCEPEDIA-8: planets are not gated by the stellar magnitude limit (see NOTICE.md)
 			var d = 0;
 			if(mag !== undefined){
 				d = 0.8*Math.max(3-mag/2, 0.5);
 				if(this.hasAtmos()) d *= Math.exp(-((90-pos.el)*this.d2r)*0.6);
 			}
 			if(d < 1.5) d = 1.5;
-			this.drawPlanet(pos.x,pos.y,d,colour,this.planets[p][0]);
+			this.drawPlanet(pos.x,pos.y,d,colour,this.planets[p][0],(typeof mag==="number" && mag > 6)); // PATCH-SCIENCEPEDIA-8: faint = beyond naked-eye, gets a finder ring
 		}
 
 		if(this.showorbits && mag < this.magnitude){
@@ -2800,7 +2800,7 @@ VirtualSky.prototype.drawPlanets = function(){
 	}
 	return this;
 };
-VirtualSky.prototype.drawPlanet = function(x,y,d,colour,label){
+VirtualSky.prototype.drawPlanet = function(x,y,d,colour,label,faint){
 	var c = this.ctx;
 	// PATCH-SCIENCEPEDIA-6 (Sciencepedia): draw recognisable bodies.
 	// Upstream draws every planet, the Sun and the Moon as the same
@@ -2874,6 +2874,19 @@ VirtualSky.prototype.drawPlanet = function(x,y,d,colour,label){
 			c.restore();
 		}
 		if(label === "S") this.drawSaturnRing(x,y,r,colour,true);
+		if(faint){
+			// PATCH-SCIENCEPEDIA-8: a thin finder ring marks bodies
+			// too faint for the naked eye (e.g. Neptune), so the disc
+			// reads as "marked for you" rather than "visible unaided"
+			// — the panel's feasibility line grades it honestly.
+			c.beginPath();
+			c.strokeStyle = colour;
+			c.globalAlpha = 0.55;
+			c.lineWidth = 1;
+			c.arc(x,y,r+3.5,0,Math.PI*2,true);
+			c.stroke();
+			c.globalAlpha = 1;
+		}
 		if(this.showplanetlabels) this.drawLabel(x,y,r,colour,phrase);
 		return this;
 	}
