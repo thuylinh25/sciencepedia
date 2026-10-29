@@ -75,6 +75,16 @@ thử, trang ví dụ và `excanvas.min.js` (chỉ cho Internet Explorer).
   canvas, đè lên nút toàn màn hình của trang. Nay khối đó chỉ chạy
   khi tuỳ chọn `showhelp` bật — Sciencepedia không bật `showhelp`
   (trang đã có dòng hướng dẫn riêng), nên nút không còn xuất hiện.
+- **2026-10-29 (PATCH-SCIENCEPEDIA-5):** `VirtualSky.prototype.fontsize`
+  hạ một bậc cỡ chữ cho khung hẹp: cạnh nhỏ nhất của khung < 500 px
+  dùng 11 px (bản gốc 12 px), < 600 px dùng 13 px (bản gốc 14 px);
+  từ 600 px trở lên giữ nguyên như gốc. Trên điện thoại (~360 px),
+  nhãn 12 px quá to so với khoảng cách giữa các điểm neo chòm sao ở
+  vùng dày như Nhân Mã – Thiên Yết nên đè lên nhau (Linh báo
+  2026-10-29). `fontsize()` là điểm nghẽn duy nhất của mọi chữ
+  engine vẽ (nhãn chòm sao, hành tinh, điểm phương hướng, ghi công)
+  nên sửa ở đây là đồng đều, và vì nó đọc kích thước sống nên tự
+  đúng lại khi xoay máy hay vào toàn màn hình.
 
 ## astronomy-engine — thư viện tính toán thiên văn (Phase 2)
 
