@@ -647,11 +647,27 @@ export function NightSky() {
           : compassFor(azDeg).vi;
     const rise =
       selectedData.kind === "body" ? selectedData.report.rise : null;
+    /* Giờ mọc vừa trôi qua trong vòng 15 phút vẫn đáng có nút nhảy:
+       thiên thể đang nhô lên ngay lúc này (Sao Thủy mọc 04:41 khi
+       giờ đang xem cũng 04:41 — giờ mọc sớm hơn vài chục giây đã bị
+       điều kiện "ở tương lai" lọc mất, Linh bắt gặp 2026-10-29).
+       Đích nhảy khi đó là giờ mọc + 5 phút để thiên thể qua hẳn
+       chân trời: đúng phút mọc, tâm của nó còn khoảng −1° theo quy
+       ước giờ mọc tính bằng rìa trên. */
+    const riseJump =
+      rise && rise.getTime() > time.getTime() - 15 * 60_000
+        ? new Date(
+            rise.getTime() > time.getTime()
+              ? rise.getTime()
+              : rise.getTime() + 5 * 60_000,
+          )
+        : null;
     return {
       name: isEnglish ? selected.nameEn : selected.nameVi,
       deg: Math.abs(Math.round(altDeg)),
       compass,
-      rise: rise && rise.getTime() > time.getTime() ? rise : null,
+      rise,
+      riseJump,
     };
   }, [isEnglish, selected, selectedData, time]);
 
@@ -2057,11 +2073,11 @@ export function NightSky() {
               {belowTarget && (
                 <button
                   type="button"
-                  disabled={!belowTarget.rise}
+                  disabled={!belowTarget.riseJump}
                   onClick={() => {
-                    if (!belowTarget.rise) return;
+                    if (!belowTarget.riseJump) return;
                     setPlaying(false);
-                    setTime(belowTarget.rise);
+                    setTime(belowTarget.riseJump);
                   }}
                   className="absolute bottom-3 left-1/2 z-30 flex max-w-[calc(100%-2rem)] -translate-x-1/2 items-center gap-1.5 rounded-full bg-black/65 px-3 py-1.5 text-xs whitespace-nowrap text-white backdrop-blur-sm transition-colors enabled:hover:bg-black/80"
                 >
@@ -2072,7 +2088,7 @@ export function NightSky() {
                       deg: belowTarget.deg,
                       compass: belowTarget.compass,
                     })}
-                    {belowTarget.rise && (
+                    {belowTarget.riseJump && belowTarget.rise && (
                       <>
                         {" · "}
                         <span className="font-medium underline underline-offset-2">

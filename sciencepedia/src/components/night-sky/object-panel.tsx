@@ -92,7 +92,7 @@ export function ObjectPanel({
       if (
         data.kind === "body" &&
         data.report.rise &&
-        data.report.rise > viewedTime
+        data.report.rise.getTime() > viewedTime.getTime() - 15 * 60_000
       ) {
         return t("belowHorizonRises", {
           time: fmtEventTime(tz, data.report.rise, locale, viewedTime),
