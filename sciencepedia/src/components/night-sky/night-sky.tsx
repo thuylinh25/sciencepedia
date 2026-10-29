@@ -15,6 +15,7 @@ import {
   Check,
   Compass,
   History,
+  ImageUp,
   LocateFixed,
   Maximize,
   Minimize,
@@ -726,42 +727,132 @@ export function NightSky() {
     }
   }, []);
 
-  const capture = useCallback(() => {
+  /* Tấm thiệp bầu trời: canvas của engine + dải thương hiệu phía
+     dưới (tên công cụ · nơi · giờ · GMT). Dựng một chỗ ở đây để cả
+     đường tải xuống (capture) lẫn đường chia sẻ ảnh (shareCard)
+     dùng chung đúng một hình. */
+  const buildCaptureCanvas = useCallback((): HTMLCanvasElement | null => {
     const canvas = frameRef.current?.querySelector("canvas");
-    if (!canvas) {
+    if (!canvas) return null;
+    const strip = Math.max(76, Math.round(canvas.width * 0.075));
+    const out = document.createElement("canvas");
+    out.width = canvas.width;
+    out.height = canvas.height + strip;
+    const ctx = out.getContext("2d");
+    if (!ctx) return null;
+    ctx.drawImage(canvas, 0, 0);
+    ctx.fillStyle = "#05070f";
+    ctx.fillRect(0, canvas.height, canvas.width, strip);
+    ctx.fillStyle = "#f1f5f9";
+    ctx.font = `600 ${Math.round(strip * 0.3)}px system-ui, sans-serif`;
+    ctx.fillText(
+      `${t("title")} — Sciencepedia`,
+      24,
+      canvas.height + strip * 0.42,
+    );
+    ctx.fillStyle = "#cbd5e1";
+    ctx.font = `400 ${Math.round(strip * 0.23)}px system-ui, sans-serif`;
+    ctx.fillText(
+      `${observer.label} · ${formatDateTimeInTz(tz, time, locale)} · ${gmtOffsetLabel(tz, time)}`,
+      24,
+      canvas.height + strip * 0.78,
+    );
+    return out;
+  }, [locale, observer.label, t, time, tz]);
+
+  const captureName = useCallback(() => {
+    const wall = utcToWallParts(tz, time);
+    const pad = (num: number) => String(num).padStart(2, "0");
+    return `mo-phong-bau-troi-${locationId}-${wall.year}${pad(wall.month)}${pad(wall.day)}-${pad(wall.hour)}${pad(wall.minute)}.png`;
+  }, [locationId, time, tz]);
+
+  const capture = useCallback(() => {
+    const out = buildCaptureCanvas();
+    if (!out) {
       setCaptureOk(false);
       return;
     }
     try {
-      const strip = Math.max(76, Math.round(canvas.width * 0.075));
-      const out = document.createElement("canvas");
-      out.width = canvas.width;
-      out.height = canvas.height + strip;
-      const ctx = out.getContext("2d");
-      if (!ctx) return;
-      ctx.drawImage(canvas, 0, 0);
-      ctx.fillStyle = "#05070f";
-      ctx.fillRect(0, canvas.height, canvas.width, strip);
-      ctx.fillStyle = "#f1f5f9";
-      ctx.font = `600 ${Math.round(strip * 0.3)}px system-ui, sans-serif`;
-      ctx.fillText(`${t("title")} — Sciencepedia`, 24, canvas.height + strip * 0.42);
-      ctx.fillStyle = "#cbd5e1";
-      ctx.font = `400 ${Math.round(strip * 0.23)}px system-ui, sans-serif`;
-      ctx.fillText(
-        `${observer.label} · ${formatDateTimeInTz(tz, time, locale)} · ${gmtOffsetLabel(tz, time)}`,
-        24,
-        canvas.height + strip * 0.78,
-      );
-      const wall = utcToWallParts(tz, time);
-      const pad = (n: number) => String(n).padStart(2, "0");
       const link = document.createElement("a");
-      link.download = `mo-phong-bau-troi-${locationId}-${wall.year}${pad(wall.month)}${pad(wall.day)}-${pad(wall.hour)}${pad(wall.minute)}.png`;
+      link.download = captureName();
       link.href = out.toDataURL("image/png");
       link.click();
     } catch {
       setCaptureOk(false);
     }
-  }, [locationId, locale, observer.label, t, time, tz]);
+  }, [buildCaptureCanvas, captureName]);
+
+  const [cardCopied, setCardCopied] = useState(false);
+
+  /* Chia sẻ TẤM THIỆP (ảnh PNG có dải thương hiệu) — vòng lặp chia
+     sẻ quanh "Bầu trời ngày bạn sinh": máy chia sẻ được tệp (Web
+     Share mức 2, phần lớn điện thoại) thì gửi thẳng ảnh kèm lời
+     nhắn + liên kết về đúng khung cảnh; không thì lùi xuống chia
+     sẻ liên kết, rồi chép liên kết như nút Chia sẻ. Người đọc tự
+     huỷ hộp chia sẻ của hệ điều hành (AbortError) thì im lặng. */
+  const shareCard = useCallback(async () => {
+    const out = buildCaptureCanvas();
+    if (!out) {
+      setCaptureOk(false);
+      return;
+    }
+    const url = window.location.href;
+    const text =
+      activeMoment?.kind === "birthday"
+        ? t("shareBirthdayText", {
+            date: activeMoment.dateText,
+            place: observer.label,
+          })
+        : t("shareText", {
+            place: observer.label,
+            time: formatDateTimeInTz(tz, time, locale),
+          });
+    try {
+      if (typeof navigator.share === "function") {
+        const blob = await new Promise<Blob | null>((resolve) =>
+          out.toBlob(resolve, "image/png"),
+        );
+        if (blob) {
+          const file = new File([blob], captureName(), {
+            type: "image/png",
+          });
+          if (
+            typeof navigator.canShare === "function" &&
+            navigator.canShare({ files: [file] })
+          ) {
+            await navigator.share({
+              files: [file],
+              title: t("title"),
+              text: `${text}\n${url}`,
+            });
+            return;
+          }
+        }
+        await navigator.share({ title: t("title"), text, url });
+        return;
+      }
+    } catch (error) {
+      if ((error as Error)?.name === "AbortError") return;
+      // Chia sẻ native lỗi — lùi xuống chép liên kết bên dưới.
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      setCardCopied(true);
+      window.setTimeout(() => setCardCopied(false), 2000);
+    } catch {
+      // Không chép được: URL trên thanh địa chỉ đã mang đúng khung
+      // cảnh nhờ replaceState — người đọc vẫn tự chép được.
+    }
+  }, [
+    activeMoment,
+    buildCaptureCanvas,
+    captureName,
+    locale,
+    observer.label,
+    t,
+    time,
+    tz,
+  ]);
 
   const applyPreset = useCallback(
     (preset: "now" | "sunset" | "midnight" | "sunrise") => {
@@ -1279,6 +1370,21 @@ export function NightSky() {
         >
           <Camera className="size-4" />
           {t("capture")}
+        </Button>
+
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => void shareCard()}
+          disabled={!captureOk}
+          className={cn(capturePulse && "animate-pulse ring-2 ring-primary")}
+        >
+          {cardCopied ? (
+            <Check className="size-4" />
+          ) : (
+            <ImageUp className="size-4" />
+          )}
+          {cardCopied ? t("copied") : t("shareCard")}
         </Button>
       </div>
 
