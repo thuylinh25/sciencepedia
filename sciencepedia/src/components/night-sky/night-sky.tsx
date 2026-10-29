@@ -1128,6 +1128,7 @@ export function NightSky() {
                 : "h-[62vh] rounded-3xl sm:h-[68vh] lg:h-[78vh]",
             )}
           >
+
             <SkyCanvas
               latitude={observer.lat}
               longitude={observer.lon}
@@ -1141,22 +1142,25 @@ export function NightSky() {
               onCursor={handleCursor}
             />
 
-            {/* Lớp phủ khí quyển: engine vẽ sao bất kể ngày đêm (nền
-                trong suốt), nên trang tự làm sáng khung theo độ cao
-                Mặt Trời — sao và nhãn chìm dần như mắt thật bị chói.
-                Thuần thị giác, không đụng dữ kiện; lớp ngày phủ gần
-                kín, lớp ấm chỉ ghé qua dải chạng vạng. */}
+            {/* Lớp màu khí quyển nằm TRÊN canvas: canvas của engine
+                tự tô nền trời đêm đặc (gradient của chính nó) nên đặt
+                lớp màu ở dưới là không thấy gì (vòng 2 của PR #182).
+                Nhưng phủ trên ở độ mờ 0,93 thì nhãn chỉ còn ~7% tương
+                phản — nên cách sửa đúng là GIỚI HẠN độ mờ của lớp ngày
+                (ramp trong sky-format.ts, đỉnh ~0,58) cộng bảng màu
+                đậm, giữ đủ tương phản cho nhãn mà trời vẫn rõ là ngày.
+                Thứ tự: ngày dưới, ấm trên nó. */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#5f9fd8] via-[#8fc0e8] to-[#d7ecf9] transition-opacity duration-700"
+              className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-b from-[#2e6bc2] via-[#5b97d9] to-[#9cc3ea] transition-opacity duration-700"
               style={{ opacity: overlay.day }}
             />
-            {/* Lớp ấm nằm TRÊN lớp ngày: ở hoàng hôn lớp ngày đã rút
+            {/* Lớp ấm nằm trên lớp ngày: ở hoàng hôn lớp ngày đã rút
                 nhanh theo độ cao Mặt Trời, sắc cam phủ lên trên tạo
                 đúng cảm giác chạng vạng thay vì xanh trưa kéo dài. */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-0 z-[1] transition-opacity duration-700"
+              className="pointer-events-none absolute inset-0 z-[2] transition-opacity duration-700"
               style={{
                 opacity: overlay.twilight,
                 // Dải ấm phải nhô lên từ ~55% chiều cao khung: nếu chỉ
@@ -1166,6 +1170,7 @@ export function NightSky() {
                   "linear-gradient(180deg, #101d3d 0%, #2c3d66 45%, #b4552d 78%, #ff8c42 100%)",
               }}
             />
+
             {report?.sun.state === "day" && report.sun.sunset && (
               <div className="pointer-events-none absolute left-1/2 top-3 z-10 flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-black/45 px-3 py-1 text-xs font-medium text-amber-100 backdrop-blur-sm">
                 <Sunrise className="size-3.5" />
@@ -1176,7 +1181,7 @@ export function NightSky() {
             )}
 
             {!ready && (
-              <p className="pointer-events-none absolute inset-0 flex items-center justify-center text-sm text-slate-300">
+              <p className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center text-sm text-slate-300">
                 <span className="animate-pulse">{t("loading")}</span>
               </p>
             )}
@@ -1239,7 +1244,10 @@ export function NightSky() {
               <div
                 aria-hidden
                 className={cn(
-                  "pointer-events-none absolute top-3 left-3 z-10 rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-xs font-medium text-white tabular-nums backdrop-blur-sm transition-opacity duration-500",
+                  cn(
+                    "pointer-events-none absolute top-3 left-3 z-10 rounded-full border border-white/15 px-3 py-1.5 text-xs font-medium text-white tabular-nums backdrop-blur-sm transition-opacity duration-500",
+                    report?.sun.state === "day" ? "bg-black/60" : "bg-black/35",
+                  ),
                   hudDimmed && "opacity-40",
                 )}
               >
@@ -1259,7 +1267,10 @@ export function NightSky() {
             <div
               ref={cursorBoxRef}
               aria-hidden
-              className="pointer-events-none absolute top-0 left-0 z-30 max-w-[calc(100%-1.5rem)] rounded-2xl border border-white/15 bg-black/35 px-3 py-1.5 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300"
+              className={cn(
+                "pointer-events-none absolute top-0 left-0 z-30 max-w-[calc(100%-1.5rem)] rounded-2xl border border-white/15 px-3 py-1.5 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300",
+                report?.sun.state === "day" ? "bg-black/65" : "bg-black/35",
+              )}
             >
               <div ref={cursorMainRef} className="text-xs font-medium tabular-nums" />
               <div ref={cursorSubRef} className="text-[10px] text-white/65 tabular-nums" />

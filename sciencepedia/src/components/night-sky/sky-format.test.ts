@@ -108,14 +108,14 @@ test("daylightOverlay: nửa đêm thiên văn không phủ gì", () => {
 
 test("daylightOverlay: trưa phủ ngày gần kín, hết ấm chạng vạng", () => {
   const o = daylightOverlay(35);
-  assert.equal(o.day, 0.93);
+  assert.equal(o.day, 0.58);
   assert.equal(o.twilight, 0);
 });
 
 test("daylightOverlay: hoàng hôn còn ấm và đã sáng đáng kể", () => {
   const o = daylightOverlay(-4);
   assert.ok(o.twilight > 0.5 && o.twilight <= 0.55);
-  assert.ok(o.day > 0.3 && o.day < 0.45);
+  assert.ok(o.day > 0.2 && o.day < 0.35);
 });
 
 test("daylightOverlay: lớp ngày đơn điệu theo độ cao Mặt Trời", () => {

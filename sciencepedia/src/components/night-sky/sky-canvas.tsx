@@ -422,7 +422,7 @@ export function SkyCanvas({
      căng đầy khung; lớp trong `h-full` là container của engine, chiều cao
      luôn bám khung dù engine có ghi đè position. */
   return (
-    <div className="absolute inset-0 max-lg:relative max-lg:min-h-0 max-lg:flex-1">
+    <div className="absolute inset-0 z-[1] max-lg:relative max-lg:min-h-0 max-lg:flex-1">
       <div ref={mountRef} id={ENGINE_ID} className="h-full w-full" />
     </div>
   );
