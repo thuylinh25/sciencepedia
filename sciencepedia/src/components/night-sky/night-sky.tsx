@@ -299,12 +299,15 @@ export function NightSky() {
     if (typeof doe?.requestPermission === "function") {
       try {
         if ((await doe.requestPermission()) !== "granted") {
+          // Trả lời "denied" rõ ràng = người đọc vừa từ chối ở hộp
+          // thoại thật của iOS — báo đúng lý do đó.
           setSensorNote(t("sensorDenied"));
           return;
         }
       } catch {
-        setSensorNote(t("sensorDenied"));
-        return;
+        // API xin quyền ném lỗi (môi trường không có cảm biến thật,
+        // trình duyệt desktop): không kết luận là bị từ chối — cứ
+        // nghe sự kiện, watchdog không-thấy-dữ-liệu sẽ kết luận.
       }
     }
     sensorStateRef.current = {
