@@ -59,7 +59,7 @@ export default async function NightSkyPage({
   const t = await getTranslations("nightSky");
 
   return (
-    <div className="container-page py-8">
+    <div className="container-page py-6">
       <ToolViewTracker toolId="night-sky" />
 
       <JsonLd
@@ -76,7 +76,7 @@ export default async function NightSkyPage({
         }}
       />
 
-      <header className="mb-5">
+      <header className="mb-4">
         <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
           {t("title")}
         </h1>

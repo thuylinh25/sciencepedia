@@ -38,7 +38,8 @@ export function AssistantLauncher() {
    * lên nút "Đặt lại" (đo ở 390px). Không đánh dấu "đã thấy" ở đây, để trang
    * kế tiếp vẫn bung nhãn một lần như thường.
    */
-  const noLabel = pathname.startsWith("/human-atlas");
+  const noLabel =
+    pathname.startsWith("/human-atlas") || pathname.startsWith("/night-sky");
 
   useEffect(() => {
     if (noLabel) return;
