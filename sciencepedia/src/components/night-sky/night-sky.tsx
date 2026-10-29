@@ -1314,222 +1314,490 @@ export function NightSky() {
             )}
           >
 
-            <SkyCanvas
-              latitude={observer.lat}
-              longitude={observer.lon}
-              time={time}
-              lang={locale}
-              onReady={() => setReady(true)}
-              focusRequest={focusRequest}
-              zoomRequest={zoomRequest}
-              onAzimuth={setViewAzimuth}
-              onFov={setViewFov}
-              onCursor={handleCursor}
-              markerTarget={markerTarget}
-              onMarkerPos={setMarkerPos}
-            />
+            {/* Vùng trời: mọi lớp phủ (dấu sao chổi, ô toạ độ, thẻ
+                tour…) neo theo vùng này — đúng hộp của canvas. Sàn
+                điều khiển nằm ở dải riêng ngay dưới nên không che
+                trời ở bất kỳ kích thước nào (trước đây desktop cho
+                sàn nổi đè lên đáy khung — Linh báo 29/10). */}
+            <div className="relative min-h-0 flex-1">
+              <SkyCanvas
+                latitude={observer.lat}
+                longitude={observer.lon}
+                time={time}
+                lang={locale}
+                onReady={() => setReady(true)}
+                focusRequest={focusRequest}
+                zoomRequest={zoomRequest}
+                onAzimuth={setViewAzimuth}
+                onFov={setViewFov}
+                onCursor={handleCursor}
+                markerTarget={markerTarget}
+                onMarkerPos={setMarkerPos}
+              />
 
-            {/* Lớp màu khí quyển nằm TRÊN canvas: canvas của engine
-                tự tô nền trời đêm đặc (gradient của chính nó) nên đặt
-                lớp màu ở dưới là không thấy gì (vòng 2 của PR #182).
-                Nhưng phủ trên ở độ mờ 0,93 thì nhãn chỉ còn ~7% tương
-                phản — nên cách sửa đúng là GIỚI HẠN độ mờ của lớp ngày
-                (ramp trong sky-format.ts, đỉnh ~0,58) cộng bảng màu
-                đậm, giữ đủ tương phản cho nhãn mà trời vẫn rõ là ngày.
-                Thứ tự: ngày dưới, ấm trên nó. */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-b from-[#2e6bc2] via-[#5b97d9] to-[#9cc3ea] transition-opacity duration-700"
-              style={{ opacity: overlay.day }}
-            />
-            {/* Lớp ấm nằm trên lớp ngày: ở hoàng hôn lớp ngày đã rút
-                nhanh theo độ cao Mặt Trời, sắc cam phủ lên trên tạo
-                đúng cảm giác chạng vạng thay vì xanh trưa kéo dài. */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 z-[2] transition-opacity duration-700"
-              style={{
-                opacity: overlay.twilight,
-                // Dải ấm phải nhô lên từ ~55% chiều cao khung: nếu chỉ
-                // đậm ở sát đáy, sàn điều khiển che mất đúng phần cam
-                // nhất và hoàng hôn trông như xanh xám (QA PR #179).
-                background:
-                  "linear-gradient(180deg, #101d3d 0%, #2c3d66 45%, #b4552d 78%, #ff8c42 100%)",
-              }}
-            />
+              {/* Lớp màu khí quyển nằm TRÊN canvas: canvas của engine
+                  tự tô nền trời đêm đặc (gradient của chính nó) nên đặt
+                  lớp màu ở dưới là không thấy gì (vòng 2 của PR #182).
+                  Nhưng phủ trên ở độ mờ 0,93 thì nhãn chỉ còn ~7% tương
+                  phản — nên cách sửa đúng là GIỚI HẠN độ mờ của lớp ngày
+                  (ramp trong sky-format.ts, đỉnh ~0,58) cộng bảng màu
+                  đậm, giữ đủ tương phản cho nhãn mà trời vẫn rõ là ngày.
+                  Thứ tự: ngày dưới, ấm trên nó. */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-b from-[#2e6bc2] via-[#5b97d9] to-[#9cc3ea] transition-opacity duration-700"
+                style={{ opacity: overlay.day }}
+              />
+              {/* Lớp ấm nằm trên lớp ngày: ở hoàng hôn lớp ngày đã rút
+                  nhanh theo độ cao Mặt Trời, sắc cam phủ lên trên tạo
+                  đúng cảm giác chạng vạng thay vì xanh trưa kéo dài. */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 z-[2] transition-opacity duration-700"
+                style={{
+                  opacity: overlay.twilight,
+                  // Dải ấm phải nhô lên từ ~55% chiều cao khung: nếu chỉ
+                  // đậm ở sát đáy, sàn điều khiển che mất đúng phần cam
+                  // nhất và hoàng hôn trông như xanh xám (QA PR #179).
+                  background:
+                    "linear-gradient(180deg, #101d3d 0%, #2c3d66 45%, #b4552d 78%, #ff8c42 100%)",
+                }}
+              />
 
-            {/* Chip ban ngày nằm giữa–trên cùng: ở khung hẹp nó tràn
-                sang trái đè lên ô hướng (Linh báo trên điện thoại
-                29/10) — màn nhỏ cho nó xuống dưới hàng trên cùng. */}
-            {report?.sun.state === "day" && report.sun.sunset && (
-              <div className="pointer-events-none absolute top-14 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-black/45 px-3 py-1 text-xs font-medium whitespace-nowrap text-amber-100 backdrop-blur-sm lg:top-3">
-                <Sunrise className="size-3.5" />
-                {t("daySkyChip", {
-                  time: fmtEventTime(tz, report.sun.sunset, locale, time),
-                })}
-              </div>
-            )}
-
-            {!ready && (
-              <p className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center text-sm text-slate-300">
-                <span className="animate-pulse">{t("loading")}</span>
-              </p>
-            )}
-
-            <Button
-              type="button"
-              size="icon"
-              variant="secondary"
-              onClick={toggleFullscreen}
-              aria-label={isFullscreen ? t("exitFullscreen") : t("fullscreen")}
-              className="absolute top-3 right-3 z-10 bg-white/10 text-white backdrop-blur hover:bg-white/20"
-            >
-              {isFullscreen ? (
-                <Minimize className="size-4" />
-              ) : (
-                <Maximize className="size-4" />
+              {/* Chip ban ngày nằm giữa–trên cùng: ở khung hẹp nó tràn
+                  sang trái đè lên ô hướng (Linh báo trên điện thoại
+                  29/10) — màn nhỏ cho nó xuống dưới hàng trên cùng. */}
+              {report?.sun.state === "day" && report.sun.sunset && (
+                <div className="pointer-events-none absolute top-14 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-black/45 px-3 py-1 text-xs font-medium whitespace-nowrap text-amber-100 backdrop-blur-sm lg:top-3">
+                  <Sunrise className="size-3.5" />
+                  {t("daySkyChip", {
+                    time: fmtEventTime(tz, report.sun.sunset, locale, time),
+                  })}
+                </div>
               )}
-            </Button>
 
-            {sensorSupported && (
+              {!ready && (
+                <p className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center text-sm text-slate-300">
+                  <span className="animate-pulse">{t("loading")}</span>
+                </p>
+              )}
+
               <Button
                 type="button"
                 size="icon"
                 variant="secondary"
-                onClick={toggleSensor}
-                aria-label={sensorOn ? t("sensorDisable") : t("sensorEnable")}
-                aria-pressed={sensorOn}
+                onClick={toggleFullscreen}
+                aria-label={isFullscreen ? t("exitFullscreen") : t("fullscreen")}
+                className="absolute top-3 right-3 z-10 bg-white/10 text-white backdrop-blur hover:bg-white/20"
+              >
+                {isFullscreen ? (
+                  <Minimize className="size-4" />
+                ) : (
+                  <Maximize className="size-4" />
+                )}
+              </Button>
+
+              {sensorSupported && (
+                <Button
+                  type="button"
+                  size="icon"
+                  variant="secondary"
+                  onClick={toggleSensor}
+                  aria-label={sensorOn ? t("sensorDisable") : t("sensorEnable")}
+                  aria-pressed={sensorOn}
+                  className={cn(
+                    "absolute top-16 right-3 z-10 backdrop-blur",
+                    sensorOn
+                      ? "bg-amber-400 text-slate-900 hover:bg-amber-300"
+                      : "bg-white/10 text-white hover:bg-white/20",
+                  )}
+                >
+                  <Compass className="size-4" />
+                </Button>
+              )}
+
+              {/* Cụm thu phóng: cạnh phải, giữa chiều cao khung — góc
+                  trên-phải đã có nút toàn màn hình, dưới-phải có đồng hồ.
+                  Số giữa là góc nhìn hiện tại (độ), engine kẹp [1, 60]
+                  nên hai đầu mút thì nút tương ứng mờ đi. */}
+              {ready && viewFov !== null && (
+                <div
+                  role="group"
+                  aria-label={t("zoomLabel")}
+                  className="absolute top-1/2 right-3 z-20 flex -translate-y-1/2 flex-col items-center gap-1 rounded-full border border-white/15 bg-black/45 px-1.5 py-2 text-white shadow-lg backdrop-blur-md"
+                >
+                  <button
+                    type="button"
+                    onClick={() => requestZoom(1.4)}
+                    disabled={Math.round(viewFov) <= 1}
+                    aria-label={t("zoomIn")}
+                    title={t("zoomIn")}
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-white/70 disabled:pointer-events-none disabled:opacity-35"
+                  >
+                    <Plus className="size-4" />
+                  </button>
+                  <span className="text-[11px] leading-none font-semibold tabular-nums">
+                    {Math.round(viewFov)}°
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => requestZoom(1 / 1.4)}
+                    disabled={Math.round(viewFov) >= 60}
+                    aria-label={t("zoomOut")}
+                    title={t("zoomOut")}
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-white/70 disabled:pointer-events-none disabled:opacity-35"
+                  >
+                    <Minus className="size-4" />
+                  </button>
+                </div>
+              )}
+
+              {/* HUD: la bàn (góc phương vị tâm khung, đọc từ chính thể
+                  hiện của engine) + đồng hồ giờ tường. Cả hai tự mờ sau 3
+                  giây không di chuột trên khung (wakeHud). */}
+              {viewAzimuth !== null && (
+                <div
+                  aria-hidden
+                  className={cn(
+                    cn(
+                      "pointer-events-none absolute top-3 left-3 z-10 rounded-full border border-white/15 px-3 py-1.5 text-xs font-medium text-white tabular-nums backdrop-blur-sm transition-opacity duration-500",
+                      report?.sun.state === "day" ? "bg-black/60" : "bg-black/35",
+                    ),
+                    hudDimmed && "opacity-40",
+                  )}
+                >
+                  {isEnglish
+                    ? compassFor(viewAzimuth).en
+                    : compassFor(viewAzimuth).vi}{" "}
+                  · {Math.round(viewAzimuth)}°
+                </div>
+              )}
+              {/* Ô đọc toạ độ BÁM THEO con trỏ (trước đây cố định dưới
+                  HUD la bàn; Linh đổi theo mẫu TheSkyLive 2026-10-29: toạ
+                  độ hiện ngay chỗ trỏ). Nội dung và vị trí đều do
+                  handleCursor ghi thẳng vào DOM (placeCursorBox lo phần
+                  lật mép); ở đây chỉ dựng khung rỗng đang ẩn. Nằm trong
+                  phần tử toàn màn hình nên vào toàn màn hình vẫn đi theo,
+                  như sàn. */}
+              <div
+                ref={cursorBoxRef}
+                aria-hidden
                 className={cn(
-                  "absolute top-16 right-3 z-10 backdrop-blur",
-                  sensorOn
-                    ? "bg-amber-400 text-slate-900 hover:bg-amber-300"
-                    : "bg-white/10 text-white hover:bg-white/20",
+                  "pointer-events-none absolute top-0 left-0 z-30 max-w-[calc(100%-1.5rem)] rounded-2xl border border-white/15 px-3 py-1.5 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300",
+                  report?.sun.state === "day" ? "bg-black/65" : "bg-black/35",
                 )}
               >
-                <Compass className="size-4" />
-              </Button>
-            )}
-
-            {/* Cụm thu phóng: cạnh phải, giữa chiều cao khung — góc
-                trên-phải đã có nút toàn màn hình, dưới-phải có đồng hồ.
-                Số giữa là góc nhìn hiện tại (độ), engine kẹp [1, 60]
-                nên hai đầu mút thì nút tương ứng mờ đi. */}
-            {ready && viewFov !== null && (
-              <div
-                role="group"
-                aria-label={t("zoomLabel")}
-                className="absolute top-1/2 right-3 z-20 flex -translate-y-1/2 flex-col items-center gap-1 rounded-full border border-white/15 bg-black/45 px-1.5 py-2 text-white shadow-lg backdrop-blur-md"
-              >
-                <button
-                  type="button"
-                  onClick={() => requestZoom(1.4)}
-                  disabled={Math.round(viewFov) <= 1}
-                  aria-label={t("zoomIn")}
-                  title={t("zoomIn")}
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-white/70 disabled:pointer-events-none disabled:opacity-35"
-                >
-                  <Plus className="size-4" />
-                </button>
-                <span className="text-[11px] leading-none font-semibold tabular-nums">
-                  {Math.round(viewFov)}°
-                </span>
-                <button
-                  type="button"
-                  onClick={() => requestZoom(1 / 1.4)}
-                  disabled={Math.round(viewFov) >= 60}
-                  aria-label={t("zoomOut")}
-                  title={t("zoomOut")}
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-white/70 disabled:pointer-events-none disabled:opacity-35"
-                >
-                  <Minus className="size-4" />
-                </button>
+                <div ref={cursorMainRef} className="text-xs font-medium tabular-nums" />
+                <div ref={cursorSubRef} className="text-[10px] text-white/65 tabular-nums" />
               </div>
-            )}
-
-            {/* HUD: la bàn (góc phương vị tâm khung, đọc từ chính thể
-                hiện của engine) + đồng hồ giờ tường. Cả hai tự mờ sau 3
-                giây không di chuột trên khung (wakeHud). */}
-            {viewAzimuth !== null && (
+              {/* Dấu sao chổi Halley: SkyCanvas chiếu bằng phép chiếu
+                  của chính engine theo nhịp thăm dò, đuôi hướng ra xa
+                  Mặt Trời. Chỉ hiện khi sao chổi ở trên chân trời và
+                  điểm chiếu nằm trong khung. */}
+              {markerPos &&
+                comet &&
+                comet.altitudeDeg > 0 &&
+                markerPos.xPct >= -2 &&
+                markerPos.xPct <= 102 &&
+                markerPos.yPct >= -2 &&
+                markerPos.yPct <= 102 && (
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute z-30"
+                    style={{
+                      left: `${markerPos.xPct}%`,
+                      top: `${markerPos.yPct}%`,
+                    }}
+                  >
+                    <div className="relative -translate-x-1/2 -translate-y-1/2">
+                      <div
+                        className="absolute top-1/2 left-1/2 h-[3px] w-10 origin-left rounded-full bg-gradient-to-r from-cyan-100/80 to-transparent"
+                        style={{
+                          transform: `translateY(-50%) rotate(${markerPos.tailAngleDeg}deg)`,
+                        }}
+                      />
+                      <div className="absolute top-1/2 left-1/2 size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-50 shadow-[0_0_10px_3px_rgba(165,243,252,0.75)]" />
+                      <span className="absolute top-2 left-2 rounded-full bg-black/60 px-2 py-0.5 text-[11px] font-medium whitespace-nowrap text-white">
+                        {isEnglish ? "Comet Halley" : "Sao chổi Halley"}
+                      </span>
+                    </div>
+                  </div>
+                )}
               <div
                 aria-hidden
                 className={cn(
-                  cn(
-                    "pointer-events-none absolute top-3 left-3 z-10 rounded-full border border-white/15 px-3 py-1.5 text-xs font-medium text-white tabular-nums backdrop-blur-sm transition-opacity duration-500",
-                    report?.sun.state === "day" ? "bg-black/60" : "bg-black/35",
-                  ),
+                  "pointer-events-none absolute right-3 bottom-3 z-10 text-right transition-opacity duration-500",
                   hudDimmed && "opacity-40",
                 )}
               >
-                {isEnglish
-                  ? compassFor(viewAzimuth).en
-                  : compassFor(viewAzimuth).vi}{" "}
-                · {Math.round(viewAzimuth)}°
+                <div className="font-display text-2xl font-bold text-white tabular-nums [text-shadow:0_1px_10px_rgba(0,0,0,0.85)]">
+                  {formatTimeInTz(tz, time, locale)}
+                </div>
+                <div className="text-xs text-white/85 [text-shadow:0_1px_6px_rgba(0,0,0,0.85)]">
+                  {fmtDayMonth(tz, time, locale)}
+                </div>
               </div>
-            )}
-            {/* Ô đọc toạ độ BÁM THEO con trỏ (trước đây cố định dưới
-                HUD la bàn; Linh đổi theo mẫu TheSkyLive 2026-10-29: toạ
-                độ hiện ngay chỗ trỏ). Nội dung và vị trí đều do
-                handleCursor ghi thẳng vào DOM (placeCursorBox lo phần
-                lật mép); ở đây chỉ dựng khung rỗng đang ẩn. Nằm trong
-                phần tử toàn màn hình nên vào toàn màn hình vẫn đi theo,
-                như sàn. */}
-            <div
-              ref={cursorBoxRef}
-              aria-hidden
-              className={cn(
-                "pointer-events-none absolute top-0 left-0 z-30 max-w-[calc(100%-1.5rem)] rounded-2xl border border-white/15 px-3 py-1.5 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300",
-                report?.sun.state === "day" ? "bg-black/65" : "bg-black/35",
-              )}
-            >
-              <div ref={cursorMainRef} className="text-xs font-medium tabular-nums" />
-              <div ref={cursorSubRef} className="text-[10px] text-white/65 tabular-nums" />
-            </div>
-            {/* Dấu sao chổi Halley: SkyCanvas chiếu bằng phép chiếu
-                của chính engine theo nhịp thăm dò, đuôi hướng ra xa
-                Mặt Trời. Chỉ hiện khi sao chổi ở trên chân trời và
-                điểm chiếu nằm trong khung. */}
-            {markerPos &&
-              comet &&
-              comet.altitudeDeg > 0 &&
-              markerPos.xPct >= -2 &&
-              markerPos.xPct <= 102 &&
-              markerPos.yPct >= -2 &&
-              markerPos.yPct <= 102 && (
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute z-30"
-                  style={{
-                    left: `${markerPos.xPct}%`,
-                    top: `${markerPos.yPct}%`,
-                  }}
-                >
-                  <div className="relative -translate-x-1/2 -translate-y-1/2">
-                    <div
-                      className="absolute top-1/2 left-1/2 h-[3px] w-10 origin-left rounded-full bg-gradient-to-r from-cyan-100/80 to-transparent"
-                      style={{
-                        transform: `translateY(-50%) rotate(${markerPos.tailAngleDeg}deg)`,
-                      }}
-                    />
-                    <div className="absolute top-1/2 left-1/2 size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-50 shadow-[0_0_10px_3px_rgba(165,243,252,0.75)]" />
-                    <span className="absolute top-2 left-2 rounded-full bg-black/60 px-2 py-0.5 text-[11px] font-medium whitespace-nowrap text-white">
-                      {isEnglish ? "Comet Halley" : "Sao chổi Halley"}
-                    </span>
+
+              {/* Thẻ đề nghị nhảy hoàng hôn khi trời chưa đủ tối cho tour. */}
+              {tourNotice && !tour && (
+                <div className="absolute bottom-3 left-3 z-20 w-[calc(100%-1.5rem)] max-w-xs rounded-2xl border border-white/15 bg-black/60 p-4 text-white backdrop-blur-md">
+                  <div className="flex items-start justify-between gap-3">
+                    <p className="text-sm leading-relaxed">
+                      {t("tourNeedsSunset")}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setTourNotice(false)}
+                      aria-label={t("tourEnd")}
+                      className="rounded-full p-1 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+                    >
+                      <X className="size-4" aria-hidden />
+                    </button>
                   </div>
+                  <Button
+                    type="button"
+                    size="sm"
+                    className="mt-3"
+                    onClick={() => {
+                      setTourPendingSunset(true);
+                      applyPreset("sunset");
+                    }}
+                  >
+                    <Sunset className="size-4" />
+                    {t("tourJumpSunset")}
+                  </Button>
                 </div>
               )}
-            <div
-              aria-hidden
-              className={cn(
-                "pointer-events-none absolute right-3 bottom-3 z-10 text-right transition-opacity duration-500 lg:bottom-24",
-                hudDimmed && "opacity-40",
+
+              {/* Thẻ tour: lời dẫn từng điểm dừng + trắc nghiệm cuối tour. */}
+              {tour && tourStop && (
+                <div className="absolute bottom-3 left-3 z-20 max-h-[52%] w-[calc(100%-1.5rem)] max-w-xs overflow-y-auto rounded-2xl border border-white/15 bg-black/60 p-4 text-white backdrop-blur-md">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-[11px] font-medium tracking-wide text-white/70 uppercase">
+                      {t("tourStopOf", {
+                        k: tour.index + 1,
+                        n: tour.stops.length,
+                      })}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={endTour}
+                      aria-label={t("tourEnd")}
+                      className="rounded-full p-1 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+                    >
+                      <X className="size-4" aria-hidden />
+                    </button>
+                  </div>
+
+                  {tourStop.kind === "intro" && (
+                    <div className="mt-2">
+                      <h3 className="font-display text-base font-bold">
+                        {t("tourIntroTitle")}
+                      </h3>
+                      <p className="mt-1 text-sm leading-relaxed text-white/85">
+                        {t("tourIntroBody")}
+                      </p>
+                    </div>
+                  )}
+
+                  {tourStop.kind === "object" && (
+                    <div className="mt-2">
+                      <h3 className="font-display text-base font-bold">
+                        {(() => {
+                          const entry = findCatalogEntry(
+                            tourStop.body.toLowerCase(),
+                          );
+                          return entry
+                            ? isEnglish
+                              ? entry.nameEn
+                              : entry.nameVi
+                            : tourStop.body;
+                        })()}
+                      </h3>
+                      <p className="mt-1 text-sm leading-relaxed text-white/85">
+                        {(() => {
+                          const entry = findCatalogEntry(
+                            tourStop.body.toLowerCase(),
+                          );
+                          return entry
+                            ? isEnglish
+                              ? entry.factEn
+                              : entry.factVi
+                            : "";
+                        })()}
+                      </p>
+                      {tourLiveBody && (
+                        <p className="mt-2 text-xs font-medium text-white/70">
+                          {t("tourLiveLine", {
+                            alt: fmtDegrees(tourLiveBody.altitudeDeg),
+                            dir: isEnglish
+                              ? tourLiveBody.compassEn
+                              : tourLiveBody.compassVi,
+                          })}
+                        </p>
+                      )}
+                    </div>
+                  )}
+
+                  {tourStop.kind === "quiz" && (
+                    <div className="mt-2 space-y-4">
+                      <h3 className="font-display text-base font-bold">
+                        {t("quizTitle")}
+                      </h3>
+                      {tour.quiz.map((question, questionIndex) => {
+                        const chosen = tour.answers[questionIndex];
+                        const answered = chosen !== undefined;
+                        const correctKey = String(question.correct);
+                        const allDone =
+                          Object.keys(tour.answers).length >= tour.quiz.length;
+                        return (
+                          <fieldset key={questionIndex}>
+                            <legend className="text-sm font-medium">
+                              {quizPrompt(question)}
+                            </legend>
+                            <div className="mt-2 flex flex-wrap gap-1.5">
+                              {question.options.map((option) => {
+                                const key = String(option);
+                                const isCorrect = key === correctKey;
+                                const isChosen = key === chosen;
+                                return (
+                                  <button
+                                    key={key}
+                                    type="button"
+                                    disabled={answered}
+                                    onClick={() => answerQuiz(questionIndex, key)}
+                                    className={cn(
+                                      "rounded-full border px-3 py-1.5 text-xs font-medium transition-colors",
+                                      !answered &&
+                                        "border-white/25 bg-white/5 hover:bg-white/15",
+                                      answered &&
+                                        isCorrect &&
+                                        "border-emerald-300/70 bg-emerald-400/25 text-emerald-100",
+                                      answered &&
+                                        isChosen &&
+                                        !isCorrect &&
+                                        "border-red-300/70 bg-red-400/25 text-red-100",
+                                      answered &&
+                                        !isChosen &&
+                                        !isCorrect &&
+                                        "border-white/15 bg-white/5 text-white/50",
+                                    )}
+                                  >
+                                    {quizOptionLabel(question, option)}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                            {answered && (
+                              <p
+                                className={cn(
+                                  "mt-1.5 text-xs font-medium",
+                                  chosen === correctKey
+                                    ? "text-emerald-300"
+                                    : "text-red-300",
+                                )}
+                              >
+                                {chosen === correctKey
+                                  ? t("quizCorrect")
+                                  : t("quizWrong", {
+                                      answer: quizOptionLabel(
+                                        question,
+                                        question.correct,
+                                      ),
+                                    })}
+                              </p>
+                            )}
+                            {questionIndex === tour.quiz.length - 1 &&
+                              allDone && (
+                                <div className="pt-1">
+                                  <p className="text-sm font-semibold">
+                                    {t("quizScore", {
+                                      score: tour.quiz.filter(
+                                        (q, i) =>
+                                          tour.answers[i] === String(q.correct),
+                                      ).length,
+                                      total: tour.quiz.length,
+                                    })}
+                                  </p>
+                                  <div className="mt-2 flex gap-2">
+                                    <Button
+                                      type="button"
+                                      size="sm"
+                                      variant="secondary"
+                                      onClick={retryQuiz}
+                                    >
+                                      {t("quizRetry")}
+                                    </Button>
+                                    <Button
+                                      type="button"
+                                      size="sm"
+                                      onClick={endTour}
+                                    >
+                                      {t("quizDone")}
+                                    </Button>
+                                  </div>
+                                </div>
+                              )}
+                          </fieldset>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  {tourStop.kind === "quiz" && (
+                    <div className="mt-3">
+                      <Button
+                        type="button"
+                        size="sm"
+                        variant="secondary"
+                        onClick={() =>
+                          setTour((current) =>
+                            current
+                              ? { ...current, index: current.index - 1 }
+                              : current,
+                          )
+                        }
+                      >
+                        {t("tourPrev")}
+                      </Button>
+                    </div>
+                  )}
+
+                  {tourStop.kind !== "quiz" && (
+                    <div className="mt-3 flex items-center justify-between gap-2">
+                      <Button
+                        type="button"
+                        size="sm"
+                        variant="secondary"
+                        disabled={tour.index === 0}
+                        onClick={() =>
+                          setTour((current) =>
+                            current
+                              ? { ...current, index: current.index - 1 }
+                              : current,
+                          )
+                        }
+                      >
+                        {t("tourPrev")}
+                      </Button>
+                      <Button
+                        type="button"
+                        size="sm"
+                        disabled={tour.index >= tour.stops.length - 1}
+                        onClick={() =>
+                          setTour((current) =>
+                            current
+                              ? { ...current, index: current.index + 1 }
+                              : current,
+                          )
+                        }
+                      >
+                        {t("tourNext")}
+                      </Button>
+                    </div>
+                  )}
+                </div>
               )}
-            >
-              <div className="font-display text-2xl font-bold text-white tabular-nums [text-shadow:0_1px_10px_rgba(0,0,0,0.85)]">
-                {formatTimeInTz(tz, time, locale)}
-              </div>
-              <div className="text-xs text-white/85 [text-shadow:0_1px_6px_rgba(0,0,0,0.85)]">
-                {fmtDayMonth(tz, time, locale)}
-              </div>
             </div>
 
             <SkyDeck
@@ -1545,267 +1813,6 @@ export function NightSky() {
               isFullscreen={isFullscreen}
               onExitFullscreen={toggleFullscreen}
             />
-
-            {/* Thẻ đề nghị nhảy hoàng hôn khi trời chưa đủ tối cho tour. */}
-            {tourNotice && !tour && (
-              <div className="absolute bottom-3 lg:bottom-24 left-3 z-20 w-[calc(100%-1.5rem)] max-w-xs rounded-2xl border border-white/15 bg-black/60 p-4 text-white backdrop-blur-md">
-                <div className="flex items-start justify-between gap-3">
-                  <p className="text-sm leading-relaxed">
-                    {t("tourNeedsSunset")}
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => setTourNotice(false)}
-                    aria-label={t("tourEnd")}
-                    className="rounded-full p-1 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
-                  >
-                    <X className="size-4" aria-hidden />
-                  </button>
-                </div>
-                <Button
-                  type="button"
-                  size="sm"
-                  className="mt-3"
-                  onClick={() => {
-                    setTourPendingSunset(true);
-                    applyPreset("sunset");
-                  }}
-                >
-                  <Sunset className="size-4" />
-                  {t("tourJumpSunset")}
-                </Button>
-              </div>
-            )}
-
-            {/* Thẻ tour: lời dẫn từng điểm dừng + trắc nghiệm cuối tour. */}
-            {tour && tourStop && (
-              <div className="absolute bottom-3 lg:bottom-24 left-3 z-20 max-h-[52%] w-[calc(100%-1.5rem)] max-w-xs overflow-y-auto rounded-2xl border border-white/15 bg-black/60 p-4 text-white backdrop-blur-md">
-                <div className="flex items-center justify-between gap-3">
-                  <span className="text-[11px] font-medium tracking-wide text-white/70 uppercase">
-                    {t("tourStopOf", {
-                      k: tour.index + 1,
-                      n: tour.stops.length,
-                    })}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={endTour}
-                    aria-label={t("tourEnd")}
-                    className="rounded-full p-1 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
-                  >
-                    <X className="size-4" aria-hidden />
-                  </button>
-                </div>
-
-                {tourStop.kind === "intro" && (
-                  <div className="mt-2">
-                    <h3 className="font-display text-base font-bold">
-                      {t("tourIntroTitle")}
-                    </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-white/85">
-                      {t("tourIntroBody")}
-                    </p>
-                  </div>
-                )}
-
-                {tourStop.kind === "object" && (
-                  <div className="mt-2">
-                    <h3 className="font-display text-base font-bold">
-                      {(() => {
-                        const entry = findCatalogEntry(
-                          tourStop.body.toLowerCase(),
-                        );
-                        return entry
-                          ? isEnglish
-                            ? entry.nameEn
-                            : entry.nameVi
-                          : tourStop.body;
-                      })()}
-                    </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-white/85">
-                      {(() => {
-                        const entry = findCatalogEntry(
-                          tourStop.body.toLowerCase(),
-                        );
-                        return entry
-                          ? isEnglish
-                            ? entry.factEn
-                            : entry.factVi
-                          : "";
-                      })()}
-                    </p>
-                    {tourLiveBody && (
-                      <p className="mt-2 text-xs font-medium text-white/70">
-                        {t("tourLiveLine", {
-                          alt: fmtDegrees(tourLiveBody.altitudeDeg),
-                          dir: isEnglish
-                            ? tourLiveBody.compassEn
-                            : tourLiveBody.compassVi,
-                        })}
-                      </p>
-                    )}
-                  </div>
-                )}
-
-                {tourStop.kind === "quiz" && (
-                  <div className="mt-2 space-y-4">
-                    <h3 className="font-display text-base font-bold">
-                      {t("quizTitle")}
-                    </h3>
-                    {tour.quiz.map((question, questionIndex) => {
-                      const chosen = tour.answers[questionIndex];
-                      const answered = chosen !== undefined;
-                      const correctKey = String(question.correct);
-                      const allDone =
-                        Object.keys(tour.answers).length >= tour.quiz.length;
-                      return (
-                        <fieldset key={questionIndex}>
-                          <legend className="text-sm font-medium">
-                            {quizPrompt(question)}
-                          </legend>
-                          <div className="mt-2 flex flex-wrap gap-1.5">
-                            {question.options.map((option) => {
-                              const key = String(option);
-                              const isCorrect = key === correctKey;
-                              const isChosen = key === chosen;
-                              return (
-                                <button
-                                  key={key}
-                                  type="button"
-                                  disabled={answered}
-                                  onClick={() => answerQuiz(questionIndex, key)}
-                                  className={cn(
-                                    "rounded-full border px-3 py-1.5 text-xs font-medium transition-colors",
-                                    !answered &&
-                                      "border-white/25 bg-white/5 hover:bg-white/15",
-                                    answered &&
-                                      isCorrect &&
-                                      "border-emerald-300/70 bg-emerald-400/25 text-emerald-100",
-                                    answered &&
-                                      isChosen &&
-                                      !isCorrect &&
-                                      "border-red-300/70 bg-red-400/25 text-red-100",
-                                    answered &&
-                                      !isChosen &&
-                                      !isCorrect &&
-                                      "border-white/15 bg-white/5 text-white/50",
-                                  )}
-                                >
-                                  {quizOptionLabel(question, option)}
-                                </button>
-                              );
-                            })}
-                          </div>
-                          {answered && (
-                            <p
-                              className={cn(
-                                "mt-1.5 text-xs font-medium",
-                                chosen === correctKey
-                                  ? "text-emerald-300"
-                                  : "text-red-300",
-                              )}
-                            >
-                              {chosen === correctKey
-                                ? t("quizCorrect")
-                                : t("quizWrong", {
-                                    answer: quizOptionLabel(
-                                      question,
-                                      question.correct,
-                                    ),
-                                  })}
-                            </p>
-                          )}
-                          {questionIndex === tour.quiz.length - 1 &&
-                            allDone && (
-                              <div className="pt-1">
-                                <p className="text-sm font-semibold">
-                                  {t("quizScore", {
-                                    score: tour.quiz.filter(
-                                      (q, i) =>
-                                        tour.answers[i] === String(q.correct),
-                                    ).length,
-                                    total: tour.quiz.length,
-                                  })}
-                                </p>
-                                <div className="mt-2 flex gap-2">
-                                  <Button
-                                    type="button"
-                                    size="sm"
-                                    variant="secondary"
-                                    onClick={retryQuiz}
-                                  >
-                                    {t("quizRetry")}
-                                  </Button>
-                                  <Button
-                                    type="button"
-                                    size="sm"
-                                    onClick={endTour}
-                                  >
-                                    {t("quizDone")}
-                                  </Button>
-                                </div>
-                              </div>
-                            )}
-                        </fieldset>
-                      );
-                    })}
-                  </div>
-                )}
-
-                {tourStop.kind === "quiz" && (
-                  <div className="mt-3">
-                    <Button
-                      type="button"
-                      size="sm"
-                      variant="secondary"
-                      onClick={() =>
-                        setTour((current) =>
-                          current
-                            ? { ...current, index: current.index - 1 }
-                            : current,
-                        )
-                      }
-                    >
-                      {t("tourPrev")}
-                    </Button>
-                  </div>
-                )}
-
-                {tourStop.kind !== "quiz" && (
-                  <div className="mt-3 flex items-center justify-between gap-2">
-                    <Button
-                      type="button"
-                      size="sm"
-                      variant="secondary"
-                      disabled={tour.index === 0}
-                      onClick={() =>
-                        setTour((current) =>
-                          current
-                            ? { ...current, index: current.index - 1 }
-                            : current,
-                        )
-                      }
-                    >
-                      {t("tourPrev")}
-                    </Button>
-                    <Button
-                      type="button"
-                      size="sm"
-                      disabled={tour.index >= tour.stops.length - 1}
-                      onClick={() =>
-                        setTour((current) =>
-                          current
-                            ? { ...current, index: current.index + 1 }
-                            : current,
-                        )
-                      }
-                    >
-                      {t("tourNext")}
-                    </Button>
-                  </div>
-                )}
-              </div>
-            )}
           </div>
 
           <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
