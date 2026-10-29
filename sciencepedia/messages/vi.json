@@ -697,6 +697,8 @@
     "statBrightest": "Sao sáng nhất",
     "belowHorizon": "Đang ở dưới đường chân trời tại thời điểm đang xem.",
     "belowHorizonRises": "Đang ở dưới đường chân trời — mọc lúc {time}.",
+    "belowHorizonChip": "{name} đang ở dưới chân trời {deg}° · hướng {compass}",
+    "belowHorizonJump": "Xem lúc mọc {time}",
     "feasibilitySun": "Đừng bao giờ nhìn thẳng vào Mặt Trời: chỉ quan sát gián tiếp hoặc qua kính lọc Mặt Trời chuyên dụng.",
     "feasibilityNakedEye": "Nhìn rõ bằng mắt thường.",
     "feasibilityMercury": "Thấy được bằng mắt thường, nhưng chỉ khi ở rất thấp gần chân trời — ngay sau hoàng hôn hoặc ngay trước bình minh.",

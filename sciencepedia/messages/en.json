@@ -697,6 +697,8 @@
     "statBrightest": "Brightest star",
     "belowHorizon": "Below the horizon at the selected time.",
     "belowHorizonRises": "Below the horizon — rises at {time}.",
+    "belowHorizonChip": "{name} is {deg}° below the horizon · toward the {compass}",
+    "belowHorizonJump": "See it rise at {time}",
     "feasibilitySun": "Never look directly at the Sun: observe only indirectly or through a proper solar filter.",
     "feasibilityNakedEye": "Clearly visible to the naked eye.",
     "feasibilityMercury": "Visible to the naked eye, but only very low near the horizon — just after sunset or just before sunrise.",

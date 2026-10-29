@@ -14,6 +14,7 @@ import { toast } from "sonner";
 
 import { useRouter } from "@/i18n/navigation";
 import {
+  ArrowDown,
   Cake,
   Bell,
   BellRing,
@@ -618,6 +619,42 @@ export function NightSky() {
     }
     return null;
   }, [engine, selected, observer.lat, observer.lon, reportTime]);
+
+  /* Thiên thể đang chọn mà ở DƯỚI chân trời: khung trời không xoay
+     tới (xoay cũng không thấy gì — xem selectObject) nên trước đây
+     người đọc chọn xong chỉ thấy... không có gì xảy ra, lời giải
+     thích nằm trong panel và dễ bị khuất. Chip ở đáy khung nói rõ
+     ngay tại chỗ nhìn: nó ở dưới chân trời bao nhiêu độ, về hướng
+     nào, và bấm vào được để nhảy tới lúc nó mọc (nếu có). */
+  const belowTarget = useMemo(() => {
+    if (!selected || !selectedData) return null;
+    const altDeg =
+      selectedData.kind === "body"
+        ? selectedData.report.altitudeDeg
+        : selectedData.altitudeDeg;
+    if (altDeg > 0) return null;
+    const azDeg =
+      selectedData.kind === "body"
+        ? selectedData.report.azimuthDeg
+        : selectedData.azimuthDeg;
+    const compass =
+      selectedData.kind === "body"
+        ? isEnglish
+          ? selectedData.report.compassEn
+          : selectedData.report.compassVi
+        : isEnglish
+          ? compassFor(azDeg).en
+          : compassFor(azDeg).vi;
+    const rise =
+      selectedData.kind === "body" ? selectedData.report.rise : null;
+    return {
+      name: isEnglish ? selected.nameEn : selected.nameVi,
+      deg: Math.abs(Math.round(altDeg)),
+      compass,
+      rise: rise && rise.getTime() > time.getTime() ? rise : null,
+    };
+  }, [isEnglish, selected, selectedData, time]);
+
 
   const selectObject = useCallback(
     (entry: CatalogEntry) => {
@@ -2017,6 +2054,42 @@ export function NightSky() {
                     </div>
                   </div>
                 )}
+              {belowTarget && (
+                <button
+                  type="button"
+                  disabled={!belowTarget.rise}
+                  onClick={() => {
+                    if (!belowTarget.rise) return;
+                    setPlaying(false);
+                    setTime(belowTarget.rise);
+                  }}
+                  className="absolute bottom-3 left-1/2 z-30 flex max-w-[calc(100%-2rem)] -translate-x-1/2 items-center gap-1.5 rounded-full bg-black/65 px-3 py-1.5 text-xs whitespace-nowrap text-white backdrop-blur-sm transition-colors enabled:hover:bg-black/80"
+                >
+                  <ArrowDown className="size-3.5 shrink-0" aria-hidden />
+                  <span className="truncate">
+                    {t("belowHorizonChip", {
+                      name: belowTarget.name,
+                      deg: belowTarget.deg,
+                      compass: belowTarget.compass,
+                    })}
+                    {belowTarget.rise && (
+                      <>
+                        {" · "}
+                        <span className="font-medium underline underline-offset-2">
+                          {t("belowHorizonJump", {
+                            time: fmtEventTime(
+                              tz,
+                              belowTarget.rise,
+                              locale,
+                              time,
+                            ),
+                          })}
+                        </span>
+                      </>
+                    )}
+                  </span>
+                </button>
+              )}
               <div
                 aria-hidden
                 className={cn(
