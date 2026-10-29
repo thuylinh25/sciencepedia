@@ -145,11 +145,11 @@ export function daylightOverlay(altDeg: number): {
     day: ramp(
       [
         [-18, 0],
-        [-12, 0.15],
-        [-6, 0.35],
-        [-2, 0.55],
-        [0, 0.72],
-        [2, 0.88],
+        [-12, 0.12],
+        [-6, 0.3],
+        [-2, 0.45],
+        [0, 0.6],
+        [2, 0.85],
         [6, 0.93],
       ],
       altDeg,
@@ -157,9 +157,9 @@ export function daylightOverlay(altDeg: number): {
     twilight: ramp(
       [
         [-16, 0],
-        [-10, 0.28],
-        [-4, 0.42],
-        [0, 0.3],
+        [-10, 0.3],
+        [-4, 0.55],
+        [0, 0.38],
         [3, 0],
       ],
       altDeg,

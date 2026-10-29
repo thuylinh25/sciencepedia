@@ -1231,8 +1231,15 @@ export function NightSky() {
                 đúng cảm giác chạng vạng thay vì xanh trưa kéo dài. */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#16264d] via-[#3a4a7a]/40 to-[#ff8c42] transition-opacity duration-700"
-              style={{ opacity: overlay.twilight }}
+              className="pointer-events-none absolute inset-0 z-[1] transition-opacity duration-700"
+              style={{
+                opacity: overlay.twilight,
+                // Dải ấm phải nhô lên từ ~55% chiều cao khung: nếu chỉ
+                // đậm ở sát đáy, sàn điều khiển che mất đúng phần cam
+                // nhất và hoàng hôn trông như xanh xám (QA PR #179).
+                background:
+                  "linear-gradient(180deg, #101d3d 0%, #2c3d66 45%, #b4552d 78%, #ff8c42 100%)",
+              }}
             />
             {report?.sun.state === "day" && report.sun.sunset && (
               <div className="pointer-events-none absolute left-1/2 top-3 z-10 flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-black/45 px-3 py-1 text-xs font-medium text-amber-100 backdrop-blur-sm">
