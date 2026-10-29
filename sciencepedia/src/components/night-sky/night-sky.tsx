@@ -1210,7 +1210,7 @@ export function NightSky() {
             <div
               ref={cursorBoxRef}
               aria-hidden
-              className="pointer-events-none absolute top-0 left-0 z-10 max-w-[calc(100%-1.5rem)] truncate rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-xs font-medium text-white tabular-nums opacity-0 backdrop-blur-sm transition-opacity duration-300"
+              className="pointer-events-none absolute top-0 left-0 z-30 max-w-[calc(100%-1.5rem)] truncate rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-xs font-medium text-white tabular-nums opacity-0 backdrop-blur-sm transition-opacity duration-300"
             />
             <div
               aria-hidden
