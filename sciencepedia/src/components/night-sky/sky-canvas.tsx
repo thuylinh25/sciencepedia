@@ -534,16 +534,36 @@ export function SkyCanvas({
     if (focusRequest) {
       const engine = engineRef.current;
       engine?.setAzimuth(focusRequest.azimuthDeg);
-      // Thiên thể đích nằm ngoài dải dọc đang thấy thì nâng/hạ khung
-      // theo (PATCH-SCIENCEPEDIA-7): độ cao giữa khung hiệu dụng là
-      // el_off + cMid, cMid suy từ hệ số phép chiếu stereo.
+      // Đưa thiên thể đích vào ĐÚNG giữa khung theo chiều dọc
+      // (PATCH-SCIENCEPEDIA-7): phép chiếu neo el_off ở mép dưới
+      // khung nên độ cao tại tâm là el_off + cMid, và muốn đích ở
+      // tâm thì el_off = alt − cMid. Nhưng el_off bị kẹp ở −15 mà
+      // cMid rất lớn ở góc nhìn rộng (61,5° tại fov 30; 99,9° tại
+      // fov 60) nên phép đặt đó chạm kẹp với hầu hết thiên thể ở
+      // cao vừa và thấp. Trước đây khi đó ta bỏ qua không nâng
+      // khung ("dải giữa" rộng ±55% cMid) — đích chỉ gần giữa, và
+      // phóng to sau đó khuếch đại độ lệch còn lại cho tới khi đẩy
+      // đích ra khỏi khung (QA production 2026-10-29: chọn Sao Thổ
+      // rồi phóng to, nó trượt khỏi mép dưới ở fov 9). Nay: nếu
+      // phép đặt chạm kẹp, thu hẹp góc nhìn tới mức RỘNG NHẤT còn
+      // đặt giữa chính xác được (fov ≤ 50,4·tan((alt+15)/2), sàn
+      // 12° để vật sát chân trời vẫn giữ ngữ cảnh) rồi mới đặt
+      // el_off. Zoom sau đó giữ nguyên tâm nhờ bù trong setFOV.
       if (engine && focusRequest.altitudeDeg !== undefined) {
-        const f = (0.42 * 30) / Math.max(1, engine.getFov());
-        const cMid = (2 * Math.atan(0.25 / f) * 180) / Math.PI;
-        const centerEl = engine.getElevation() + cMid;
-        if (Math.abs(focusRequest.altitudeDeg - centerEl) > cMid * 0.55) {
-          engine.setElevation(focusRequest.altitudeDeg - cMid);
+        const alt = focusRequest.altitudeDeg;
+        const cMidAt = (fv: number) =>
+          (2 * Math.atan(0.25 / ((0.42 * 30) / Math.max(1, fv))) * 180) /
+          Math.PI;
+        let fov = engine.getFov();
+        if (alt - cMidAt(fov) < -15) {
+          const needed = 50.4 * Math.tan(((alt + 15) * Math.PI) / 360);
+          const target = Math.max(12, Math.min(fov, needed));
+          if (target < fov) {
+            engine.setFov(target);
+            fov = target;
+          }
         }
+        engine.setElevation(alt - cMidAt(fov));
       }
     }
   }, [focusRequest]);
