@@ -1128,33 +1128,6 @@ export function NightSky() {
                 : "h-[62vh] rounded-3xl sm:h-[68vh] lg:h-[78vh]",
             )}
           >
-            {/* Lớp màu khí quyển nằm DƯỚI canvas: engine vẽ trên nền
-                trong suốt nên màu trời phải là nền phía sau, không phải
-                lớp phủ phía trước — phủ trước ở độ mờ 0,93 thì nhãn và
-                sao chỉ còn ~7% tương phản, đổi bảng màu đậm cỡ nào cũng
-                không cứu được (bản sửa tương phản đầu của PR #182 vấp
-                đúng chỗ này). Thứ tự: ngày dưới, ấm trên nó, canvas
-                (z-[1]) vẽ sao/nhãn nguyên vẹn lên trên cùng. */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-[#2e6bc2] via-[#5b97d9] to-[#9cc3ea] transition-opacity duration-700"
-              style={{ opacity: overlay.day }}
-            />
-            {/* Lớp ấm nằm trên lớp ngày nhưng vẫn dưới canvas: ở
-                hoàng hôn lớp ngày rút nhanh theo độ cao Mặt Trời, sắc
-                cam thành nền trời chạng vạng cho sao hiện dần. */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-700"
-              style={{
-                opacity: overlay.twilight,
-                // Dải ấm phải nhô lên từ ~55% chiều cao khung: nếu chỉ
-                // đậm ở sát đáy, sàn điều khiển che mất đúng phần cam
-                // nhất và hoàng hôn trông như xanh xám (QA PR #179).
-                background:
-                  "linear-gradient(180deg, #101d3d 0%, #2c3d66 45%, #b4552d 78%, #ff8c42 100%)",
-              }}
-            />
 
             <SkyCanvas
               latitude={observer.lat}
@@ -1167,6 +1140,35 @@ export function NightSky() {
               onAzimuth={setViewAzimuth}
               onFov={setViewFov}
               onCursor={handleCursor}
+            />
+
+            {/* Lớp màu khí quyển nằm TRÊN canvas: canvas của engine
+                tự tô nền trời đêm đặc (gradient của chính nó) nên đặt
+                lớp màu ở dưới là không thấy gì (vòng 2 của PR #182).
+                Nhưng phủ trên ở độ mờ 0,93 thì nhãn chỉ còn ~7% tương
+                phản — nên cách sửa đúng là GIỚI HẠN độ mờ của lớp ngày
+                (ramp trong sky-format.ts, đỉnh ~0,58) cộng bảng màu
+                đậm, giữ đủ tương phản cho nhãn mà trời vẫn rõ là ngày.
+                Thứ tự: ngày dưới, ấm trên nó. */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-b from-[#2e6bc2] via-[#5b97d9] to-[#9cc3ea] transition-opacity duration-700"
+              style={{ opacity: overlay.day }}
+            />
+            {/* Lớp ấm nằm trên lớp ngày: ở hoàng hôn lớp ngày đã rút
+                nhanh theo độ cao Mặt Trời, sắc cam phủ lên trên tạo
+                đúng cảm giác chạng vạng thay vì xanh trưa kéo dài. */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 z-[2] transition-opacity duration-700"
+              style={{
+                opacity: overlay.twilight,
+                // Dải ấm phải nhô lên từ ~55% chiều cao khung: nếu chỉ
+                // đậm ở sát đáy, sàn điều khiển che mất đúng phần cam
+                // nhất và hoàng hôn trông như xanh xám (QA PR #179).
+                background:
+                  "linear-gradient(180deg, #101d3d 0%, #2c3d66 45%, #b4552d 78%, #ff8c42 100%)",
+              }}
             />
 
             {report?.sun.state === "day" && report.sun.sunset && (
