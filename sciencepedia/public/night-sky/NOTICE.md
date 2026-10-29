@@ -86,6 +86,23 @@ thử, trang ví dụ và `excanvas.min.js` (chỉ cho Internet Explorer).
   nên sửa ở đây là đồng đều, và vì nó đọc kích thước sống nên tự
   đúng lại khi xoay máy hay vào toàn màn hình.
 
+- **2026-10-29 (PATCH-SCIENCEPEDIA-6):** `VirtualSky.prototype.drawPlanet`
+  vẽ lại các thiên thể có bề mặt: bản gốc vẽ Mặt Trời, Mặt Trăng và
+  mọi hành tinh cùng một kiểu chấm tròn đặc vài pixel — Mặt Trời
+  trông như một ngôi sao, Sao Thổ không có vành (Linh báo kèm ảnh
+  tham chiếu TheSkyLive 2026-10-29). Bản vá: Mặt Trời là đĩa sáng
+  có quầng; Mặt Trăng có pha thật (hình học từ kinh độ hoàng đạo
+  của Mặt Trời/Mặt Trăng của chính engine + vị trí Mặt Trời chiếu
+  lên màn hình, qua helper mới `drawMoonPhase`); Sao Thổ có vành
+  elip nghiêng cố định vẽ hai nửa trước/sau đĩa (helper
+  `drawSaturnRing` — góc nghiêng là quy ước trình bày, vành chỉ là
+  ký hiệu nhận diện, không phải dữ kiện đo); Sao Mộc có hai dải
+  ngang; Sao Kim có quầng mờ; mọi hành tinh có bán kính tối thiểu
+  lớn dần theo mức phóng to. Kích thước đĩa là phóng đại trình bày
+  (đĩa thật chỉ vài giây cung) nhưng vị trí, màu và pha Mặt Trăng
+  lấy từ dữ kiện của engine. Chế độ âm bản (in ấn) và chế độ chỉ
+  hiện nhãn giữ nguyên cách vẽ gốc.
+
 ## astronomy-engine — thư viện tính toán thiên văn (Phase 2)
 
 Cùng thư mục này chứa `astronomy.browser.js`: bản dựng trình duyệt của

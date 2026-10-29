@@ -2798,14 +2798,141 @@ VirtualSky.prototype.drawPlanets = function(){
 };
 VirtualSky.prototype.drawPlanet = function(x,y,d,colour,label){
 	var c = this.ctx;
+	// PATCH-SCIENCEPEDIA-6 (Sciencepedia): draw recognisable bodies.
+	// Upstream draws every planet, the Sun and the Moon as the same
+	// plain filled circle a few pixels wide, so at a glance the Sun
+	// is just another dot and Saturn has no rings. Here the Sun gets
+	// a glow and a real disc, the Moon is shaded with its true phase
+	// (geometry from this.sun/this.moon ecliptic longitudes and the
+	// Sun's own screen position), Saturn gets its rings, Jupiter its
+	// bands, Venus a soft halo, and every planet gets a minimum size
+	// that grows as the reader zooms in. Sizes are stylised (true
+	// discs are arcseconds across) but positions, colours and the
+	// Moon's phase come from the engine's own data. Negative
+	// (print) mode and label-only mode keep the upstream drawing.
+	var phrase = this.getPhrase('planets',label);
+	if(this.showplanets && !this.negative){
+		var fov = Math.max(1, this.fov || 30);
+		var zoomK = Math.max(1, Math.min(4, 40/fov));
+		if(label === "sun" || label === "moon"){
+			var rb = Math.max(6, Math.min(64, (0.53/fov) * this.tall * 1.1));
+			if(label === "sun"){
+				var g = c.createRadialGradient(x,y,rb*0.4,x,y,rb*3.4);
+				g.addColorStop(0,"rgba(255,205,92,0.55)");
+				g.addColorStop(1,"rgba(255,205,92,0)");
+				c.beginPath();
+				c.fillStyle = g;
+				c.arc(x,y,rb*3.4,0,Math.PI*2,true);
+				c.fill();
+				var g2 = c.createRadialGradient(x,y,0,x,y,rb);
+				g2.addColorStop(0,"#fffbe9");
+				g2.addColorStop(0.75,"#ffe89a");
+				g2.addColorStop(1,"#ffc94d");
+				c.beginPath();
+				c.fillStyle = g2;
+				c.arc(x,y,rb,0,Math.PI*2,true);
+				c.fill();
+			}else{
+				this.drawMoonPhase(x,y,rb);
+			}
+			if(this.showplanetlabels) this.drawLabel(x,y,rb,colour,phrase);
+			return this;
+		}
+		var r = Math.max(d, 3) * zoomK;
+		// Muted, naturalistic presentation tints (the plugin's raw
+		// colours are marker-like: pure red Mars, pink Jupiter and
+		// Saturn). Presentation only — positions are untouched.
+		var tints = { Me: "#b8a89a", V: "#f2e3b3", Ma: "#d97b4f", J: "#e3cda3", S: "#e6c88a", U: "#a8d8d2", N: "#7f9ff0" };
+		if(tints[label]) colour = tints[label];
+		if(label === "S") r = Math.max(r, 4.5 * zoomK);
+		if(label === "V"){
+			var gv = c.createRadialGradient(x,y,r*0.5,x,y,r*2.6);
+			gv.addColorStop(0,"rgba(255,246,214,0.35)");
+			gv.addColorStop(1,"rgba(255,246,214,0)");
+			c.beginPath();
+			c.fillStyle = gv;
+			c.arc(x,y,r*2.6,0,Math.PI*2,true);
+			c.fill();
+		}
+		if(label === "S") this.drawSaturnRing(x,y,r,colour,false);
+		c.beginPath();
+		c.fillStyle = colour;
+		c.arc(x,y,r,0,Math.PI*2,true);
+		c.fill();
+		if(label === "J"){
+			c.save();
+			c.beginPath();
+			c.arc(x,y,r,0,Math.PI*2,true);
+			c.clip();
+			c.fillStyle = "rgba(146,84,44,0.45)";
+			c.fillRect(x-r, y-r*0.52, r*2, r*0.30);
+			c.fillRect(x-r, y+r*0.18, r*2, r*0.26);
+			c.restore();
+		}
+		if(label === "S") this.drawSaturnRing(x,y,r,colour,true);
+		if(this.showplanetlabels) this.drawLabel(x,y,r,colour,phrase);
+		return this;
+	}
 	c.beginPath();
 	c.fillStyle = colour;
 	c.strokeStyle = colour;
 	c.moveTo(x+d,y+d);
 	if(this.showplanets) c.arc(x,y,d,0,Math.PI*2,true);
-	label = this.getPhrase('planets',label);
-	if(this.showplanetlabels) this.drawLabel(x,y,d,colour,label);
+	if(this.showplanetlabels) this.drawLabel(x,y,d,colour,phrase);
 	c.fill();
+	return this;
+};
+// PATCH-SCIENCEPEDIA-6 helper: Saturn's rings as a tilted ellipse,
+// drawn in two halves so the disc occludes the far half and is
+// occluded by the near half. The tilt is a fixed presentational
+// angle; the ring is a symbol for Saturn, not measured data.
+VirtualSky.prototype.drawSaturnRing = function(x,y,r,colour,front){
+	var c = this.ctx;
+	c.save();
+	c.translate(x,y);
+	c.rotate(-0.42);
+	c.scale(1,0.36);
+	c.beginPath();
+	c.strokeStyle = colour;
+	c.globalAlpha = 0.95;
+	c.lineWidth = Math.max(1.6, r*0.5);
+	if(front) c.arc(0,0,r*2.05,0,Math.PI,false);
+	else c.arc(0,0,r*2.05,Math.PI,Math.PI*2,false);
+	c.stroke();
+	c.restore();
+	return this;
+};
+// PATCH-SCIENCEPEDIA-6 helper: the Moon with its phase. The dark
+// part is a dim earthshine disc; the lit part is bounded by the
+// limb on the Sun's side and by the terminator ellipse, whose
+// width follows cos(elongation) from the engine's own Sun/Moon
+// longitudes. The whole figure is rotated so the lit limb points
+// at the Sun's projected screen position.
+VirtualSky.prototype.drawMoonPhase = function(x,y,r){
+	var c = this.ctx;
+	c.beginPath();
+	c.fillStyle = "#454f66";
+	c.arc(x,y,r,0,Math.PI*2,true);
+	c.fill();
+	if(!this.sun || !this.moon) return this;
+	var elong = ((this.moon.lon - this.sun.lon)%360+360)%360;
+	var cosE = Math.cos(elong*this.d2r);
+	var sp = this.ecliptic2xy(this.sun.lon*this.d2r,this.sun.lat*this.d2r,this.times.LST);
+	if(!sp || isNaN(sp.x) || isNaN(sp.y)) return this;
+	var pa = Math.atan2(sp.y-y, sp.x-x);
+	c.save();
+	c.translate(x,y);
+	c.rotate(pa);
+	c.beginPath();
+	c.arc(0,0,r,-Math.PI/2,Math.PI/2,false);
+	c.ellipse(0,0,Math.abs(r*cosE),r,0,Math.PI/2,Math.PI*1.5,cosE>0);
+	c.closePath();
+	var g = c.createRadialGradient(-r*0.3,-r*0.3,r*0.2,0,0,r*1.15);
+	g.addColorStop(0,"#fbfcfe");
+	g.addColorStop(1,"#c3ccd9");
+	c.fillStyle = g;
+	c.fill();
+	c.restore();
 	return this;
 };
 VirtualSky.prototype.drawText = function(txt,x,y){
