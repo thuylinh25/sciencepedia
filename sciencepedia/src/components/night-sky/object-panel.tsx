@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Star } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { BodyReport, MoonReport } from "@/lib/night-sky/astro";
@@ -42,6 +42,8 @@ export function ObjectPanel({
   tz,
   viewedTime,
   onBack,
+  isFavorite,
+  onToggleFavorite,
 }: {
   entry: CatalogEntry;
   data: SelectedObjectData | null;
@@ -49,6 +51,8 @@ export function ObjectPanel({
   tz: string;
   viewedTime: Date;
   onBack: () => void;
+  isFavorite?: boolean;
+  onToggleFavorite?: () => void;
 }) {
   const t = useTranslations("nightSky");
   const locale = useLocale();
@@ -216,7 +220,27 @@ export function ObjectPanel({
           </h2>
           <p className="text-sm text-muted-foreground">{altName}</p>
         </div>
-        <Badge variant="soft">{typeLabel}</Badge>
+        <div className="flex items-start gap-1.5">
+          <Badge variant="soft">{typeLabel}</Badge>
+          {onToggleFavorite && (
+            <button
+              type="button"
+              onClick={onToggleFavorite}
+              aria-pressed={isFavorite ?? false}
+              aria-label={isFavorite ? t("favoriteRemove") : t("favoriteAdd")}
+              title={isFavorite ? t("favoriteRemove") : t("favoriteAdd")}
+              className="rounded-full p-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+            >
+              <Star
+                className={
+                  isFavorite
+                    ? "size-4 fill-amber-400 text-amber-400"
+                    : "size-4"
+                }
+              />
+            </button>
+          )}
+        </div>
       </div>
 
       {!data ? (
