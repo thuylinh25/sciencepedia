@@ -1,9 +1,16 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { ChevronRight, Moon as MoonIcon, Route, Sun } from "lucide-react";
+import {
+  ChevronRight,
+  Moon as MoonIcon,
+  Route,
+  Sparkles,
+  Sun,
+} from "lucide-react";
 
 import type { SkyReport } from "@/lib/night-sky/astro";
+import type { CometReport } from "@/lib/night-sky/comets";
 import { findCatalogEntry, type CatalogEntry } from "@/lib/night-sky/catalog";
 import { fmtDegrees, fmtEventTime } from "@/components/night-sky/sky-format";
 import { cn } from "@/lib/utils";
@@ -23,6 +30,8 @@ export function VisiblePanel({
   onSelect,
   onStartTour,
   tonightMode,
+  comet,
+  onFocusComet,
 }: {
   report: SkyReport | null;
   placeLabel: string;
@@ -36,6 +45,11 @@ export function VisiblePanel({
    *  được tính tại hoàng hôn) — tiêu đề và gợi ý phải nói đúng điều đó
    *  thay vì hứa "đang nhìn thấy" giữa ban ngày. */
   tonightMode?: boolean;
+  /** Sao chổi Halley tại (nơi, lúc) của báo cáo này — tính ở comets.ts
+   *  từ phần tử quỹ đạo JPL, ngoài engine. Chỉ hiện dòng khi nó đang ở
+   *  trên chân trời; chạm vào thì xoay khung tới nó. */
+  comet?: CometReport | null;
+  onFocusComet?: () => void;
 }) {
   const t = useTranslations("nightSky");
   const locale = useLocale();
@@ -145,6 +159,38 @@ export function VisiblePanel({
             </span>
             <ChevronRight className="size-4 shrink-0 text-muted-foreground" />
           </button>
+
+          {comet && comet.altitudeDeg > 0 && (
+            <>
+              <button
+                type="button"
+                onClick={onFocusComet}
+                className="mt-3 flex w-full items-center gap-3 rounded-xl border border-cyan-500/30 bg-background px-3 py-2.5 text-left transition-colors hover:bg-muted/60"
+              >
+                <Sparkles className="size-5 shrink-0 text-cyan-400" />
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-sm font-medium">
+                    {isEnglish ? "Comet Halley" : "Sao chổi Halley"}
+                    {comet.forecast &&
+                      (isEnglish ? " · forecast" : " · dự báo")}
+                  </span>
+                  <span className="block text-xs text-muted-foreground">
+                    {t("cometMeta", {
+                      alt: Math.round(comet.altitudeDeg),
+                      compass: isEnglish ? comet.compassEn : comet.compassVi,
+                      mag: comet.magnitudeEst
+                        .toFixed(1)
+                        .replace(".", isEnglish ? "." : ","),
+                    })}
+                  </span>
+                </span>
+                <ChevronRight className="size-4 shrink-0 text-muted-foreground" />
+              </button>
+              <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                {t("cometOrbitNote")}
+              </p>
+            </>
+          )}
 
           <ul className="mt-3 divide-y">
             {[...above, ...below].map((planet) => {

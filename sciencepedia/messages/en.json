@@ -635,6 +635,8 @@
     "sensorDenied": "Motion-sensor permission was not granted — try again and allow it when the browser asks.",
     "sensorNoData": "This device sends no compass data, so point-at-the-sky mode cannot run.",
     "sensorHint": "The sky now follows your phone’s compass — hold it up and turn around to look around the sky.",
+    "cometMeta": "altitude {alt}° · {compass} · about magnitude {mag} (estimate)",
+    "cometOrbitNote": "Comet position computed from JPL orbital elements; brightness is an estimate.",
     "zoomLabel": "Sky zoom",
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",

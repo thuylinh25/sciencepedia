@@ -635,6 +635,8 @@
     "sensorDenied": "Chưa được cấp quyền dùng cảm biến chuyển động — hãy thử lại và cho phép khi trình duyệt hỏi.",
     "sensorNoData": "Thiết bị này không gửi dữ liệu la bàn nên chế độ chỉ lên trời không chạy được.",
     "sensorHint": "Khung trời đang xoay theo la bàn của điện thoại — giơ máy lên và quay người để nhìn quanh bầu trời.",
+    "cometMeta": "cao {alt}° · hướng {compass} · sáng khoảng cấp {mag} (ước tính)",
+    "cometOrbitNote": "Vị trí sao chổi tính từ phần tử quỹ đạo của JPL; độ sáng là ước tính.",
     "zoomLabel": "Thu phóng khung trời",
     "zoomIn": "Phóng to",
     "zoomOut": "Thu nhỏ",

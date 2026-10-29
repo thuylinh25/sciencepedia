@@ -48,6 +48,19 @@ type VirtualSkyInstance = {
   fov: number;
   setFOV: (fov: number) => void;
   draw: () => void;
+  /** Kích thước canvas theo điểm CSS — phép chiếu cần để tính px. */
+  wide: number;
+  tall: number;
+  /** Phép chiếu của chính engine (constructor gắn từ projection đang
+      chọn): nhận phương vị TƯƠNG ĐỐI (đã trừ az_off) + độ cao, đều là
+      radian, trả toạ độ px CSS. Dấu chỉ thiên thể phụ (sao chổi) chiếu
+      qua đúng hàm này để không bao giờ lệch khỏi hình engine vẽ. */
+  azel2xy: (
+    az: number,
+    el: number,
+    w: number,
+    h: number,
+  ) => { x: number; y: number };
 };
 
 declare global {
@@ -70,6 +83,23 @@ export type SkyCursorPos = {
   y: number | null;
 };
 
+/** Thiên thể phụ cần chấm dấu lên khung (hiện có sao chổi Halley):
+    vị trí tuyệt đối theo độ cao/phương vị; đuôi hướng ra xa Mặt Trời. */
+export type SkyMarkerTarget = {
+  altDeg: number;
+  azDeg: number;
+  sunAltDeg: number;
+  sunAzDeg: number;
+};
+
+/** Vị trí dấu trên khung: % theo khung + góc đuôi trên màn hình (độ,
+    0 = hướng sang phải, tăng theo chiều kim đồng hồ như CSS rotate). */
+export type SkyMarkerPos = {
+  xPct: number;
+  yPct: number;
+  tailAngleDeg: number;
+};
+
 /** Engine handle — thứ duy nhất phần còn lại của trang được phép giữ. */
 export type SkyEngine = {
   setObserver: (lat: number, lon: number) => void;
@@ -79,6 +109,12 @@ export type SkyEngine = {
   getAzimuth: () => number;
   /** Góc nhìn hiện tại (độ) — đọc sống cho cụm nút thu phóng. */
   getFov: () => number;
+  /** Chiếu một (độ cao, phương vị) tuyệt đối sang toạ độ khung bằng
+      phép chiếu của engine; null khi engine chưa sẵn sàng. */
+  projectAltAz: (
+    altitudeDeg: number,
+    azimuthDeg: number,
+  ) => { xPct: number; yPct: number; xPx: number; yPx: number } | null;
   /** Thu/phóng theo hệ số: factor > 1 là phóng to (góc nhìn hẹp lại).
       Trả góc nhìn THẬT sau khi engine đã kẹp vào [1, 60]. */
   zoomBy: (factor: number) => number;
@@ -213,6 +249,28 @@ async function createSkyEngine(
       // thì chỉ engine biết, biến `currentAzimuth` ở trên không hề hay.
       return (((instance.az_off + 180) % 360) + 360) % 360;
     },
+    projectAltAz(altitudeDeg, azimuthDeg) {
+      if (
+        typeof instance.azel2xy !== "function" ||
+        !instance.wide ||
+        !instance.tall
+      )
+        return null;
+      const pos = instance.azel2xy(
+        ((azimuthDeg - instance.az_off) * Math.PI) / 180,
+        (altitudeDeg * Math.PI) / 180,
+        instance.wide,
+        instance.tall,
+      );
+      if (!pos || !Number.isFinite(pos.x) || !Number.isFinite(pos.y))
+        return null;
+      return {
+        xPct: (pos.x / instance.wide) * 100,
+        yPct: (pos.y / instance.tall) * 100,
+        xPx: pos.x,
+        yPx: pos.y,
+      };
+    },
     getFov() {
       return instance.fov;
     },
@@ -278,6 +336,8 @@ export function SkyCanvas({
   onCursor,
   focusRequest,
   zoomRequest,
+  markerTarget,
+  onMarkerPos,
 }: {
   latitude: number;
   longitude: number;
@@ -302,6 +362,10 @@ export function SkyCanvas({
   /** Yêu cầu thu/phóng theo hệ số (nút bấm và con lăn chuột trên khung
       đều gửi qua đây). `nonce` như ở `focusRequest`. */
   zoomRequest?: { factor: number; nonce: number } | null;
+  /** Thiên thể phụ cần chấm dấu (sao chổi) — SkyCanvas chiếu lại theo
+      nhịp thăm dò và báo vị trí qua `onMarkerPos`; null là không dấu. */
+  markerTarget?: SkyMarkerTarget | null;
+  onMarkerPos?: (pos: SkyMarkerPos | null) => void;
 }) {
   const mountRef = useRef<HTMLDivElement>(null);
   const engineRef = useRef<SkyEngine | null>(null);
@@ -313,6 +377,10 @@ export function SkyCanvas({
   fovRef.current = onFov;
   const cursorRef = useRef(onCursor);
   cursorRef.current = onCursor;
+  const markerRef = useRef(markerTarget);
+  markerRef.current = markerTarget;
+  const markerPosRef = useRef(onMarkerPos);
+  markerPosRef.current = onMarkerPos;
   /* Giá trị mới nhất, để instance tạo bất đồng bộ xong không áp trạng thái cũ. */
   const latestRef = useRef({ latitude, longitude, time });
   latestRef.current = { latitude, longitude, time };
@@ -349,6 +417,7 @@ export function SkyCanvas({
         azimuthRef.current?.(lastAzimuth);
         let lastFov = created.getFov();
         fovRef.current?.(lastFov);
+        let lastMarkerKey = "";
         azimuthPoll = window.setInterval(() => {
           const azimuth = created.getAzimuth();
           if (Math.abs(azimuth - lastAzimuth) >= 0.5) {
@@ -359,6 +428,35 @@ export function SkyCanvas({
           if (Math.abs(fov - lastFov) >= 0.5) {
             lastFov = fov;
             fovRef.current?.(fov);
+          }
+          // Dấu thiên thể phụ: kéo khung không bắn sự kiện nào ra
+          // ngoài nên phải chiếu lại theo nhịp thăm dò; chỉ báo lên
+          // khi vị trí đổi đủ rõ để khỏi bắt React dựng lại vô ích.
+          const target = markerRef.current;
+          let markerKey = "off";
+          let markerPayload: SkyMarkerPos | null = null;
+          if (target) {
+            const p = created.projectAltAz(target.altDeg, target.azDeg);
+            if (p) {
+              const sun = created.projectAltAz(
+                target.sunAltDeg,
+                target.sunAzDeg,
+              );
+              const tailAngleDeg = sun
+                ? (Math.atan2(p.yPx - sun.yPx, p.xPx - sun.xPx) * 180) /
+                  Math.PI
+                : -45;
+              markerPayload = {
+                xPct: p.xPct,
+                yPct: p.yPct,
+                tailAngleDeg,
+              };
+              markerKey = `${p.xPct.toFixed(1)}|${p.yPct.toFixed(1)}|${tailAngleDeg.toFixed(0)}`;
+            }
+          }
+          if (markerKey !== lastMarkerKey) {
+            lastMarkerKey = markerKey;
+            markerPosRef.current?.(markerPayload);
           }
         }, 250);
       })

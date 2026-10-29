@@ -67,6 +67,7 @@ import {
   type CatalogEntry,
 } from "@/lib/night-sky/catalog";
 import { SKY_MOMENTS, type SkyMoment } from "@/lib/night-sky/moments";
+import { halleyReport, type CometReport } from "@/lib/night-sky/comets";
 import {
   buildQuiz,
   buildTourStops,
@@ -86,6 +87,7 @@ import {
 import {
   SkyCanvas,
   type SkyCursorPos,
+  type SkyMarkerPos,
 } from "@/components/night-sky/sky-canvas";
 import { SkyDeck } from "@/components/night-sky/sky-deck";
 import { ObjectSearch } from "@/components/night-sky/object-search";
@@ -468,11 +470,42 @@ export function NightSky() {
         : null,
     [engine, observer.lat, observer.lon, report],
   );
+  /* Sao chổi Halley (comets.ts): chỉ khác null trong cửa sổ của hai
+     lần ghé 1986/2061. Dấu trên khung bám giờ đang xem; dòng trong
+     panel bám báo cáo mà panel đang hiển thị (ban ngày là hoàng hôn). */
+  const comet: CometReport | null = useMemo(
+    () =>
+      engine
+        ? halleyReport(engine, observer.lat, observer.lon, reportTime)
+        : null,
+    [engine, observer.lat, observer.lon, reportTime],
+  );
+  const eveningComet: CometReport | null = useMemo(
+    () =>
+      engine && report?.sun.state === "day" && report.sun.sunset
+        ? halleyReport(engine, observer.lat, observer.lon, report.sun.sunset)
+        : null,
+    [engine, observer.lat, observer.lon, report],
+  );
+
   const tonightMode = eveningReport !== null;
   /* Lớp phủ khí quyển trong khung theo độ cao Mặt Trời của giờ đang xem. */
   const overlay = report
     ? daylightOverlay(report.sun.altitudeDeg)
     : { day: 0, twilight: 0 };
+  const [markerPos, setMarkerPos] = useState<SkyMarkerPos | null>(null);
+  const markerTarget = useMemo(
+    () =>
+      comet && report
+        ? {
+            altDeg: comet.altitudeDeg,
+            azDeg: comet.azimuthDeg,
+            sunAltDeg: report.sun.altitudeDeg,
+            sunAzDeg: report.sun.azimuthDeg,
+          }
+        : null,
+    [comet, report],
+  );
 
   const selectedData: SelectedObjectData | null = useMemo(() => {
     if (!engine || !selected) return null;
@@ -838,6 +871,24 @@ export function NightSky() {
     },
     [],
   );
+
+  /* Chọn một khoảnh khắc Halley thì xoay khung tới sao chổi luôn: cả
+     điểm của khoảnh khắc là nó, bắt người đọc tự tìm là hỏng một nửa.
+     Chỉ bắn một lần cho mỗi lần chọn (ref chốt id) và chỉ khi sao
+     chổi thật sự ở trên chân trời tại khoảnh khắc đó. */
+  const focusedMomentRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (activeMoment?.kind !== "moment") return;
+    const id = activeMoment.moment.id;
+    if (!id.startsWith("halley-")) {
+      focusedMomentRef.current = null;
+      return;
+    }
+    if (focusedMomentRef.current === id) return;
+    if (!comet || comet.altitudeDeg <= 0) return;
+    focusedMomentRef.current = id;
+    setFocusRequest({ azimuthDeg: comet.azimuthDeg, nonce: Date.now() });
+  }, [activeMoment, comet]);
 
   const applyBirthday = useCallback(() => {
     const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(birthdayDate);
@@ -1274,6 +1325,8 @@ export function NightSky() {
               onAzimuth={setViewAzimuth}
               onFov={setViewFov}
               onCursor={handleCursor}
+              markerTarget={markerTarget}
+              onMarkerPos={setMarkerPos}
             />
 
             {/* Lớp màu khí quyển nằm TRÊN canvas: canvas của engine
@@ -1428,6 +1481,39 @@ export function NightSky() {
               <div ref={cursorMainRef} className="text-xs font-medium tabular-nums" />
               <div ref={cursorSubRef} className="text-[10px] text-white/65 tabular-nums" />
             </div>
+            {/* Dấu sao chổi Halley: SkyCanvas chiếu bằng phép chiếu
+                của chính engine theo nhịp thăm dò, đuôi hướng ra xa
+                Mặt Trời. Chỉ hiện khi sao chổi ở trên chân trời và
+                điểm chiếu nằm trong khung. */}
+            {markerPos &&
+              comet &&
+              comet.altitudeDeg > 0 &&
+              markerPos.xPct >= -2 &&
+              markerPos.xPct <= 102 &&
+              markerPos.yPct >= -2 &&
+              markerPos.yPct <= 102 && (
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute z-30"
+                  style={{
+                    left: `${markerPos.xPct}%`,
+                    top: `${markerPos.yPct}%`,
+                  }}
+                >
+                  <div className="relative -translate-x-1/2 -translate-y-1/2">
+                    <div
+                      className="absolute top-1/2 left-1/2 h-[3px] w-10 origin-left rounded-full bg-gradient-to-r from-cyan-100/80 to-transparent"
+                      style={{
+                        transform: `translateY(-50%) rotate(${markerPos.tailAngleDeg}deg)`,
+                      }}
+                    />
+                    <div className="absolute top-1/2 left-1/2 size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-50 shadow-[0_0_10px_3px_rgba(165,243,252,0.75)]" />
+                    <span className="absolute top-2 left-2 rounded-full bg-black/60 px-2 py-0.5 text-[11px] font-medium whitespace-nowrap text-white">
+                      {isEnglish ? "Comet Halley" : "Sao chổi Halley"}
+                    </span>
+                  </div>
+                </div>
+              )}
             <div
               aria-hidden
               className={cn(
@@ -1847,6 +1933,20 @@ export function NightSky() {
                   viewedTime={time}
                   isNow={isNow}
                   tonightMode={tonightMode}
+                  comet={tonightMode ? eveningComet : comet}
+                  onFocusComet={() => {
+                    if (tonightMode && report?.sun.sunset) {
+                      // Như mọi dòng khác ở chế độ tối nay: nhảy tới
+                      // hoàng hôn trước, tới đó mới có dữ kiện để xoay.
+                      setPlaying(false);
+                      setTime(report.sun.sunset);
+                    } else if (comet) {
+                      setFocusRequest({
+                        azimuthDeg: comet.azimuthDeg,
+                        nonce: Date.now(),
+                      });
+                    }
+                  }}
                   onSelect={
                     tonightMode && report?.sun.sunset
                       ? () => {
