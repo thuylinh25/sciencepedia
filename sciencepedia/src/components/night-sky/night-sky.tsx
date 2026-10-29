@@ -1128,6 +1128,34 @@ export function NightSky() {
                 : "h-[62vh] rounded-3xl sm:h-[68vh] lg:h-[78vh]",
             )}
           >
+            {/* Lớp màu khí quyển nằm DƯỚI canvas: engine vẽ trên nền
+                trong suốt nên màu trời phải là nền phía sau, không phải
+                lớp phủ phía trước — phủ trước ở độ mờ 0,93 thì nhãn và
+                sao chỉ còn ~7% tương phản, đổi bảng màu đậm cỡ nào cũng
+                không cứu được (bản sửa tương phản đầu của PR #182 vấp
+                đúng chỗ này). Thứ tự: ngày dưới, ấm trên nó, canvas
+                (z-[1]) vẽ sao/nhãn nguyên vẹn lên trên cùng. */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-[#2e6bc2] via-[#5b97d9] to-[#9cc3ea] transition-opacity duration-700"
+              style={{ opacity: overlay.day }}
+            />
+            {/* Lớp ấm nằm trên lớp ngày nhưng vẫn dưới canvas: ở
+                hoàng hôn lớp ngày rút nhanh theo độ cao Mặt Trời, sắc
+                cam thành nền trời chạng vạng cho sao hiện dần. */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-700"
+              style={{
+                opacity: overlay.twilight,
+                // Dải ấm phải nhô lên từ ~55% chiều cao khung: nếu chỉ
+                // đậm ở sát đáy, sàn điều khiển che mất đúng phần cam
+                // nhất và hoàng hôn trông như xanh xám (QA PR #179).
+                background:
+                  "linear-gradient(180deg, #101d3d 0%, #2c3d66 45%, #b4552d 78%, #ff8c42 100%)",
+              }}
+            />
+
             <SkyCanvas
               latitude={observer.lat}
               longitude={observer.lon}
@@ -1141,31 +1169,6 @@ export function NightSky() {
               onCursor={handleCursor}
             />
 
-            {/* Lớp phủ khí quyển: engine vẽ sao bất kể ngày đêm (nền
-                trong suốt), nên trang tự làm sáng khung theo độ cao
-                Mặt Trời — sao và nhãn chìm dần như mắt thật bị chói.
-                Thuần thị giác, không đụng dữ kiện; lớp ngày phủ gần
-                kín, lớp ấm chỉ ghé qua dải chạng vạng. */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#2e6bc2] via-[#5b97d9] to-[#9cc3ea] transition-opacity duration-700"
-              style={{ opacity: overlay.day }}
-            />
-            {/* Lớp ấm nằm TRÊN lớp ngày: ở hoàng hôn lớp ngày đã rút
-                nhanh theo độ cao Mặt Trời, sắc cam phủ lên trên tạo
-                đúng cảm giác chạng vạng thay vì xanh trưa kéo dài. */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 z-[1] transition-opacity duration-700"
-              style={{
-                opacity: overlay.twilight,
-                // Dải ấm phải nhô lên từ ~55% chiều cao khung: nếu chỉ
-                // đậm ở sát đáy, sàn điều khiển che mất đúng phần cam
-                // nhất và hoàng hôn trông như xanh xám (QA PR #179).
-                background:
-                  "linear-gradient(180deg, #101d3d 0%, #2c3d66 45%, #b4552d 78%, #ff8c42 100%)",
-              }}
-            />
             {report?.sun.state === "day" && report.sun.sunset && (
               <div className="pointer-events-none absolute left-1/2 top-3 z-10 flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-black/45 px-3 py-1 text-xs font-medium text-amber-100 backdrop-blur-sm">
                 <Sunrise className="size-3.5" />
@@ -1176,7 +1179,7 @@ export function NightSky() {
             )}
 
             {!ready && (
-              <p className="pointer-events-none absolute inset-0 flex items-center justify-center text-sm text-slate-300">
+              <p className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center text-sm text-slate-300">
                 <span className="animate-pulse">{t("loading")}</span>
               </p>
             )}
