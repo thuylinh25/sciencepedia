@@ -754,6 +754,13 @@
     "aiThinking": "The AI is looking up…",
     "aiError": "The AI could not be reached just now — please try again in a few minutes.",
     "aiFactsAt": "Explained from the facts of this view: {when}",
+    "bulletinTitle": "Evening sky bulletin",
+    "bulletinSun": "Sunset {sunset} · fully dark {dark}",
+    "bulletinSunNoDark": "Sunset {sunset}",
+    "bulletinLoading": "Writing the bulletin…",
+    "bulletinError": "Couldn't write the bulletin just now.",
+    "bulletinRetry": "Try again",
+    "bulletinRegenerate": "Rewrite bulletin",
     "cursorRa": "RA",
     "cursorDec": "Dec"
   },
