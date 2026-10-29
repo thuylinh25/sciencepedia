@@ -147,6 +147,34 @@ export function altitudeBandLabel(band: AltitudeBand): { vi: string; en: string 
   return ALTITUDE_BAND_LABELS[band];
 }
 
+/** Hướng la bàn (độ, 0 = Bắc, theo chiều kim đồng hồ) từ sự kiện
+ * DeviceOrientation. iOS cho sẵn `webkitCompassHeading`; Android cho
+ * `alpha` ngược chiều kim đồng hồ nên phải lật. Cộng góc xoay màn
+ * hình để máy nằm ngang vẫn đúng hướng. Không có dữ liệu thì null. */
+export function headingFromOrientation(
+  alpha: number | null,
+  webkitHeading: number | null | undefined,
+  screenAngleDeg: number,
+): number | null {
+  const norm = (deg: number) => ((deg % 360) + 360) % 360;
+  if (typeof webkitHeading === "number" && Number.isFinite(webkitHeading))
+    return norm(webkitHeading + screenAngleDeg);
+  if (alpha === null || !Number.isFinite(alpha)) return null;
+  return norm(360 - alpha + screenAngleDeg);
+}
+
+/** Làm mượt hướng la bàn theo vòng tròn (350° → 10° đi qua 0°, không
+ * vòng ngược 340°). `factor` là tỉ lệ bước nhảy mỗi sự kiện. */
+export function smoothHeading(
+  prev: number | null,
+  next: number,
+  factor = 0.35,
+): number {
+  if (prev === null) return next;
+  const delta = ((next - prev + 540) % 360) - 180;
+  return ((prev + delta * factor) % 360 + 360) % 360;
+}
+
 export function daylightOverlay(altDeg: number): {
   day: number;
   twilight: number;

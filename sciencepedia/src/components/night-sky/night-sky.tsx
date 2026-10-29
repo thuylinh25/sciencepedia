@@ -13,6 +13,7 @@ import {
   Cake,
   Camera,
   Check,
+  Compass,
   History,
   LocateFixed,
   Maximize,
@@ -101,6 +102,8 @@ import {
   fmtRaHm,
   altitudeBand,
   altitudeBandLabel,
+  headingFromOrientation,
+  smoothHeading,
   daylightOverlay,
   placeCursorBox,
 } from "@/components/night-sky/sky-format";
@@ -218,6 +221,115 @@ export function NightSky() {
     azimuthDeg: number;
     nonce: number;
   } | null>(null);
+
+  /* ---------------- Chế độ chỉ lên trời (S3) ----------------
+     Khung trời xoay theo la bàn của điện thoại: sự kiện
+     DeviceOrientation → hướng (helper thuần trong sky-format) →
+     làm mượt → gửi xuống engine qua đúng kênh focusRequest.
+     Phép chiếu của engine khoá theo đường chân trời nên chỉ phương
+     vị đi theo máy; độ nghiêng không có trục để bám — ghi rõ vậy ở
+     dòng gợi ý thay vì hứa hẹn "chỉ đâu thấy đó" hai chiều. */
+  const [sensorOn, setSensorOn] = useState(false);
+  const [sensorNote, setSensorNote] = useState<string | null>(null);
+  const [sensorSupported, setSensorSupported] = useState(false);
+  const sensorStateRef = useRef<{
+    heading: number | null;
+    lastSentAt: number;
+    lastSentAz: number;
+    suspendedUntil: number;
+    gotData: boolean;
+  } | null>(null);
+  const sensorWatchdogRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    setSensorSupported(
+      typeof window !== "undefined" && "DeviceOrientationEvent" in window,
+    );
+  }, []);
+
+  const handleOrientation = useCallback((event: DeviceOrientationEvent) => {
+    const st = sensorStateRef.current;
+    if (!st) return;
+    const ev = event as DeviceOrientationEvent & {
+      webkitCompassHeading?: number;
+    };
+    const raw = headingFromOrientation(
+      event.alpha,
+      ev.webkitCompassHeading,
+      window.screen.orientation?.angle ?? 0,
+    );
+    if (raw === null) return;
+    st.gotData = true;
+    st.heading = smoothHeading(st.heading, raw);
+    const now = performance.now();
+    if (now < st.suspendedUntil || now - st.lastSentAt < 100) return;
+    const moved = Math.abs(((st.heading - st.lastSentAz + 540) % 360) - 180);
+    if (moved < 0.5) return;
+    st.lastSentAt = now;
+    st.lastSentAz = st.heading;
+    setFocusRequest({ azimuthDeg: st.heading, nonce: now });
+  }, []);
+
+  const stopSensor = useCallback(() => {
+    window.removeEventListener(
+      "deviceorientationabsolute",
+      handleOrientation as EventListener,
+    );
+    window.removeEventListener("deviceorientation", handleOrientation);
+    if (sensorWatchdogRef.current !== null) {
+      window.clearTimeout(sensorWatchdogRef.current);
+      sensorWatchdogRef.current = null;
+    }
+    sensorStateRef.current = null;
+    setSensorOn(false);
+  }, [handleOrientation]);
+
+  useEffect(() => stopSensor, [stopSensor]);
+
+  const toggleSensor = useCallback(async () => {
+    if (sensorOn) {
+      stopSensor();
+      return;
+    }
+    setSensorNote(null);
+    // iOS 13+: phải xin quyền cảm biến ngay trong cử chỉ chạm.
+    const doe = window.DeviceOrientationEvent as unknown as {
+      requestPermission?: () => Promise<string>;
+    };
+    if (typeof doe?.requestPermission === "function") {
+      try {
+        if ((await doe.requestPermission()) !== "granted") {
+          setSensorNote(t("sensorDenied"));
+          return;
+        }
+      } catch {
+        setSensorNote(t("sensorDenied"));
+        return;
+      }
+    }
+    sensorStateRef.current = {
+      heading: null,
+      lastSentAt: 0,
+      lastSentAz: -999,
+      suspendedUntil: 0,
+      gotData: false,
+    };
+    window.addEventListener(
+      "deviceorientationabsolute",
+      handleOrientation as EventListener,
+    );
+    window.addEventListener("deviceorientation", handleOrientation);
+    setSensorOn(true);
+    // Máy tính để bàn có API nhưng không có cảm biến: 2,5 giây không
+    // thấy dữ liệu thì tự tắt kèm lời giải thích, tránh nút "bật mà
+    // không chạy" làm người đọc tưởng trang hỏng.
+    sensorWatchdogRef.current = window.setTimeout(() => {
+      if (sensorStateRef.current && !sensorStateRef.current.gotData) {
+        stopSensor();
+        setSensorNote(t("sensorNoData"));
+      }
+    }, 2500);
+  }, [handleOrientation, sensorOn, stopSensor, t]);
   const [copied, setCopied] = useState(false);
   const [captureOk, setCaptureOk] = useState(true);
   const frameRef = useRef<HTMLDivElement>(null);
@@ -1094,6 +1206,10 @@ export function NightSky() {
           </span>
         )}
         {geoNote && <span className="mt-0.5 block">{geoNote}</span>}
+        {sensorNote && <span className="mt-0.5 block">{sensorNote}</span>}
+        {sensorOn && !sensorNote && (
+          <span className="mt-0.5 block">{t("sensorHint")}</span>
+        )}
       </p>
 
       {/* ------------------------------------------- khung trời + panel */}
@@ -1115,6 +1231,13 @@ export function NightSky() {
           <div
             ref={frameRef}
             onPointerMove={wakeHud}
+            onPointerDown={() => {
+              // Người đọc kéo tay thì cảm biến nhường 3 giây, không
+              // giành lại hướng nhìn ngay giữa thao tác.
+              if (sensorStateRef.current)
+                sensorStateRef.current.suspendedUntil =
+                  performance.now() + 3000;
+            }}
             className={cn(
               "relative flex flex-col overflow-hidden border border-white/10",
               "bg-gradient-to-b from-[#0a1030] via-[#060a20] to-[#03040c]",
@@ -1200,6 +1323,25 @@ export function NightSky() {
                 <Maximize className="size-4" />
               )}
             </Button>
+
+            {sensorSupported && (
+              <Button
+                type="button"
+                size="icon"
+                variant="secondary"
+                onClick={toggleSensor}
+                aria-label={sensorOn ? t("sensorDisable") : t("sensorEnable")}
+                aria-pressed={sensorOn}
+                className={cn(
+                  "absolute top-16 right-3 z-10 backdrop-blur",
+                  sensorOn
+                    ? "bg-amber-400 text-slate-900 hover:bg-amber-300"
+                    : "bg-white/10 text-white hover:bg-white/20",
+                )}
+              >
+                <Compass className="size-4" />
+              </Button>
+            )}
 
             {/* Cụm thu phóng: cạnh phải, giữa chiều cao khung — góc
                 trên-phải đã có nút toàn màn hình, dưới-phải có đồng hồ.

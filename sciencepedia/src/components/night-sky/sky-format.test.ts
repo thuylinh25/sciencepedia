@@ -3,6 +3,8 @@ import assert from "node:assert/strict";
 
 import {
   altitudeBand,
+  headingFromOrientation,
+  smoothHeading,
   altitudeBandLabel,
   daylightOverlay,
   fmtDecDm,
@@ -132,5 +134,20 @@ test("altitudeBand: mốc lời thường cho độ cao con trỏ", () => {
   assert.equal(altitudeBand(64.9), "high");
   assert.equal(altitudeBand(65), "zenith");
   assert.equal(altitudeBandLabel("zenith").vi, "gần ngay đỉnh đầu");
+});
+
+test("headingFromOrientation: iOS thắng, Android lật alpha, cộng góc màn hình", () => {
+  assert.equal(headingFromOrientation(null, 90, 0), 90);
+  assert.equal(headingFromOrientation(90, null, 0), 270);
+  assert.equal(headingFromOrientation(90, undefined, 90), 0);
+  assert.equal(headingFromOrientation(null, null, 0), null);
+  assert.equal(headingFromOrientation(0, null, 0), 0);
+});
+
+test("smoothHeading: đi đường ngắn qua mốc 0/360", () => {
+  assert.equal(smoothHeading(null, 123), 123);
+  assert.equal(smoothHeading(350, 10, 0.5), 0);
+  assert.equal(smoothHeading(10, 350, 0.5), 0);
+  assert.equal(smoothHeading(100, 200, 1), 200);
 });
 });
