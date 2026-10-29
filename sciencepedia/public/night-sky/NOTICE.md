@@ -103,6 +103,22 @@ thử, trang ví dụ và `excanvas.min.js` (chỉ cho Internet Explorer).
   lấy từ dữ kiện của engine. Chế độ âm bản (in ấn) và chế độ chỉ
   hiện nhãn giữ nguyên cách vẽ gốc.
 
+- **2026-10-29 (PATCH-SCIENCEPEDIA-7):** phép chiếu `stereo` —
+  mở khóa kéo dọc. Bản gốc gán cứng độ cao tâm phép chiếu
+  `sinel1 = 0, cosel1 = 1` (tâm nhìn chết ở đường chân trời) và cả
+  hai handler kéo (chuột + cảm ứng) chỉ cập nhật `az_off`, bỏ qua
+  hoàn toàn thành phần dọc — người đọc kéo lên/xuống không có gì
+  xảy ra (Linh báo 2026-10-29). Công thức lập thể vốn đã viết tổng
+  quát theo (sinel1, cosel1) ở cả `azel2xy` lẫn `xy2azel`, nên bản
+  vá chỉ cho hai hằng số đó đọc từ `this.el_off` mới (độ, khởi tạo
+  0 trong constructor) và cộng `(y − y_trước)/4` vào `el_off` ở cả
+  hai handler kéo, kẹp [−15, 85] — cùng tốc độ và kiểu nắm-kéo như
+  trục ngang. Ở `el_off = 0` hình học trùng hệt bản gốc. Wrapper
+  React đi kèm: tay cầm `setElevation/getElevation`, `focusRequest`
+  mang thêm độ cao đích để thiên thể ở cao cũng vào giữa khung khi
+  được chọn, và chế độ la bàn đặt `el_off` về 0 khi bật (khóa chân
+  trời như thiết kế S3).
+
 ## astronomy-engine — thư viện tính toán thiên văn (Phase 2)
 
 Cùng thư mục này chứa `astronomy.browser.js`: bản dựng trình duyệt của

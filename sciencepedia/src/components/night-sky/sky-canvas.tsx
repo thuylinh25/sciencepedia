@@ -43,6 +43,7 @@ type VirtualSkyInstance = {
       khung và khi `changeAzimuth` chạy. Phương vị tâm khung = az_off + 180
       (xem ghi chú ở `currentAzimuth` trong `createSkyEngine`). */
   az_off: number;
+  el_off: number;
   /** Góc nhìn hiện tại (độ). `setFOV` của engine tự kẹp vào [1, 60] và
       KHÔNG tự vẽ lại — muốn hiện ngay phải gọi `draw()` sau đó. */
   fov: number;
@@ -105,6 +106,11 @@ export type SkyEngine = {
   setObserver: (lat: number, lon: number) => void;
   setTime: (date: Date) => void;
   setAzimuth: (azimuthDeg: number) => void;
+  /** Đặt độ cao tâm khung (độ, PATCH-SCIENCEPEDIA-7 trong engine —
+      kéo dọc). Kẹp [-15, 85] ở cả hai lớp. */
+  setElevation: (elevationDeg: number) => void;
+  /** Độ cao tâm khung hiện tại (độ) — đọc sống từ `el_off`. */
+  getElevation: () => number;
   /** Phương vị tâm khung hiện tại (độ, 0 = Bắc) — đọc sống cho HUD la bàn. */
   getAzimuth: () => number;
   /** Góc nhìn hiện tại (độ) — đọc sống cho cụm nút thu phóng. */
@@ -245,6 +251,13 @@ async function createSkyEngine(
       if (delta !== 0) instance.changeAzimuth(delta);
       currentAzimuth = target;
     },
+    setElevation(elevationDeg) {
+      instance.el_off = Math.max(-15, Math.min(85, elevationDeg));
+      instance.draw();
+    },
+    getElevation() {
+      return instance.el_off ?? 0;
+    },
     getAzimuth() {
       // Đọc thẳng az_off thay vì biến theo dõi của ta: người đọc kéo khung
       // thì chỉ engine biết, biến `currentAzimuth` ở trên không hề hay.
@@ -349,6 +362,7 @@ export function SkyCanvas({
   focusRequest,
   zoomRequest,
   fovRequest,
+  elevationRequest,
   markerTarget,
   onMarkerPos,
 }: {
@@ -371,12 +385,15 @@ export function SkyCanvas({
   /** Yêu cầu xoay tâm khung tới một phương vị (chọn thiên thể đang ở trên
       chân trời). `nonce` đổi mỗi lần yêu cầu để chọn lại cùng một thiên thể
       vẫn xoay lại được sau khi người đọc đã kéo khung đi chỗ khác. */
-  focusRequest?: { azimuthDeg: number; nonce: number } | null;
+  focusRequest?: { azimuthDeg: number; altitudeDeg?: number; nonce: number } | null;
   /** Yêu cầu thu/phóng theo hệ số (nút bấm và con lăn chuột trên khung
       đều gửi qua đây). `nonce` như ở `focusRequest`. */
   zoomRequest?: { factor: number; nonce: number } | null;
   /** Yêu cầu đặt góc nhìn tuyệt đối (pinch cảm ứng gửi liên tục). */
   fovRequest?: { fovDeg: number; nonce: number } | null;
+  /** Yêu cầu đặt độ cao tâm khung (la bàn bật thì về 0). Mẫu như
+      `fovRequest`. */
+  elevationRequest?: { elevationDeg: number; nonce: number } | null;
   /** Thiên thể phụ cần chấm dấu (sao chổi) — SkyCanvas chiếu lại theo
       nhịp thăm dò và báo vị trí qua `onMarkerPos`; null là không dấu. */
   markerTarget?: SkyMarkerTarget | null;
@@ -515,7 +532,19 @@ export function SkyCanvas({
 
   useEffect(() => {
     if (focusRequest) {
-      engineRef.current?.setAzimuth(focusRequest.azimuthDeg);
+      const engine = engineRef.current;
+      engine?.setAzimuth(focusRequest.azimuthDeg);
+      // Thiên thể đích nằm ngoài dải dọc đang thấy thì nâng/hạ khung
+      // theo (PATCH-SCIENCEPEDIA-7): độ cao giữa khung hiệu dụng là
+      // el_off + cMid, cMid suy từ hệ số phép chiếu stereo.
+      if (engine && focusRequest.altitudeDeg !== undefined) {
+        const f = (0.42 * 30) / Math.max(1, engine.getFov());
+        const cMid = (2 * Math.atan(0.25 / f) * 180) / Math.PI;
+        const centerEl = engine.getElevation() + cMid;
+        if (Math.abs(focusRequest.altitudeDeg - centerEl) > cMid * 0.55) {
+          engine.setElevation(focusRequest.altitudeDeg - cMid);
+        }
+      }
     }
   }, [focusRequest]);
 
@@ -530,6 +559,12 @@ export function SkyCanvas({
       engineRef.current?.setFov(fovRequest.fovDeg);
     }
   }, [fovRequest]);
+
+  useEffect(() => {
+    if (elevationRequest) {
+      engineRef.current?.setElevation(elevationRequest.elevationDeg);
+    }
+  }, [elevationRequest]);
 
   /* Hai lớp div, cố ý: VirtualSky tự đặt `position: relative` dạng inline
      lên phần tử mang id của nó. Nếu phần tử đó chính là lớp `absolute

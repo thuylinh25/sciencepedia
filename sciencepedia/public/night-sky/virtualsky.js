@@ -301,6 +301,7 @@ function VirtualSky(input){
 	this.base = "";
 	this.az_step = 0;
 	this.az_off = 0;
+	this.el_off = 0; // PATCH-SCIENCEPEDIA-7: vertical pan offset (degrees)
 	this.ra_off = 0;
 	this.dc_off = 0;
 	this.fov = 30;
@@ -387,8 +388,8 @@ function VirtualSky(input){
 			title: 'Stereographic projection',
 			azel2xy: function(az,el,w,h){
 				var f = (typeof this.fov==="number" && this.fov>0) ? 0.42*30/this.fov : 0.42; // PATCH-SCIENCEPEDIA-2: fov-driven zoom for the stereo projection (see NOTICE.md)
-				var sinel1 = 0;
-				var cosel1 = 1;
+				var sinel1 = Math.sin((this.el_off||0)*Math.PI/180); // PATCH-SCIENCEPEDIA-7: projection centre elevation (see NOTICE.md)
+				var cosel1 = Math.cos((this.el_off||0)*Math.PI/180);
 				var cosaz = Math.cos((az-Math.PI));
 				var sinaz = Math.sin((az-Math.PI));
 				var sinel = Math.sin(el);
@@ -398,8 +399,8 @@ function VirtualSky(input){
 			},
 			xy2azel: function(x, y, w, h) {
 				var f = (typeof this.fov==="number" && this.fov>0) ? 0.42*30/this.fov : 0.42; // PATCH-SCIENCEPEDIA-2: fov-driven zoom for the stereo projection (see NOTICE.md)
-				var sinel1 = 0;
-				var cosel1 = 1;
+				var sinel1 = Math.sin((this.el_off||0)*Math.PI/180); // PATCH-SCIENCEPEDIA-7: projection centre elevation (see NOTICE.md)
+				var cosel1 = Math.cos((this.el_off||0)*Math.PI/180);
 				var X = (x - w/2) / h;
 				var Y = (h - y)/h;
 				var R = f;
@@ -1485,6 +1486,7 @@ VirtualSky.prototype.createSky = function(){
 					s.dc_off = inrangeEl(s.dc_off);
 				}else{
 					if(typeof s.x=="number") s.az_off += (s.x-x)/4;
+					if(typeof s.y=="number") s.el_off = Math.max(-15, Math.min(85, (s.el_off||0) + (y-s.y)/4)); // PATCH-SCIENCEPEDIA-7: vertical drag
 				}
 				s.az_off = s.az_off%360;
 				s.x = x;
@@ -1552,6 +1554,8 @@ VirtualSky.prototype.createSky = function(){
 				}else{
 					if(typeof s.x=="number")
 						s.az_off += (s.x-x)/4;
+					if(typeof s.y=="number")
+						s.el_off = Math.max(-15, Math.min(85, (s.el_off||0) + (y-s.y)/4)); // PATCH-SCIENCEPEDIA-7: vertical drag
 				}
 				s.az_off = s.az_off%360;
 				s.x = x;

@@ -274,6 +274,7 @@ export function NightSky() {
   const [selected, setSelected] = useState<CatalogEntry | null>(null);
   const [focusRequest, setFocusRequest] = useState<{
     azimuthDeg: number;
+    altitudeDeg?: number;
     nonce: number;
   } | null>(null);
 
@@ -341,6 +342,16 @@ export function NightSky() {
 
   useEffect(() => stopSensor, [stopSensor]);
 
+  /* Độ cao tâm khung (PATCH-SCIENCEPEDIA-7): kéo dọc do engine tự
+     xử; kênh này chỉ để đặt lại độ cao theo chương trình (bật la
+     bàn thì về 0 — chế độ cảm biến khóa chân trời). */
+  const [elevationRequest, setElevationRequest] = useState<{
+    elevationDeg: number;
+    nonce: number;
+  } | null>(null);
+  const requestElevation = useCallback((elevationDeg: number) => {
+    setElevationRequest({ elevationDeg, nonce: Date.now() });
+  }, []);
   const toggleSensor = useCallback(async () => {
     if (sensorOn) {
       stopSensor();
@@ -385,6 +396,9 @@ export function NightSky() {
     );
     window.addEventListener("deviceorientation", handleOrientation);
     setSensorOn(true);
+    // La bàn chỉ lái phương vị và khóa chân trời: trả độ cao tâm
+    // khung về 0 để khung không giữ độ nghiêng kéo tay trước đó.
+    requestElevation(0);
     // Máy tính để bàn có API nhưng không có cảm biến: 2,5 giây không
     // thấy dữ liệu thì tự tắt kèm lời giải thích, tránh nút "bật mà
     // không chạy" làm người đọc tưởng trang hỏng.
@@ -394,7 +408,7 @@ export function NightSky() {
         setSensorNote(t("sensorNoData"));
       }
     }, 2500);
-  }, [handleOrientation, sensorOn, stopSensor, t]);
+  }, [handleOrientation, requestElevation, sensorOn, stopSensor, t]);
   const [copied, setCopied] = useState(false);
   const [captureOk, setCaptureOk] = useState(true);
   const frameRef = useRef<HTMLDivElement>(null);
@@ -680,6 +694,7 @@ export function NightSky() {
       if (position && position.altitudeDeg > 0) {
         setFocusRequest({
           azimuthDeg: position.azimuthDeg,
+          altitudeDeg: position.altitudeDeg,
           nonce: Date.now(),
         });
       }
@@ -1856,6 +1871,7 @@ export function NightSky() {
                 focusRequest={focusRequest}
                 zoomRequest={zoomRequest}
                 fovRequest={fovRequest}
+                elevationRequest={elevationRequest}
                 onAzimuth={setViewAzimuth}
                 onFov={(fov) => {
                   viewFovRef.current = fov;
