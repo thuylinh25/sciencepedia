@@ -120,6 +120,11 @@ export type RawAstronomy = {
     dateStart: Date,
     direction?: number,
   ) => { time: AstroTimeLike; hor: { altitude: number; azimuth: number } };
+  GeoVector: (
+    body: string,
+    date: Date,
+    aberration: boolean,
+  ) => { x: number; y: number; z: number };
   MoonPhase: (date: Date) => number;
   Illumination: (
     body: string,
@@ -154,6 +159,7 @@ const REQUIRED_MEMBERS = [
   "SearchRiseSet",
   "SearchHourAngle",
   "MoonPhase",
+  "GeoVector",
   "Illumination",
   "SearchAltitude",
   "SearchMoonPhase",

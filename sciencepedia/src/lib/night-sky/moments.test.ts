@@ -56,8 +56,8 @@ test("Nhật thực 1995: đọc từ múi giờ Việt Nam là 09:30 ngày 24/1
 
 test("Các khoảnh khắc còn lại giữ đúng ngày/giờ tường đã hứa", () => {
   const expected: Record<string, [number, number, number, number, number]> = {
-    "halley-1986": [1986, 2, 9, 21, 0],
-    "halley-2061": [2061, 7, 28, 21, 0],
+    "halley-1986": [1986, 3, 19, 5, 0],
+    "halley-2061": [2061, 7, 16, 4, 0],
     "independence-1945": [1945, 9, 2, 19, 0],
   };
   for (const [id, parts] of Object.entries(expected)) {
