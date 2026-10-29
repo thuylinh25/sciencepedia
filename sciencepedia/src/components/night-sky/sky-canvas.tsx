@@ -518,9 +518,12 @@ export function SkyCanvas({
      lúc khởi tạo (toàn màn hình chỉ phủ ~70% chiều cao, đổi kích thước
      cửa sổ cũng không theo — QA PR #167 bắt được). Lớp ngoài giữ nhiệm vụ
      căng đầy khung; lớp trong `h-full` là container của engine, chiều cao
-     luôn bám khung dù engine có ghi đè position. */
+     luôn bám khung dù engine có ghi đè position. Lớp ngoài căng đầy
+     VÙNG TRỜI (wrapper flex-1 của trang) — sàn điều khiển đã là dải
+     riêng dưới vùng trời ở mọi kích thước nên không cần biến thể
+     theo breakpoint ở đây nữa. */
   return (
-    <div className="absolute inset-0 z-[1] max-lg:relative max-lg:min-h-0 max-lg:flex-1">
+    <div className="absolute inset-0 z-[1]">
       <div ref={mountRef} id={ENGINE_ID} className="h-full w-full" />
     </div>
   );

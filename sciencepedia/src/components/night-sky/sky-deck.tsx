@@ -58,7 +58,7 @@ export function SkyDeck({
 
   return (
     <div
-      className="relative z-20 mx-3 mt-3 flex items-center gap-1.5 rounded-2xl border border-white/15 bg-black/45 px-2.5 py-2 text-white shadow-lg backdrop-blur-md max-lg:mb-3 sm:gap-2.5 sm:px-3.5 lg:absolute lg:inset-x-3 lg:bottom-8 lg:mx-0 lg:mt-0"
+      className="relative z-20 mx-3 mt-3 mb-3 flex items-center gap-1.5 rounded-2xl border border-white/15 bg-black/45 px-2.5 py-2 text-white shadow-lg backdrop-blur-md sm:gap-2.5 sm:px-3.5"
       role="group"
       aria-label={t("deckLabel")}
     >
