@@ -301,6 +301,7 @@ function VirtualSky(input){
 	this.base = "";
 	this.az_step = 0;
 	this.az_off = 0;
+	this.el_off = 0; // PATCH-SCIENCEPEDIA-7: vertical pan offset (degrees)
 	this.ra_off = 0;
 	this.dc_off = 0;
 	this.fov = 30;
@@ -387,8 +388,8 @@ function VirtualSky(input){
 			title: 'Stereographic projection',
 			azel2xy: function(az,el,w,h){
 				var f = (typeof this.fov==="number" && this.fov>0) ? 0.42*30/this.fov : 0.42; // PATCH-SCIENCEPEDIA-2: fov-driven zoom for the stereo projection (see NOTICE.md)
-				var sinel1 = 0;
-				var cosel1 = 1;
+				var sinel1 = Math.sin((this.el_off||0)*Math.PI/180); // PATCH-SCIENCEPEDIA-7: projection centre elevation (see NOTICE.md)
+				var cosel1 = Math.cos((this.el_off||0)*Math.PI/180);
 				var cosaz = Math.cos((az-Math.PI));
 				var sinaz = Math.sin((az-Math.PI));
 				var sinel = Math.sin(el);
@@ -398,8 +399,8 @@ function VirtualSky(input){
 			},
 			xy2azel: function(x, y, w, h) {
 				var f = (typeof this.fov==="number" && this.fov>0) ? 0.42*30/this.fov : 0.42; // PATCH-SCIENCEPEDIA-2: fov-driven zoom for the stereo projection (see NOTICE.md)
-				var sinel1 = 0;
-				var cosel1 = 1;
+				var sinel1 = Math.sin((this.el_off||0)*Math.PI/180); // PATCH-SCIENCEPEDIA-7: projection centre elevation (see NOTICE.md)
+				var cosel1 = Math.cos((this.el_off||0)*Math.PI/180);
 				var X = (x - w/2) / h;
 				var Y = (h - y)/h;
 				var R = f;
@@ -1231,9 +1232,24 @@ VirtualSky.prototype.changeFOV = function(delta){
 	return this.setFOV(fov);
 };
 VirtualSky.prototype.setFOV = function(fov){
-	if(fov > 60 || typeof fov!=="number") this.fov = 60;
-	else if(fov < 1) this.fov = 1;
-	else this.fov = fov;
+	var newfov;
+	if(fov > 60 || typeof fov!=="number") newfov = 60;
+	else if(fov < 1) newfov = 1;
+	else newfov = fov;
+	// PATCH-SCIENCEPEDIA-7 (zoom-centre compensation, see NOTICE.md):
+	// the stereo projection anchors el_off at the canvas BOTTOM edge,
+	// so the elevation at the frame centre is el_off + 2*atan(0.25/f)
+	// with f = 0.42*30/fov. Holding el_off while zooming therefore
+	// drags the centre down by tens of degrees (Saturn centred at 65
+	// degrees left the frame after three zoom clicks, QA 2026-10-29).
+	// Shift el_off by the change in the centre offset so zooming
+	// keeps the centre direction fixed; clamped to the drag range.
+	var prevfov = (typeof this.fov==="number" && this.fov>0) ? this.fov : 30;
+	if(newfov !== prevfov){
+		var shift = 2*Math.atan(0.25/(0.42*30/prevfov)) - 2*Math.atan(0.25/(0.42*30/newfov));
+		this.el_off = Math.max(-15, Math.min(85, (this.el_off||0) + shift*180/Math.PI));
+	}
+	this.fov = newfov;
 	this.maxangle = this.d2r*this.fov*Math.max(this.wide,this.tall)/this.tall;
 	this.maxangle = Math.min(this.maxangle,Math.PI/2);
 	return this;
@@ -1485,6 +1501,7 @@ VirtualSky.prototype.createSky = function(){
 					s.dc_off = inrangeEl(s.dc_off);
 				}else{
 					if(typeof s.x=="number") s.az_off += (s.x-x)/4;
+					if(typeof s.y=="number") s.el_off = Math.max(-15, Math.min(85, (s.el_off||0) + (y-s.y)/4)); // PATCH-SCIENCEPEDIA-7: vertical drag
 				}
 				s.az_off = s.az_off%360;
 				s.x = x;
@@ -1552,6 +1569,8 @@ VirtualSky.prototype.createSky = function(){
 				}else{
 					if(typeof s.x=="number")
 						s.az_off += (s.x-x)/4;
+					if(typeof s.y=="number")
+						s.el_off = Math.max(-15, Math.min(85, (s.el_off||0) + (y-s.y)/4)); // PATCH-SCIENCEPEDIA-7: vertical drag
 				}
 				s.az_off = s.az_off%360;
 				s.x = x;
@@ -2734,14 +2753,14 @@ VirtualSky.prototype.drawPlanets = function(){
 		if(!this.negative) colour = this.planets[p][1];
 		if(typeof colour==="string") c.strokeStyle = colour;
 
-		if((this.showplanets || this.showplanetlabels) && this.isVisible(pos.el) && mag < this.magnitude && !this.isPointBad(pos)){
+		if((this.showplanets || this.showplanetlabels) && this.isVisible(pos.el) && !this.isPointBad(pos)){ // PATCH-SCIENCEPEDIA-8: planets are not gated by the stellar magnitude limit (see NOTICE.md)
 			var d = 0;
 			if(mag !== undefined){
 				d = 0.8*Math.max(3-mag/2, 0.5);
 				if(this.hasAtmos()) d *= Math.exp(-((90-pos.el)*this.d2r)*0.6);
 			}
 			if(d < 1.5) d = 1.5;
-			this.drawPlanet(pos.x,pos.y,d,colour,this.planets[p][0]);
+			this.drawPlanet(pos.x,pos.y,d,colour,this.planets[p][0],(typeof mag==="number" && mag > 6)); // PATCH-SCIENCEPEDIA-8: faint = beyond naked-eye, gets a finder ring
 		}
 
 		if(this.showorbits && mag < this.magnitude){
@@ -2796,7 +2815,7 @@ VirtualSky.prototype.drawPlanets = function(){
 	}
 	return this;
 };
-VirtualSky.prototype.drawPlanet = function(x,y,d,colour,label){
+VirtualSky.prototype.drawPlanet = function(x,y,d,colour,label,faint){
 	var c = this.ctx;
 	// PATCH-SCIENCEPEDIA-6 (Sciencepedia): draw recognisable bodies.
 	// Upstream draws every planet, the Sun and the Moon as the same
@@ -2870,6 +2889,19 @@ VirtualSky.prototype.drawPlanet = function(x,y,d,colour,label){
 			c.restore();
 		}
 		if(label === "S") this.drawSaturnRing(x,y,r,colour,true);
+		if(faint){
+			// PATCH-SCIENCEPEDIA-8: a thin finder ring marks bodies
+			// too faint for the naked eye (e.g. Neptune), so the disc
+			// reads as "marked for you" rather than "visible unaided"
+			// — the panel's feasibility line grades it honestly.
+			c.beginPath();
+			c.strokeStyle = colour;
+			c.globalAlpha = 0.55;
+			c.lineWidth = 1;
+			c.arc(x,y,r+3.5,0,Math.PI*2,true);
+			c.stroke();
+			c.globalAlpha = 1;
+		}
 		if(this.showplanetlabels) this.drawLabel(x,y,r,colour,phrase);
 		return this;
 	}
