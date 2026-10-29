@@ -1232,7 +1232,7 @@ export function NightSky() {
                 <button
                   type="button"
                   onClick={() => requestZoom(1.4)}
-                  disabled={viewFov <= 1.01}
+                  disabled={Math.round(viewFov) <= 1}
                   aria-label={t("zoomIn")}
                   title={t("zoomIn")}
                   className="inline-flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-white/70 disabled:pointer-events-none disabled:opacity-35"
@@ -1245,7 +1245,7 @@ export function NightSky() {
                 <button
                   type="button"
                   onClick={() => requestZoom(1 / 1.4)}
-                  disabled={viewFov >= 59.9}
+                  disabled={Math.round(viewFov) >= 60}
                   aria-label={t("zoomOut")}
                   title={t("zoomOut")}
                   className="inline-flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-white/70 disabled:pointer-events-none disabled:opacity-35"
