@@ -1148,7 +1148,7 @@ export function NightSky() {
                 kín, lớp ấm chỉ ghé qua dải chạng vạng. */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#5f9fd8] via-[#8fc0e8] to-[#d7ecf9] transition-opacity duration-700"
+              className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#2e6bc2] via-[#5b97d9] to-[#9cc3ea] transition-opacity duration-700"
               style={{ opacity: overlay.day }}
             />
             {/* Lớp ấm nằm TRÊN lớp ngày: ở hoàng hôn lớp ngày đã rút
@@ -1239,7 +1239,10 @@ export function NightSky() {
               <div
                 aria-hidden
                 className={cn(
-                  "pointer-events-none absolute top-3 left-3 z-10 rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-xs font-medium text-white tabular-nums backdrop-blur-sm transition-opacity duration-500",
+                  cn(
+                    "pointer-events-none absolute top-3 left-3 z-10 rounded-full border border-white/15 px-3 py-1.5 text-xs font-medium text-white tabular-nums backdrop-blur-sm transition-opacity duration-500",
+                    report?.sun.state === "day" ? "bg-black/60" : "bg-black/35",
+                  ),
                   hudDimmed && "opacity-40",
                 )}
               >
@@ -1259,7 +1262,10 @@ export function NightSky() {
             <div
               ref={cursorBoxRef}
               aria-hidden
-              className="pointer-events-none absolute top-0 left-0 z-30 max-w-[calc(100%-1.5rem)] rounded-2xl border border-white/15 bg-black/35 px-3 py-1.5 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300"
+              className={cn(
+                "pointer-events-none absolute top-0 left-0 z-30 max-w-[calc(100%-1.5rem)] rounded-2xl border border-white/15 px-3 py-1.5 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300",
+                report?.sun.state === "day" ? "bg-black/65" : "bg-black/35",
+              )}
             >
               <div ref={cursorMainRef} className="text-xs font-medium tabular-nums" />
               <div ref={cursorSubRef} className="text-[10px] text-white/65 tabular-nums" />
