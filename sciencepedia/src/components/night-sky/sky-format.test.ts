@@ -11,6 +11,7 @@ import {
   fmtDecDm,
   fmtRaHm,
   placeCursorBox,
+  pinchFov,
   zoomFov,
 } from "./sky-format";
 
@@ -174,4 +175,18 @@ test("needsOrientationPermission: chỉ iOS/iPadOS", () => {
     false,
   );
 });
+});
+
+test("pinchFov: mở ngón phóng to, chụm ngón thu nhỏ", () => {
+  assert.equal(pinchFov(30, 100, 200), 15);
+  assert.equal(pinchFov(30, 200, 100), 60);
+  assert.equal(pinchFov(20, 150, 150), 20);
+});
+
+test("pinchFov: kẹp vào [1, 60] và chịu số liệu hỏng", () => {
+  assert.equal(pinchFov(30, 100, 4000), 1);
+  assert.equal(pinchFov(50, 400, 100), 60);
+  assert.equal(pinchFov(30, 0, 100), 30);
+  assert.equal(pinchFov(30, 100, 0), 30);
+  assert.equal(pinchFov(30, Number.NaN, 100), 30);
 });

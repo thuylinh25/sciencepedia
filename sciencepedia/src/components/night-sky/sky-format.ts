@@ -81,6 +81,30 @@ export function zoomFov(current: number, factor: number): number {
 }
 
 /**
+ * Góc nhìn khi chụm/mở hai ngón tay: khoảng cách ngón tay tăng gấp
+ * bao nhiêu lần so với lúc bắt đầu cử chỉ thì góc nhìn hẹp đi bấy
+ * nhiêu lần (mở ngón = phóng to). Kẹp [1, 60] như mọi đường thu
+ * phóng khác; số liệu hỏng (khoảng cách ≤ 0, NaN) thì giữ nguyên
+ * góc nhìn bắt đầu thay vì nhảy hình.
+ */
+export function pinchFov(
+  startFov: number,
+  startDistancePx: number,
+  distancePx: number,
+): number {
+  if (
+    !Number.isFinite(startFov) ||
+    !Number.isFinite(startDistancePx) ||
+    !Number.isFinite(distancePx) ||
+    startDistancePx <= 0 ||
+    distancePx <= 0
+  ) {
+    return startFov;
+  }
+  return Math.min(60, Math.max(1, (startFov * startDistancePx) / distancePx));
+}
+
+/**
  * Chỗ đặt ô đọc toạ độ: BÁM THEO con trỏ (yêu cầu của Linh 2026-10-29,
  * theo mẫu TheSkyLive — toạ độ hiện ngay chỗ trỏ, không phải ở một góc
  * cố định bắt mắt phải đi tìm). Ô lệch phải/xuống một nhịp để không che

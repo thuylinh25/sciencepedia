@@ -118,6 +118,7 @@ export type SkyEngine = {
   /** Thu/phóng theo hệ số: factor > 1 là phóng to (góc nhìn hẹp lại).
       Trả góc nhìn THẬT sau khi engine đã kẹp vào [1, 60]. */
   zoomBy: (factor: number) => number;
+  setFov: (fovDeg: number) => number;
   resize: () => void;
   destroy: () => void;
 };
@@ -310,6 +311,17 @@ async function createSkyEngine(
       zoomAnim = requestAnimationFrame(step);
       return to;
     },
+    setFov(fovDeg) {
+      // Đặt góc nhìn tuyệt đối cho pinch: huỷ animation thu phóng
+      // đang chạy (nếu có) rồi áp ngay — cử chỉ cần đáp tức thì,
+      // không nội suy 300 ms như nút bấm/con lăn.
+      if (zoomAnim !== null) cancelAnimationFrame(zoomAnim);
+      zoomAnim = null;
+      const target = Math.min(60, Math.max(1, fovDeg));
+      instance.setFOV(target);
+      instance.draw();
+      return instance.fov;
+    },
     resize() {
       instance.resize();
     },
@@ -336,6 +348,7 @@ export function SkyCanvas({
   onCursor,
   focusRequest,
   zoomRequest,
+  fovRequest,
   markerTarget,
   onMarkerPos,
 }: {
@@ -362,6 +375,8 @@ export function SkyCanvas({
   /** Yêu cầu thu/phóng theo hệ số (nút bấm và con lăn chuột trên khung
       đều gửi qua đây). `nonce` như ở `focusRequest`. */
   zoomRequest?: { factor: number; nonce: number } | null;
+  /** Yêu cầu đặt góc nhìn tuyệt đối (pinch cảm ứng gửi liên tục). */
+  fovRequest?: { fovDeg: number; nonce: number } | null;
   /** Thiên thể phụ cần chấm dấu (sao chổi) — SkyCanvas chiếu lại theo
       nhịp thăm dò và báo vị trí qua `onMarkerPos`; null là không dấu. */
   markerTarget?: SkyMarkerTarget | null;
@@ -509,6 +524,12 @@ export function SkyCanvas({
       engineRef.current?.zoomBy(zoomRequest.factor);
     }
   }, [zoomRequest]);
+
+  useEffect(() => {
+    if (fovRequest) {
+      engineRef.current?.setFov(fovRequest.fovDeg);
+    }
+  }, [fovRequest]);
 
   /* Hai lớp div, cố ý: VirtualSky tự đặt `position: relative` dạng inline
      lên phần tử mang id của nó. Nếu phần tử đó chính là lớp `absolute
