@@ -43,6 +43,17 @@ thử, trang ví dụ và `excanvas.min.js` (chỉ cho Internet Explorer).
   nên hộp đó cũng không bao giờ có nội dung, dòng `return` chỉ chốt chặn
   để bản nâng cấp engine sau này không vô tình bật lại nó (kèm theo các
   request tra cứu ra ngoài mà Sciencepedia không cho phép).
+- **2026-10-29 (PATCH-SCIENCEPEDIA-2):** phép chiếu `stereo` trong
+  `virtualsky.js` vốn vẽ theo phương vị/độ cao với hệ số cố định
+  `f = 0.42` và *không hề đọc `fov`* — gọi `setFOV` chỉ đổi con số, hình
+  không đổi (đây là lý do tính năng thu phóng của trang từng "đổi số mà
+  không zoom"). Hai chỗ `var f = 0.42;` trong khối `'stereo'` (ở
+  `azel2xy` và hàm ngược `xy2azel`) được đổi thành hệ số suy ra từ
+  `this.fov`: `0.42 * 30 / this.fov` (kèm fallback 0.42 khi `fov` không
+  hợp lệ). Ở `fov = 30` (mặc định) hình vẽ y hệt bản gốc; `fov` nhỏ/lớn
+  hơn cho thu/phóng thật, và vì hàm ngược dùng cùng hệ số nên kéo, click
+  chọn và toạ độ con trỏ vẫn nhất quán. Ngoài khối `'stereo'` không chỗ
+  nào bị đụng.
 
 ## astronomy-engine — thư viện tính toán thiên văn (Phase 2)
 

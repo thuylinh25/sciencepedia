@@ -386,7 +386,7 @@ function VirtualSky(input){
 		'stereo': {
 			title: 'Stereographic projection',
 			azel2xy: function(az,el,w,h){
-				var f = 0.42;
+				var f = (typeof this.fov==="number" && this.fov>0) ? 0.42*30/this.fov : 0.42; // PATCH-SCIENCEPEDIA-2: fov-driven zoom for the stereo projection (see NOTICE.md)
 				var sinel1 = 0;
 				var cosel1 = 1;
 				var cosaz = Math.cos((az-Math.PI));
@@ -397,7 +397,7 @@ function VirtualSky(input){
 				return {x:(w/2+f*k*h*cosel*sinaz),y:(h-f*k*h*(cosel1*sinel-sinel1*cosel*cosaz)),el:el};
 			},
 			xy2azel: function(x, y, w, h) {
-				var f = 0.42;
+				var f = (typeof this.fov==="number" && this.fov>0) ? 0.42*30/this.fov : 0.42; // PATCH-SCIENCEPEDIA-2: fov-driven zoom for the stereo projection (see NOTICE.md)
 				var sinel1 = 0;
 				var cosel1 = 1;
 				var X = (x - w/2) / h;

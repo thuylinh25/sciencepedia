@@ -450,7 +450,7 @@ export function NightSky() {
     const onWheel = (event: WheelEvent) => {
       if (!engineReadyRef.current) return;
       event.preventDefault();
-      requestZoom(event.deltaY < 0 ? 1.15 : 1 / 1.15);
+      requestZoom(event.deltaY < 0 ? 1.25 : 1 / 1.25);
     };
     frame.addEventListener("wheel", onWheel, { passive: false });
     return () => frame.removeEventListener("wheel", onWheel);
