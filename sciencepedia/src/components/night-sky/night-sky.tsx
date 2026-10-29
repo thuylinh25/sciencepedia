@@ -11,6 +11,7 @@ import {
 import { useLocale, useTranslations } from "next-intl";
 import {
   Cake,
+  CalendarDays,
   Camera,
   Check,
   Compass,
@@ -27,6 +28,8 @@ import {
   RotateCcw,
   Share2,
   Sparkles,
+  Star,
+  Sun,
   Sunrise,
   Sunset,
   X,
@@ -71,6 +74,10 @@ import {
 } from "@/lib/night-sky/catalog";
 import { SKY_MOMENTS, type SkyMoment } from "@/lib/night-sky/moments";
 import { halleyReport, type CometReport } from "@/lib/night-sky/comets";
+import {
+  upcomingSkyEvents,
+  type SkyEvent,
+} from "@/lib/night-sky/events";
 import {
   buildQuiz,
   buildTourStops,
@@ -548,6 +555,13 @@ export function NightSky() {
         ? skyReport(engine, observer.lat, observer.lon, report.sun.sunset)
         : null,
     [engine, observer.lat, observer.lon, report?.sun.sunset],
+  );
+
+  /* Sự kiện sắp tới (S4): tính từ "bây giờ" thật, theo múi giờ của
+     nơi đang chọn — không bám giờ đang xem của máy thời gian. */
+  const skyEvents = useMemo(
+    () => (engine ? upcomingSkyEvents(engine, tz, new Date()) : []),
+    [engine, tz],
   );
 
   const tonightMode = eveningReport !== null;
@@ -1084,6 +1098,34 @@ export function NightSky() {
       setBirthdayOpen(false);
     },
     [],
+  );
+
+  /* Nhảy tới một sự kiện sắp tới: đích là hoàng hôn của ngày sự
+     kiện tại nơi đang chọn (lúc bầu trời bắt đầu xem được), riêng
+     điểm chí/phân nhảy thẳng tới đúng mốc. Cuộn khung trời lên đầu
+     tầm nhìn vì khu vực sự kiện nằm dưới khung. */
+  const jumpToEvent = useCallback(
+    (event: SkyEvent) => {
+      setPlaying(false);
+      setActiveMoment(null);
+      setBirthdayOpen(false);
+      if (engine && event.kind !== "season") {
+        const parts = utcToWallParts(tz, event.instant);
+        const noon = wallTimeToUtc(tz, {
+          year: parts.year,
+          month: parts.month,
+          day: parts.day,
+          hour: 12,
+          minute: 0,
+        });
+        const dayReport = skyReport(engine, observer.lat, observer.lon, noon);
+        setTime(dayReport.sun.sunset ?? event.instant);
+      } else {
+        setTime(event.instant);
+      }
+      frameRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    },
+    [engine, observer.lat, observer.lon, tz],
   );
 
   /* Chọn một khoảnh khắc Halley thì xoay khung tới sao chổi luôn: cả
@@ -2372,6 +2414,59 @@ export function NightSky() {
           </div>
         </div>
       </div>
+
+      {/* Sự kiện sắp tới (S4): mọi mốc do astronomy-engine tính tại
+          chỗ theo nơi đang chọn; fanpage và bài viết liên kết về
+          đúng khu vực này (#su-kien-sap-toi). */}
+      {skyEvents.length > 0 && (
+        <div className="mt-6" id="su-kien-sap-toi">
+          <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
+            <CalendarDays className="size-3.5" aria-hidden />
+            {t("eventsTitle")}
+          </span>
+          <div className="mt-2 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {skyEvents.map((event) => (
+              <div
+                key={event.id}
+                className="flex flex-col rounded-2xl border bg-card p-4"
+              >
+                <div className="flex items-center gap-2">
+                  {event.kind === "meteor" ? (
+                    <Sparkles className="size-4 text-primary" aria-hidden />
+                  ) : event.kind === "full-moon" ? (
+                    <Moon className="size-4 text-primary" aria-hidden />
+                  ) : event.kind === "new-moon" ? (
+                    <Star className="size-4 text-primary" aria-hidden />
+                  ) : (
+                    <Sun className="size-4 text-primary" aria-hidden />
+                  )}
+                  <h3 className="text-sm font-semibold">
+                    {isEnglish ? event.nameEn : event.nameVi}
+                  </h3>
+                </div>
+                <p className="mt-1 text-xs font-medium text-primary">
+                  {formatDateTimeInTz(tz, event.instant, locale)}
+                </p>
+                <p className="mt-1 flex-1 text-xs leading-relaxed text-muted-foreground">
+                  {isEnglish ? event.noteEn : event.noteVi}
+                </p>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="mt-3 self-start"
+                  onClick={() => jumpToEvent(event)}
+                >
+                  {t("eventsView")}
+                </Button>
+              </div>
+            ))}
+          </div>
+          <p className="mt-2 text-[11px] text-muted-foreground">
+            {t("eventsNote")}
+          </p>
+        </div>
+      )}
 
       {/* Máy thời gian nằm DƯỚI khung trời (PR-C): là nội dung
           khám phá, không phải điều khiển chính — để nó trên khung

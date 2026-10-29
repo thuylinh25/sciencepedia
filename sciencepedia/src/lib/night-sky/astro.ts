@@ -143,6 +143,20 @@ export type RawAstronomy = {
     dateStart: Date,
     limitDays: number,
   ) => AstroTimeLike | null;
+  Seasons: (date: Date) => {
+    mar_equinox: AstroTimeLike;
+    jun_solstice: AstroTimeLike;
+    sep_equinox: AstroTimeLike;
+    dec_solstice: AstroTimeLike;
+  };
+  SearchLunarApsis: (
+    dateStart: Date,
+  ) => { time: AstroTimeLike; kind: number; dist_km: number } | null;
+  NextLunarApsis: (apsis: {
+    time: AstroTimeLike;
+    kind: number;
+    dist_km: number;
+  }) => { time: AstroTimeLike; kind: number; dist_km: number } | null;
 };
 
 declare global {
@@ -163,6 +177,9 @@ const REQUIRED_MEMBERS = [
   "Illumination",
   "SearchAltitude",
   "SearchMoonPhase",
+  "Seasons",
+  "SearchLunarApsis",
+  "NextLunarApsis",
 ] as const;
 
 /** Kiểm chứng hình dạng của biến toàn cục rồi mới tin — biên dữ liệu ngoài
