@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { fmtDecDm, fmtRaHm, placeCursorBox } from "./sky-format";
+import { fmtDecDm, fmtRaHm, placeCursorBox, zoomFov } from "./sky-format";
 
 /**
  * Ô đọc toạ độ tại con trỏ in RA/Dec tới phút — sai một phút là người
@@ -74,4 +74,22 @@ test("placeCursorBox: khung nhỏ hơn ô thì kẹp về lề, không toạ đ�
   );
   assert.equal(placed.left, 4);
   assert.ok(placed.top >= 4);
+});
+
+test("zoomFov: phóng to chia góc nhìn, thu nhỏ nhân lên", () => {
+  assert.equal(zoomFov(30, 1.5), 20);
+  assert.equal(zoomFov(30, 1 / 1.5), 45);
+  assert.equal(zoomFov(30, 1), 30);
+});
+
+test("zoomFov: kẹp đúng giới hạn cứng [1, 60] của engine", () => {
+  assert.equal(zoomFov(2, 4), 1); // phóng quá tay dừng ở 1°
+  assert.equal(zoomFov(50, 0.5), 60); // thu quá tay dừng ở 60°
+  assert.equal(zoomFov(1, 2), 1);
+  assert.equal(zoomFov(60, 0.9), 60);
+});
+
+test("zoomFov: hệ số hỏng thì giữ nguyên góc nhìn", () => {
+  assert.equal(zoomFov(30, 0), 30);
+  assert.equal(zoomFov(30, Number.NaN), 30);
 });
