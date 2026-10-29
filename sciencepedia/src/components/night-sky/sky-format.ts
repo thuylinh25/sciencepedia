@@ -66,3 +66,39 @@ export function fmtDecDm(decDeg: number): string {
   const sign = clamped < 0 && totalArcminutes > 0 ? "−" : "+";
   return `${sign}${degrees}° ${String(arcminutes).padStart(2, "0")}′`;
 }
+
+/**
+ * Chỗ đặt ô đọc toạ độ: BÁM THEO con trỏ (yêu cầu của Linh 2026-10-29,
+ * theo mẫu TheSkyLive — toạ độ hiện ngay chỗ trỏ, không phải ở một góc
+ * cố định bắt mắt phải đi tìm). Ô lệch phải/xuống một nhịp để không che
+ * điểm đang chỉ; chạm mép phải/dưới của khung thì lật sang phía đối
+ * diện; kết quả luôn được kẹp trong khung với lề 4 px. Thuần số học để
+ * test được — `handleCursor` chỉ áp kết quả vào style của ô.
+ */
+export function placeCursorBox(
+  pointer: { x: number; y: number },
+  box: { width: number; height: number },
+  frame: { width: number; height: number },
+): { left: number; top: number } {
+  const GAP_X = 16;
+  const GAP_Y = 18;
+  const MARGIN = 4;
+  let left = pointer.x + GAP_X;
+  if (left + box.width > frame.width - MARGIN) {
+    left = pointer.x - GAP_X - box.width;
+  }
+  let top = pointer.y + GAP_Y;
+  if (top + box.height > frame.height - MARGIN) {
+    top = pointer.y - GAP_Y - box.height;
+  }
+  return {
+    left: Math.min(
+      Math.max(left, MARGIN),
+      Math.max(MARGIN, frame.width - box.width - MARGIN),
+    ),
+    top: Math.min(
+      Math.max(top, MARGIN),
+      Math.max(MARGIN, frame.height - box.height - MARGIN),
+    ),
+  };
+}
