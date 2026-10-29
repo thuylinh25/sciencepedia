@@ -1358,8 +1358,11 @@ export function NightSky() {
               }}
             />
 
+            {/* Chip ban ngày nằm giữa–trên cùng: ở khung hẹp nó tràn
+                sang trái đè lên ô hướng (Linh báo trên điện thoại
+                29/10) — màn nhỏ cho nó xuống dưới hàng trên cùng. */}
             {report?.sun.state === "day" && report.sun.sunset && (
-              <div className="pointer-events-none absolute left-1/2 top-3 z-10 flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-black/45 px-3 py-1 text-xs font-medium text-amber-100 backdrop-blur-sm">
+              <div className="pointer-events-none absolute top-14 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-black/45 px-3 py-1 text-xs font-medium whitespace-nowrap text-amber-100 backdrop-blur-sm lg:top-3">
                 <Sunrise className="size-3.5" />
                 {t("daySkyChip", {
                   time: fmtEventTime(tz, report.sun.sunset, locale, time),

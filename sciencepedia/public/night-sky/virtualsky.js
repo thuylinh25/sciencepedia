@@ -2266,7 +2266,7 @@ VirtualSky.prototype.setFont = function(){ this.ctx.font = this.fontsize()+"px "
 VirtualSky.prototype.fontsize = function(){
 	if(this.fntsze) return parseInt(this.fntsze);
 	var m = Math.min(this.wide,this.tall);
-	return (m < 600) ? ((m < 500) ? ((m < 350) ? ((m < 300) ? ((m < 250) ? 9 : 10) : 11) : 12) : 14) : parseInt(this.container.css('font-size'));
+	return (m < 600) ? ((m < 500) ? ((m < 350) ? ((m < 300) ? ((m < 250) ? 9 : 10) : 11) : 11) : 13) : parseInt(this.container.css('font-size')); // PATCH-SCIENCEPEDIA-5: khung hẹp hạ một bậc cỡ chữ nhãn (xem NOTICE.md)
 };
 VirtualSky.prototype.positionCredit = function(){
 	this.container.find('.'+this.id+'_credit').css({position:'absolute',top:(parseFloat(this.tall)-this.padding-this.fontsize())+'px',left:this.padding+'px'});
