@@ -83,9 +83,9 @@ export const SKY_MOMENTS: readonly SkyMoment[] = [
     labelVi: "Sao chổi Halley trên trời rạng sáng · 19/3/1986",
     labelEn: "Comet Halley in the dawn sky · 19 Mar 1986",
     blurbVi:
-      "Sao chổi Halley đạt điểm cận nhật vào ngày 9/2/1986, nhưng những ngày đó nó nấp sát Mặt Trời nên từ Việt Nam không thể ngắm. Hơn một tháng sau nó mới tách sang vùng trời rạng sáng: khoảng 5 giờ sáng 19/3/1986, từ Hà Nội nó đứng ở độ cao khoảng 27° phía đông nam, trong chòm Nhân Mã, sáng khoảng cấp 5 — một vật thể của ống nhòm và những đôi mắt tinh dưới bầu trời tối. Trong khung, sao chổi là chấm sáng có đuôi tại đúng vị trí tính được của nó.",
+      "Sao chổi Halley đạt điểm cận nhật vào ngày 9/2/1986, nhưng những ngày đó nó nấp sát Mặt Trời nên từ Việt Nam không thể ngắm. Hơn một tháng sau nó mới tách sang vùng trời rạng sáng: khoảng 5 giờ sáng 19/3/1986, từ Hà Nội nó đứng ở độ cao khoảng 26° phía đông nam, trong chòm Nhân Mã, sáng khoảng cấp 5 — một vật thể của ống nhòm và những đôi mắt tinh dưới bầu trời tối. Trong khung, sao chổi là chấm sáng có đuôi tại đúng vị trí tính được của nó.",
     blurbEn:
-      "Comet Halley reached perihelion on 9 February 1986, but in those days it hid right next to the Sun and could not be seen from Vietnam. More than a month later it had moved into the pre-dawn sky: around 5 a.m. on 19 March 1986, from Hanoi it stood about 27° up in the southeast, in Sagittarius, at roughly magnitude 5 — an object for binoculars and keen eyes under a dark sky. In the frame, the comet is the small glowing dot with a tail at its computed position.",
+      "Comet Halley reached perihelion on 9 February 1986, but in those days it hid right next to the Sun and could not be seen from Vietnam. More than a month later it had moved into the pre-dawn sky: around 5 a.m. on 19 March 1986, from Hanoi it stood about 26° up in the southeast, in Sagittarius, at roughly magnitude 5 — an object for binoculars and keen eyes under a dark sky. In the frame, the comet is the small glowing dot with a tail at its computed position.",
   },
   {
     id: "halley-2061",
